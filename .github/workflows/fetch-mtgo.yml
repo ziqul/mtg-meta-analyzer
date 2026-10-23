@@ -45,6 +45,9 @@ jobs:
             bun run scripts/fetch-mtgo.ts --from "$PREV_MONTH" --to "$CURR_MONTH"
           fi
 
+      - name: Prune data outside the retention window
+        run: bun run scripts/prune-old-data.ts
+
       - name: Check/rebuild card image index
         run: |
           if bun run scripts/check-card-image-index.ts; then
@@ -60,10 +63,15 @@ jobs:
             echo "No new MTGO tournaments found."
             exit 0
           fi
-          COUNT=$(git diff --cached --name-only | grep -v -e 'card-images\.json' -e 'card-images-status\.json' | grep -c '\.json$' || true)
+          COUNT=$(git diff --cached --name-only --diff-filter=A | grep -v -e 'card-images\.json' -e 'card-images-status\.json' | grep -c '\.json$' || true)
+          PRUNED=$(git diff --cached --name-only --diff-filter=D | grep -c '\.json$' || true)
           DATE=$(date -u +%Y-%m-%d)
-          if [ "$COUNT" -gt 0 ]; then
+          if [ "$COUNT" -gt 0 ] && [ "$PRUNED" -gt 0 ]; then
+            MESSAGE="data: fetch $COUNT MTGO tournaments, prune $PRUNED old ($DATE)"
+          elif [ "$COUNT" -gt 0 ]; then
             MESSAGE="data: fetch $COUNT MTGO tournaments ($DATE)"
+          elif [ "$PRUNED" -gt 0 ]; then
+            MESSAGE="data: prune $PRUNED tournaments outside the window ($DATE)"
           else
             MESSAGE="data: refresh card image index ($DATE)"
           fi

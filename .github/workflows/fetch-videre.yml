@@ -59,6 +59,9 @@ jobs:
             bun run scripts/fetch-videre.ts --from "$PREV_MONTH" --to "$CURR_MONTH"
           fi
 
+      - name: Prune data outside the retention window
+        run: bun run scripts/prune-old-data.ts
+
       - name: Check/rebuild card image index
         run: |
           if bun run scripts/check-card-image-index.ts; then
@@ -75,9 +78,14 @@ jobs:
             exit 0
           fi
           COUNT=$(git diff --cached --name-only --diff-filter=A | grep -c 'videre-.*\.json$' || true)
+          PRUNED=$(git diff --cached --name-only --diff-filter=D | grep -c '\.json$' || true)
           DATE=$(date -u +%Y-%m-%d)
-          if [ "$COUNT" -gt 0 ]; then
+          if [ "$COUNT" -gt 0 ] && [ "$PRUNED" -gt 0 ]; then
+            MESSAGE="data: fetch $COUNT videre tournaments, prune $PRUNED old ($DATE)"
+          elif [ "$COUNT" -gt 0 ]; then
             MESSAGE="data: fetch $COUNT videre tournaments ($DATE)"
+          elif [ "$PRUNED" -gt 0 ]; then
+            MESSAGE="data: prune $PRUNED tournaments outside the window ($DATE)"
           else
             MESSAGE="data: refresh card image index ($DATE)"
           fi
