@@ -1,0 +1,78 @@
+name: Update Archetypes
+
+on:
+  schedule:
+    - cron: '0 7 * * *' # daily at 07:00 UTC (an hour after fetch-videre)
+  workflow_dispatch:
+    inputs:
+      formats:
+        description: 'Goldfish format slugs, separated by a space'
+        required: false
+        type: string
+      top:
+        description: 'Cards in each rule (default 6)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+env:
+  DEFAULT_FORMATS: standard modern pioneer legacy vintage pauper premodern
+  DEFAULT_TOP: '6'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: master
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile
+
+      # Each format overwrites data/archetypes/<slug>.yaml. The script keeps the
+      # old file when only its date line would change, so an unchanged metagame
+      # makes no commit. One failed format does not stop the others.
+      - name: Draft archetype configs from MTGGoldfish
+        run: |
+          FORMATS="${{ inputs.formats }}"
+          if [ -z "$FORMATS" ]; then
+            FORMATS="$DEFAULT_FORMATS"
+          fi
+          TOP="${{ inputs.top }}"
+          if [ -z "$TOP" ]; then
+            TOP="$DEFAULT_TOP"
+          fi
+
+          FAILED=""
+          for FORMAT in $FORMATS; do
+            if bun run scripts/draft-archetypes-goldfish.ts "$FORMAT" --top "$TOP" --force; then
+              echo "ok: $FORMAT"
+            else
+              FAILED="$FAILED $FORMAT"
+            fi
+          done
+
+          if [ -n "$FAILED" ]; then
+            echo "::warning::Could not draft:$FAILED"
+          fi
+
+      - name: Commit and push
+        run: |
+          git add data/archetypes/
+          if git diff --cached --quiet; then
+            echo "Archetype configs are already current."
+            exit 0
+          fi
+          COUNT=$(git diff --cached --name-only | wc -l | tr -d ' ')
+          DATE=$(date -u +%Y-%m-%d)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data: refresh $COUNT archetype configs from MTGGoldfish ($DATE)"
+          git push
