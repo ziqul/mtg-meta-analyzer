@@ -1,378 +1,256 @@
 format: Legacy
-date: "2026-10-03"
+date: "2026-10-24"
+# Draft from https://www.mtggoldfish.com/metagame/legacy — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
-  # --- Rebuilt from post-ban decklists. The Fantasticar was banned in the 2026-08-10
-  # announcement and appears in no Legacy decklist from 2026-08-11 on, so Dimir Car is gone.
-  # Five definitions are new: Hogaak Moonshadow, Grixis Control, Mono-Red Prison and
-  # Monolith Jewel came out of the post-ban Unknown pile, and Mono-White Initiative splits the
-  # decks the centroid was guessing into Boros Initiative. ---
-  - name: Hogaak Moonshadow
+  - name: "Dimir Tempo"
+    # 12.2% of the metagame, 153 decks
     signatureCards:
-      - name: "Hogaak, Arisen Necropolis"
-        minCopies: 2
-      - name: "Moonshadow"
-        minCopies: 3
-
-  - name: Grixis Control
-    signatureCards:
-      - name: "Kolaghan's Command"
-        minCopies: 1
-      - name: "Sheoldred's Edict"
-        minCopies: 2
-      - name: "Cling to Dust"
-        minCopies: 1
-      - name: "Volcanic Island"
-        minCopies: 1
-
-  - name: Mono-Red Prison
-    signatureCards:
-      - name: "Broadside Bombardiers"
+      - name: "Brainstorm"
         minCopies: 4
-      - name: "Chalice of the Void"
-        minCopies: 3
-
-  - name: Mono-White Initiative
-    signatureCards:
-      - name: "Seasoned Dungeoneer"
-        minCopies: 3
-      - name: "Plains"
-        minCopies: 1
-      - name: "Mountain"
-        exactCopies: 0
-
-  - name: Monolith Jewel
-    signatureCards:
-      - name: "Coveted Jewel"
-        minCopies: 3
-      - name: "Transmute Artifact"
-        minCopies: 3
-      - name: "Grim Monolith"
+        # in 100% of decks
+      - name: "Daze"
         minCopies: 4
-
-  - name: Dimir Tempo
-    strictMode: true
-    signatureCards:
-      - name: "Orcish Bowmasters"
-        minCopies: 1
-      - name: "Tamiyo, Inquisitive Student"
-        minCopies: 3
-      - name: "Wasteland"
-        minCopies: 2
-      - name: Thoughtseize
-        minCopies: 2
-      - name: Up the Beanstalk
-        exactCopies: 0
-      - name: Doomsday
-        exactCopies: 0
-  # The post-ban Dimir tempo build: Moonshadow plus Bilbo and Nethergoyf, no Tamiyo. It is a
-  # separate deck from Dimir Tempo above, which is the Tamiyo plus Bowmasters build; the two
-  # share no decks in this window. Moonshadow >= 3 is what keeps them apart. Dropping it to
-  # widen the definition double-matches eight Dimir Tempo and Izzet Delver decks, which under
-  # exactly-one-match semantics costs all eight their label. Hogaak Moonshadow needs no gate
-  # here: it runs no Bilbo.
-  - name: Dimir Moonshadow
-    signatureCards:
-      - name: "Moonshadow"
-        minCopies: 3
-      - name: "Bilbo, Thief in the Night"
-        minCopies: 2
-      - name: "Nethergoyf"
-        minCopies: 2
-  - name: Mardu Energy
-    signatureCards:
-      - name: "Ocelot Pride"
-        minCopies: 3
-      - name: "Amped Raptor"
-        minCopies: 3
-      - name: "Orcish Bowmasters"
-        minCopies: 1
-      - name: "Thoughtseize"
-        minCopies: 1
-  - name: Boros Energy
-    signatureCards:
-      - name: "Ocelot Pride"
-        minCopies: 3
-      - name: "Amped Raptor"
-        minCopies: 3
-      - name: "Orcish Bowmasters"
-        exactCopies: 0
-  - name: Affinity Stompy
-    signatureCards:
-      - name: "Kappa Cannoneer"
-        minCopies: 2
-      - name: "Mox Opal"
-        minCopies: 3
-      - name: "Urza's Saga"
-        minCopies: 3
-  - name: Blue Artifacts
-    signatureCards:
-      - name: "Emry, Lurker of the Loch"
-        minCopies: 3
-      - name: "Goblin Welder"
-        minCopies: 2
-      - name: "Painter's Servant"
-        exactCopies: 0
-  - name: Sultai Doomsday
-    signatureCards:
-      - name: "Doomsday"
-        minCopies: 3
-      - name: "Dark Ritual"
-        minCopies: 3
-      - name: "Ponder"
-        minCopies: 1
-  - name: Azorius Stoneblade
-    signatureCards:
-      - name: "Stoneforge Mystic"
-        minCopies: 1
+        # in 100% of decks
       - name: "Force of Will"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Underground Sea"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Wasteland"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ponder"
         minCopies: 3
-      - name: "Phelia, Exuberant Shepherd"
-        minCopies: 2
-  - name: Azorius Control
+        # in 100% of decks
+  - name: "Boros Energy"
+    # 7.9% of the metagame, 99 decks
     signatureCards:
-      - name: "Tamiyo, Inquisitive Student"
+      - name: "Ajani, Nacatl Pariah"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Guide of Souls"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ocelot Pride"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Wasteland"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Goblin Bombardment"
         minCopies: 3
-      - name: "Swords to Plowshares"
+        # in 100% of decks
+      - name: "Plateau"
         minCopies: 3
-      - name: "Flow State"
-        minCopies: 2
-      - name: "Stoneforge Mystic"
-        exactCopies: 0
-  - name: Stiflenought
+        # in 100% of decks
+  - name: "Izzet Delver"
+    # 6.6% of the metagame, 83 decks
     signatureCards:
-      - name: "Phyrexian Dreadnought"
-        minCopies: 3
-      - name: "Stifle"
-        minCopies: 2
-  - name: Azorius Tempo
+      - name: "Brainstorm"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Dragon's Rage Channeler"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Force of Will"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lightning Bolt"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Mishra's Bauble"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ponder"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Eldrazi"
+    # 5.3% of the metagame, 67 decks
     signatureCards:
-      - name: "Quantum Riddler"
-        minCopies: 3
-      - name: "Phelia, Exuberant Shepherd"
-        minCopies: 3
-      - name: "Up the Beanstalk"
-        exactCopies: 0
-      - name: "Stoneforge Mystic"
-        exactCopies: 0
-  - name: Jeskai Control
-    signatureCards:
-      - name: "Stock Up"
-        minCopies: 3
-      - name: "Flow State"
-        minCopies: 2
-      - name: "Swords to Plowshares"
-        minCopies: 2
-  - name: Eldrazi
-    signatureCards:
+      - name: "Ancient Tomb"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Eldrazi Temple"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Glaring Fleshraker"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Kozilek's Command"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lotus Petal"
+        minCopies: 4
+        # in 100% of decks
       - name: "Thought-Knot Seer"
-        minCopies: 3
+        minCopies: 4
+        # in 100% of decks
+  - name: "Doomsday"
+    # 5.2% of the metagame, 65 decks
+    signatureCards:
+      - name: "Brainstorm"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Dark Ritual"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Doomsday"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Underground Sea"
+        minCopies: 4
+        # in 100% of decks
       - name: "Lotus Petal"
         minCopies: 3
-      - name: "Eldrazi Linebreaker"
+        # in 100% of decks
+      - name: "Street Wraith"
         minCopies: 3
-  - name: Workshop Stompy
+        # in 100% of decks
+  - name: "Sneak and Show"
+    # 4.1% of the metagame, 51 decks
     signatureCards:
-      - name: "Urza's Workshop"
-        minCopies: 3
-      - name: "Grim Monolith"
-        minCopies: 2
-  - name: Mono-Blue Tron
-    signatureCards:
-      - name: "Stock Up"
-        minCopies: 3
-      - name: "Planar Nexus"
-        minCopies: 3
-      - name: "Urza's Tower"
-        minCopies: 3
-      - name: "Force of Will"
-        minCopies: 3
-  # The colorless Karn prison build (Chalice, Trinisphere, Manifold Key, Disruptor Flute)
-  # shares the Tron land base and the Karn/The One Ring/Ugin core but runs no blue card,
-  # so it never matches Mono-Blue Tron. The Workshop, Saga, Stock Up and Force of Will
-  # gates keep it clear of Workshop Stompy and Mono-Blue Tron.
-  - name: Colorless Tron
-    signatureCards:
-      - name: "Karn, the Great Creator"
-        minCopies: 3
-      - name: "The One Ring"
-        minCopies: 3
-      - name: "Urza's Tower"
-        minCopies: 3
-      - name: "Urza's Workshop"
-        exactCopies: 0
-      - name: "Urza's Saga"
-        exactCopies: 0
-      - name: "Stock Up"
-        exactCopies: 0
-      - name: "Force of Will"
-        exactCopies: 0
-  - name: Izzet Delver
-    signatureCards:
-      - name: "Dragon's Rage Channeler"
-        minCopies: 3
-      - name: "Force of Will"
-        minCopies: 3
-      - name: "Daze"
-        minCopies: 2
-  - name: Rakdos Reanimator
-    signatureCards:
-      - name: "Reanimate"
-        minCopies: 3
-      - name: "Animate Dead"
-        minCopies: 3
-      - name: "Dark Ritual"
-        minCopies: 3
-  - name: Dimir Reanimator
-    signatureCards:
-      - name: "Reanimate"
-        minCopies: 2
-      - name: "Force of Will"
-        minCopies: 2
-  - name: Bant Beanstalk
-    signatureCards:
-      - name: "Up the Beanstalk"
-        minCopies: 3
-      - name: "Swords to Plowshares"
-        minCopies: 2
-      - name: "Force of Will"
-        minCopies: 2
-  - name: Lands
-    signatureCards:
-      - name: "Exploration"
-        minCopies: 3
-      - name: "Wasteland"
-        minCopies: 2
-      - name: "Life from the Loam"
-        minCopies: 2
-  - name: Oops! All Spells
-    signatureCards:
-      - name: "Balustrade Spy"
-        minCopies: 3
-  - name: Omni-Tell
-    signatureCards:
-      - name: "Omniscience"
-        minCopies: 3
-      - name: "Show and Tell"
-        minCopies: 3
-      - name: "Ponder"
-        minCopies: 2
-  - name: Sneak and Show
-    signatureCards:
-      - name: "Sneak Attack"
-        minCopies: 3
-      - name: "Scalding Tarn"
-        minCopies: 3
-      - name: "Show and Tell"
-        minCopies: 3
-  - name: Painter Combo
-    signatureCards:
-      - name: "Painter's Servant"
-        minCopies: 3
-      - name: "Goblin Welder"
-        minCopies: 2
-      - name: "Goblin Engineer"
-        minCopies: 2
-  - name: Death and Taxes (Yorion) - Black/White
-    signatureCards:
-      - name: "Overlord of the Balemurk"
-        minCopies: 2
-      - name: "Phelia, Exuberant Shepherd"
-        minCopies: 2
-      - name: "White Orchid Phantom"
-        minCopies: 1
-  - name: Death and Taxes (Yorion) - Mono White
-    signatureCards:
-      - name: "White Orchid Phantom"
-        minCopies: 2
-      - name: "Phelia, Exuberant Shepherd"
-        minCopies: 2
-      - name: "Overlord of the Balemurk"
-        exactCopies: 0
-  - name: Cephalid Breakfast
-    signatureCards:
-      - name: "Cephalid Illusionist"
-        minCopies: 3
-      - name: "Force of Will"
-        minCopies: 3
-      - name: "Dread Return"
-        minCopies: 1
-  - name: Cradle Control
-    signatureCards:
-      - name: "Green Sun's Zenith"
-        minCopies: 3
-      - name: "Wight of the Reliquary"
-        minCopies: 3
-      - name: "Badgermole Cub"
-        minCopies: 2
-  - name: Aluren
-    signatureCards:
-      - name: "Aluren"
-        minCopies: 3
-  - name: Maverick
-    signatureCards:
-      - name: "Knight of the Reliquary"
-        minCopies: 2
-      - name: "Elvish Reclaimer"
-        minCopies: 2
-  - name: The EPIC Storm
-    signatureCards:
-      - name: "Burning Wish"
-        minCopies: 3
-      - name: "Gamble"
-        minCopies: 3
-      - name: "Lion's Eye Diamond"
-        minCopies: 3
-  - name: Saga Storm
-    signatureCards:
-      - name: "Infernal Tutor"
-        minCopies: 3
-      - name: "Lion's Eye Diamond"
-        minCopies: 3
-  - name: Dredge
-    signatureCards:
-      - name: "Stinkweed Imp"
-        minCopies: 2
-      - name: "Golgari Thug"
-        minCopies: 2
-      - name: "Narcomoeba"
-        minCopies: 2
-  - name: Mono-Black Midrange
-    signatureCards:
-      - name: "Dauthi Voidwalker"
-        minCopies: 2
-      - name: "Nethergoyf"
-        minCopies: 2
-  - name: Nic Fit
-    signatureCards:
-      - name: "Veteran Explorer"
-        minCopies: 3
-      - name: "Cabal Therapy"
-        minCopies: 2
-      - name: "Aluren"
-        exactCopies: 0
-  - name: Living End
-    signatureCards:
-      - name: "Living End"
-        minCopies: 2
-      - name: "Shardless Agent"
-        minCopies: 3
-  - name: Boros Initiative
-    signatureCards:
-      - name: "Caves of Chaos Adventurer"
-        minCopies: 2
-      - name: "Seasoned Dungeoneer"
-        minCopies: 2
-  - name: High Tide
-    signatureCards:
-      - name: "High Tide"
+      - name: "Atraxa, Grand Unifier"
         minCopies: 4
-      - name: "Time Spiral"
-        minCopies: 2
-  - name: Ruby Storm
+        # in 100% of decks
+      - name: "Brainstorm"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Force of Will"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lotus Petal"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ponder"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Scalding Tarn"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Lands"
+    # 4.1% of the metagame, 51 decks
     signatureCards:
-      - name: "Ruby Medallion"
-        minCopies: 3
-      - name: "Seething Song"
-        minCopies: 3
-      - name: "Rite of Flame"
-        minCopies: 3
+      - name: "Crop Rotation"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Exploration"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Life from the Loam"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Mox Diamond"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Urza's Saga"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Wasteland"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Mystic Forge Combo"
+    # 3.7% of the metagame, 46 decks
+    signatureCards:
+      - name: "Ancient Tomb"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Grim Monolith"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Karn, the Great Creator"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Kozilek's Command"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lotus Petal"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Manifold Key"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Death and Taxes (Yorion) - Black/White"
+    # 3.7% of the metagame, 46 decks
+    signatureCards:
+      - name: "Aether Vial"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Karakas"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Marsh Flats"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Overlord of the Balemurk"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Phelia, Exuberant Shepherd"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Prismatic Vista"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Aluren"
+    # 3.4% of the metagame, 42 decks
+    signatureCards:
+      - name: "Acererak the Archlich"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Aluren"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ancient Tomb"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Atraxa, Grand Unifier"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Brainstorm"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Force of Will"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Beanstalk Control (Non-Yorion)"
+    # 3.3% of the metagame, 41 decks
+    signatureCards:
+      - name: "Brainstorm"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Flooded Strand"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Force of Will"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ponder"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Swords to Plowshares"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Up the Beanstalk"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Sewer-Cam Combo"
+    # 3% of the metagame, 38 decks
+    signatureCards:
+      - name: "Emry, Lurker of the Loch"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Goblin Welder"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lotus Petal"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Mishra's Bauble"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Mox Opal"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sewer-veillance Cam"
+        minCopies: 4
+        # in 100% of decks

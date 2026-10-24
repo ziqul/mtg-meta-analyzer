@@ -1,137 +1,211 @@
 format: Premodern
-date: "2026-03-15"
+date: "2026-10-24"
+# Draft from https://www.mtggoldfish.com/metagame/premodern — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
-  - name: Mono-Blue Stiflenought
+  - name: "Selesnya Enchantress"
+    # 10.5% of the metagame, 107 decks
     signatureCards:
-      - name: "Vision Charm"
-        minCopies: 1
-      - name: "Phyrexian Dreadnought"
-        minCopies: 1
-      - name: "Stifle"
-        minCopies: 1
-  - name: Mono-Red Sligh
-    signatureCards:
-      - name: "Lightning Bolt"
-        minCopies: 1
-      - name: "Fireblast"
-        minCopies: 1
-      - name: "Jackal Pup"
-        minCopies: 1
-  - name: Gruul Goblins
-    signatureCards:
-      - name: "Goblin Lackey"
-        minCopies: 1
-      - name: "Goblin Warchief"
-        minCopies: 1
-      - name: "Goblin Piledriver"
-        minCopies: 1
-  - name: Elves
-    signatureCards:
-      - name: "Wirewood Symbiote"
-        minCopies: 1
-      - name: "Llanowar Elves"
-        minCopies: 1
-      - name: "Fyndhorn Elves"
-        minCopies: 1
-  - name: Azorius Standstill
+      - name: "Argothian Enchantress"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Brushland"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Enchantress's Presence"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Serra's Sanctum"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Windswept Heath"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Seal of Cleansing"
+        minCopies: 3
+        # in 100% of decks
+  - name: "Mono-Blue Stiflenought"
+    # 9.9% of the metagame, 101 decks
     signatureCards:
       - name: "Counterspell"
-        minCopies: 1
-      - name: "Swords to Plowshares"
-        minCopies: 1
-      - name: "Mana Leak"
-        minCopies: 1
-  - name: Selesnya Enchantress
+        minCopies: 4
+        # in 100% of decks
+      - name: "Foil"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Gush"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Phyrexian Dreadnought"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Portent"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Stifle"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Mono-Red Sligh"
+    # 8.3% of the metagame, 85 decks
     signatureCards:
-      - name: "Enchantress's Presence"
-        minCopies: 1
-      - name: "Argothian Enchantress"
-        minCopies: 1
-      - name: "Mirri's Guile"
-        minCopies: 1
-  - name: Tireless Tribe
+      - name: "Fireblast"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Grim Lavamancer"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Incinerate"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lightning Bolt"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Mogg Fanatic"
+        minCopies: 4
+        # in 98% of decks
+      - name: "Seal of Fire"
+        minCopies: 4
+        # in 97% of decks
+  - name: "Mono-Black Midrange"
+    # 8.1% of the metagame, 83 decks
     signatureCards:
-      - name: "Wild Mongrel"
-        minCopies: 1
-      - name: "Swords to Plowshares"
-        minCopies: 1
-      - name: "Basking Rootwalla"
-        minCopies: 1
-  - name: Azorius Replenish
-    signatureCards:
-      - name: "Replenish"
-        minCopies: 1
-      - name: "Opalescence"
-        minCopies: 1
-      - name: "Parallax Wave"
-        minCopies: 1
-      - name: "Argothian Enchantress"
-        exactCopies: 0
-  - name: Naya Terragedon
-    signatureCards:
-      - name: "Swords to Plowshares"
-        minCopies: 1
-      - name: "Mox Diamond"
-        minCopies: 1
-      - name: "Terravore"
-        minCopies: 1
-  - name: Mono-Black Midrange
-    signatureCards:
-      - name: "Dark Ritual"
-        minCopies: 1
       - name: "Duress"
-        minCopies: 1
+        minCopies: 4
+        # in 100% of decks
+      - name: "Smother"
+        minCopies: 2
+        # in 98% of decks
       - name: "Hypnotic Specter"
-        minCopies: 1
-  - name: Orzhov Control
+        minCopies: 4
+        # in 96% of decks
+      - name: "Mishra's Factory"
+        minCopies: 4
+        # in 96% of decks
+      - name: "Dark Ritual"
+        minCopies: 4
+        # in 91% of decks
+  - name: "Naya Terragedon"
+    # 5.3% of the metagame, 54 decks
     signatureCards:
+      - name: "Armageddon"
+        minCopies: 4
+        # in 100% of decks
       - name: "Swords to Plowshares"
-        minCopies: 1
-      - name: "Vindicate"
-        minCopies: 1
-      - name: "Gerrard's Verdict"
-        minCopies: 1
-  - name: The Rock
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sylvan Library"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Terravore"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Wasteland"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Windswept Heath"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Azorius Stiflenought"
+    # 5.1% of the metagame, 52 decks
+    signatureCards:
+      - name: "Adarkar Wastes"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Counterspell"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Flooded Strand"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Swords to Plowshares"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Decree of Justice"
+        minCopies: 3
+        # in 100% of decks
+      - name: "Wrath of God"
+        minCopies: 2
+        # in 98% of decks
+  - name: "Psychatog"
+    # 4.1% of the metagame, 42 decks
+    signatureCards:
+      - name: "Counterspell"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Gush"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Psychatog"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Duress"
+        minCopies: 4
+        # in 98% of decks
+      - name: "Polluted Delta"
+        minCopies: 4
+        # in 98% of decks
+      - name: "Foil"
+        minCopies: 3
+        # in 98% of decks
+  - name: "Azorius Replenish"
+    # 3.3% of the metagame, 34 decks
+    signatureCards:
+      - name: "Adarkar Wastes"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ancient Tomb"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Attunement"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Flooded Strand"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Opalescence"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Parallax Wave"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Gruul Goblins"
+    # 3.3% of the metagame, 34 decks
+    signatureCards:
+      - name: "Goblin Lackey"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Goblin Matron"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Goblin Piledriver"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Goblin Ringleader"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Goblin Warchief"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Karplusan Forest"
+        minCopies: 4
+        # in 100% of decks
+  - name: "The Rock"
+    # 3.2% of the metagame, 33 decks
     signatureCards:
       - name: "Cabal Therapy"
-        minCopies: 1
+        minCopies: 4
+        # in 100% of decks
+      - name: "Llanowar Wastes"
+        minCopies: 4
+        # in 100% of decks
       - name: "Pernicious Deed"
-        minCopies: 1
+        minCopies: 4
+        # in 100% of decks
       - name: "Wall of Blossoms"
-        minCopies: 1
-  - name: Azorius
-    signatureCards:
-      - name: "Swords to Plowshares"
-        minCopies: 1
-      - name: "Mother of Runes"
-        minCopies: 1
-      - name: "Whipcorder"
-        minCopies: 1
-  - name: Gro-A-Tog
-    signatureCards:
-      - name: "Gush"
-        minCopies: 1
-      - name: "Portent"
-        minCopies: 1
-      - name: "Opt"
-        minCopies: 1
-      - name: "Phyrexian Dreadnought"
-        exactCopies: 0
-  - name: Gruul Sligh
-    signatureCards:
-      - name: "Lightning Bolt"
-        minCopies: 1
-      - name: "Call of the Herd"
-        minCopies: 1
-      - name: "Grim Lavamancer"
-        minCopies: 1
-  - name: Bant
-    signatureCards:
-      - name: "Impulse"
-        minCopies: 1
-      - name: "Chain of Vapor"
-        minCopies: 1
-      - name: "Gush"
-        minCopies: 1
-      - name: "Phyrexian Dreadnought"
-        exactCopies: 0
+        minCopies: 4
+        # in 97% of decks
+      - name: "Duress"
+        minCopies: 4
+        # in 94% of decks
+      - name: "Treetop Village"
+        minCopies: 4
+        # in 94% of decks
