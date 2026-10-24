@@ -81,6 +81,16 @@ interface SignatureCard {
 	inclusionPercent: number;
 }
 
+interface MetaShare {
+	metaPercent: number;
+	deckCount: number;
+}
+
+interface CardInclusion {
+	averageCopies: number;
+	inclusionPercent: number;
+}
+
 interface DraftArchetype {
 	tile: MetagameTile;
 	signatureCards: SignatureCard[];
@@ -223,7 +233,7 @@ function parseMetagameTiles(html: string, minMetaPercent: number): MetagameTile[
 }
 
 /** Reads the tile statistic "10.7% (139)". */
-function parseMetaShare(text: string): { metaPercent: number; deckCount: number } | null {
+function parseMetaShare(text: string): MetaShare | null {
 	const match = text.trim().match(/([0-9.]+)%\s*\(([0-9]+)\)/);
 	if (!match) {
 		return null;
@@ -292,9 +302,7 @@ function parseArchetypeCards(
 }
 
 /** Reads the card text "4.0 in 100% of decks". */
-function parseInclusion(
-	text: string,
-): { averageCopies: number; inclusionPercent: number } | null {
+function parseInclusion(text: string): CardInclusion | null {
 	const match = text.match(/([0-9.]+)\s+in\s+([0-9.]+)%/);
 	if (!match) {
 		return null;
