@@ -1,30 +1,9 @@
 format: Premodern
-date: "2026-10-24"
+date: "2026-10-25"
 # Draft from https://www.mtggoldfish.com/metagame/premodern — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
-  - name: "Selesnya Enchantress"
-    # 10.5% of the metagame, 107 decks
-    signatureCards:
-      - name: "Argothian Enchantress"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Brushland"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Enchantress's Presence"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Serra's Sanctum"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Windswept Heath"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Seal of Cleansing"
-        minCopies: 3
-        # in 100% of decks
   - name: "Mono-Blue Stiflenought"
-    # 9.9% of the metagame, 101 decks
+    # 10% of the metagame, 105 decks
     signatureCards:
       - name: "Counterspell"
         minCopies: 4
@@ -44,13 +23,49 @@ archetypes:
       - name: "Stifle"
         minCopies: 4
         # in 100% of decks
-  - name: "Mono-Red Sligh"
-    # 8.3% of the metagame, 85 decks
+  - name: "Selesnya Enchantress"
+    # 9.6% of the metagame, 101 decks
     signatureCards:
-      - name: "Fireblast"
+      - name: "Argothian Enchantress"
         minCopies: 4
         # in 100% of decks
-      - name: "Grim Lavamancer"
+      - name: "Brushland"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Enchantress's Presence"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Serra's Sanctum"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Windswept Heath"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Seal of Cleansing"
+        minCopies: 3
+        # in 100% of decks
+  - name: "Mono-Black Midrange"
+    # 8.6% of the metagame, 90 decks
+    signatureCards:
+      - name: "Duress"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Mishra's Factory"
+        minCopies: 4
+        # in 96% of decks
+      - name: "Smother"
+        minCopies: 2
+        # in 96% of decks
+      - name: "Hypnotic Specter"
+        minCopies: 4
+        # in 94% of decks
+      - name: "Dark Ritual"
+        minCopies: 4
+        # in 93% of decks
+  - name: "Mono-Red Sligh"
+    # 7.7% of the metagame, 81 decks
+    signatureCards:
+      - name: "Fireblast"
         minCopies: 4
         # in 100% of decks
       - name: "Incinerate"
@@ -59,53 +74,17 @@ archetypes:
       - name: "Lightning Bolt"
         minCopies: 4
         # in 100% of decks
+      - name: "Grim Lavamancer"
+        minCopies: 4
+        # in 99% of decks
       - name: "Mogg Fanatic"
         minCopies: 4
         # in 98% of decks
       - name: "Seal of Fire"
         minCopies: 4
         # in 97% of decks
-  - name: "Mono-Black Midrange"
-    # 8.1% of the metagame, 83 decks
-    signatureCards:
-      - name: "Duress"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Smother"
-        minCopies: 2
-        # in 98% of decks
-      - name: "Hypnotic Specter"
-        minCopies: 4
-        # in 96% of decks
-      - name: "Mishra's Factory"
-        minCopies: 4
-        # in 96% of decks
-      - name: "Dark Ritual"
-        minCopies: 4
-        # in 91% of decks
-  - name: "Naya Terragedon"
-    # 5.3% of the metagame, 54 decks
-    signatureCards:
-      - name: "Armageddon"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Swords to Plowshares"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Sylvan Library"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Terravore"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Wasteland"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Windswept Heath"
-        minCopies: 4
-        # in 100% of decks
   - name: "Azorius Stiflenought"
-    # 5.1% of the metagame, 52 decks
+    # 5.2% of the metagame, 54 decks
     signatureCards:
       - name: "Adarkar Wastes"
         minCopies: 4
@@ -125,50 +104,71 @@ archetypes:
       - name: "Wrath of God"
         minCopies: 2
         # in 98% of decks
+  - name: "Naya Terragedon"
+    # 5% of the metagame, 52 decks
+    signatureCards:
+      - name: "Armageddon"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Swords to Plowshares"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sylvan Library"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Terravore"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Wasteland"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Windswept Heath"
+        minCopies: 4
+        # in 100% of decks
   - name: "Psychatog"
-    # 4.1% of the metagame, 42 decks
+    # 3.8% of the metagame, 40 decks
     signatureCards:
       - name: "Counterspell"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Duress"
         minCopies: 4
         # in 100% of decks
       - name: "Gush"
         minCopies: 4
         # in 100% of decks
+      - name: "Polluted Delta"
+        minCopies: 4
+        # in 100% of decks
       - name: "Psychatog"
         minCopies: 4
         # in 100% of decks
+      - name: "Smother"
+        minCopies: 3
+        # in 100% of decks
+  - name: "The Rock"
+    # 3.2% of the metagame, 34 decks
+    signatureCards:
+      - name: "Llanowar Wastes"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Pernicious Deed"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Cabal Therapy"
+        minCopies: 4
+        # in 97% of decks
+      - name: "Wall of Blossoms"
+        minCopies: 4
+        # in 97% of decks
+      - name: "Treetop Village"
+        minCopies: 4
+        # in 95% of decks
       - name: "Duress"
         minCopies: 4
-        # in 98% of decks
-      - name: "Polluted Delta"
-        minCopies: 4
-        # in 98% of decks
-      - name: "Foil"
-        minCopies: 3
-        # in 98% of decks
-  - name: "Azorius Replenish"
-    # 3.3% of the metagame, 34 decks
-    signatureCards:
-      - name: "Adarkar Wastes"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Ancient Tomb"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Attunement"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Flooded Strand"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Opalescence"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Parallax Wave"
-        minCopies: 4
-        # in 100% of decks
+        # in 92% of decks
   - name: "Gruul Goblins"
-    # 3.3% of the metagame, 34 decks
+    # 3.2% of the metagame, 33 decks
     signatureCards:
       - name: "Goblin Lackey"
         minCopies: 4
@@ -188,24 +188,24 @@ archetypes:
       - name: "Karplusan Forest"
         minCopies: 4
         # in 100% of decks
-  - name: "The Rock"
-    # 3.2% of the metagame, 33 decks
+  - name: "Azorius Replenish"
+    # 3.1% of the metagame, 32 decks
     signatureCards:
-      - name: "Cabal Therapy"
+      - name: "Adarkar Wastes"
         minCopies: 4
         # in 100% of decks
-      - name: "Llanowar Wastes"
+      - name: "Ancient Tomb"
         minCopies: 4
         # in 100% of decks
-      - name: "Pernicious Deed"
+      - name: "Attunement"
         minCopies: 4
         # in 100% of decks
-      - name: "Wall of Blossoms"
+      - name: "Flooded Strand"
         minCopies: 4
-        # in 97% of decks
-      - name: "Duress"
+        # in 100% of decks
+      - name: "Opalescence"
         minCopies: 4
-        # in 94% of decks
-      - name: "Treetop Village"
+        # in 100% of decks
+      - name: "Parallax Wave"
         minCopies: 4
-        # in 94% of decks
+        # in 100% of decks

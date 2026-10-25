@@ -1,9 +1,9 @@
 format: Vintage
-date: "2026-10-24"
+date: "2026-10-25"
 # Draft from https://www.mtggoldfish.com/metagame/vintage — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Jewel Shops"
-    # 16.3% of the metagame, 112 decks
+    # 16.3% of the metagame, 102 decks
     signatureCards:
       - name: "Ancient Tomb"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Mono-White Initiative"
-    # 13.5% of the metagame, 93 decks
+    # 12.6% of the metagame, 79 decks
     signatureCards:
       - name: "Ancient Tomb"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Esper Lurrus Control"
-    # 9.9% of the metagame, 68 decks
+    # 9.9% of the metagame, 62 decks
     signatureCards:
       - name: "Force of Will"
         minCopies: 4
@@ -66,7 +66,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Dimir Lurrus Control"
-    # 8.7% of the metagame, 60 decks
+    # 9% of the metagame, 56 decks
     signatureCards:
       - name: "Force of Will"
         minCopies: 4
@@ -87,7 +87,7 @@ archetypes:
         minCopies: 1
         # in 100% of decks
   - name: "Lurrus PO"
-    # 7% of the metagame, 48 decks
+    # 7% of the metagame, 44 decks
     signatureCards:
       - name: "Force of Will"
         minCopies: 4
@@ -108,7 +108,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Raker Shops"
-    # 6.4% of the metagame, 44 decks
+    # 6.7% of the metagame, 42 decks
     signatureCards:
       - name: "Ancient Tomb"
         minCopies: 4
@@ -128,29 +128,8 @@ archetypes:
       - name: "Tezzeret, Cruel Captain"
         minCopies: 4
         # in 100% of decks
-  - name: "Oath of Druids"
-    # 4.4% of the metagame, 30 decks
-    signatureCards:
-      - name: "Oath of Druids"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Atraxa, Grand Unifier"
-        minCopies: 3
-        # in 100% of decks
-      - name: "Tropical Island"
-        minCopies: 2
-        # in 100% of decks
-      - name: "Stock Up"
-        minCopies: 4
-        # in 97% of decks
-      - name: "Polluted Delta"
-        minCopies: 2
-        # in 94% of decks
-      - name: "Forbidden Orchard"
-        minCopies: 4
-        # in 92% of decks
   - name: "Lurrus Breach"
-    # 3.8% of the metagame, 26 decks
+    # 3.8% of the metagame, 24 decks
     signatureCards:
       - name: "Stock Up"
         minCopies: 4
@@ -170,8 +149,29 @@ archetypes:
       - name: "Gitaxian Probe"
         minCopies: 1
         # in 100% of decks
+  - name: "Oath of Druids"
+    # 3.5% of the metagame, 22 decks
+    signatureCards:
+      - name: "Oath of Druids"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Atraxa, Grand Unifier"
+        minCopies: 3
+        # in 100% of decks
+      - name: "Tropical Island"
+        minCopies: 2
+        # in 100% of decks
+      - name: "Stock Up"
+        minCopies: 4
+        # in 97% of decks
+      - name: "Polluted Delta"
+        minCopies: 2
+        # in 95% of decks
+      - name: "Forbidden Orchard"
+        minCopies: 4
+        # in 92% of decks
   - name: "Paradoxical Outcome"
-    # 3.3% of the metagame, 23 decks
+    # 3.4% of the metagame, 21 decks
     signatureCards:
       - name: "Force of Will"
         minCopies: 4
@@ -191,29 +191,8 @@ archetypes:
       - name: "Mana Crypt"
         minCopies: 1
         # in 100% of decks
-  - name: "Jeskai Lurrus"
-    # 3% of the metagame, 21 decks
-    signatureCards:
-      - name: "Flow State"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Force of Will"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Stock Up"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Thundertrap Trainer"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Flame of Anor"
-        minCopies: 3
-        # in 100% of decks
-      - name: "Force of Negation"
-        minCopies: 3
-        # in 100% of decks
   - name: "Dredge"
-    # 3% of the metagame, 21 decks
+    # 3.4% of the metagame, 21 decks
     signatureCards:
       - name: "Bazaar of Baghdad"
         minCopies: 4
@@ -232,4 +211,25 @@ archetypes:
         # in 100% of decks
       - name: "Shambling Shell"
         minCopies: 4
+        # in 100% of decks
+  - name: "Jeskai Lurrus"
+    # 3% of the metagame, 19 decks
+    signatureCards:
+      - name: "Flow State"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Force of Will"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Stock Up"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Thundertrap Trainer"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Flame of Anor"
+        minCopies: 3
+        # in 100% of decks
+      - name: "Force of Negation"
+        minCopies: 3
         # in 100% of decks

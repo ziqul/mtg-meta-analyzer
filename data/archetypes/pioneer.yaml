@@ -1,9 +1,9 @@
 format: Pioneer
-date: "2026-10-24"
+date: "2026-10-25"
 # Draft from https://www.mtggoldfish.com/metagame/pioneer — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Golgari Midrange"
-    # 17.4% of the metagame, 53 decks
+    # 17.2% of the metagame, 54 decks
     signatureCards:
       - name: "Blooming Marsh"
         minCopies: 4
@@ -20,11 +20,11 @@ archetypes:
       - name: "Overgrown Tomb"
         minCopies: 4
         # in 98% of decks
-      - name: "Thoughtseize"
+      - name: "Unholy Annex // Ritual Chamber"
         minCopies: 4
         # in 98% of decks
   - name: "Izzet Prowess"
-    # 14.8% of the metagame, 45 decks
+    # 14.3% of the metagame, 45 decks
     signatureCards:
       - name: "Academic Dispute"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Mono-Red Prowess"
-    # 7.2% of the metagame, 22 decks
+    # 7% of the metagame, 22 decks
     signatureCards:
       - name: "Burst Lightning"
         minCopies: 4
@@ -66,7 +66,7 @@ archetypes:
         minCopies: 1
         # in 100% of decks
   - name: "Nykthos Ramp"
-    # 6.2% of the metagame, 19 decks
+    # 6.4% of the metagame, 20 decks
     signatureCards:
       - name: "Elvish Mystic"
         minCopies: 4
@@ -87,7 +87,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Jund Sacrifice"
-    # 5.9% of the metagame, 18 decks
+    # 5.7% of the metagame, 18 decks
     signatureCards:
       - name: "Blackcleave Cliffs"
         minCopies: 4
@@ -108,7 +108,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Jund Artifact Sacrifice"
-    # 5.9% of the metagame, 18 decks
+    # 5.7% of the metagame, 18 decks
     signatureCards:
       - name: "Biotech Specialist"
         minCopies: 4
@@ -129,7 +129,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Dimir Aggro"
-    # 5.2% of the metagame, 16 decks
+    # 5.1% of the metagame, 16 decks
     signatureCards:
       - name: "Darkslick Shores"
         minCopies: 4
@@ -150,7 +150,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Azorius Control"
-    # 3.9% of the metagame, 12 decks
+    # 3.8% of the metagame, 12 decks
     signatureCards:
       - name: "Deserted Beach"
         minCopies: 4
@@ -171,7 +171,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Izzet Phoenix"
-    # 3.6% of the metagame, 11 decks
+    # 3.5% of the metagame, 11 decks
     signatureCards:
       - name: "Arclight Phoenix"
         minCopies: 4
@@ -189,68 +189,5 @@ archetypes:
         minCopies: 4
         # in 100% of decks
       - name: "Picklock Prankster"
-        minCopies: 4
-        # in 100% of decks
-  - name: "Izzet Aggro"
-    # 3% of the metagame, 9 decks
-    signatureCards:
-      - name: "Academic Dispute"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Flow State"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Monastery Swiftspear"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Pompous Battlemage"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Sleight of Hand"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Spirebluff Canal"
-        minCopies: 4
-        # in 100% of decks
-  - name: "Selesnya Company"
-    # 3% of the metagame, 9 decks
-    signatureCards:
-      - name: "Archon of Emeria"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Badgermole Cub"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Brushland"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Collected Company"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Elvish Mystic"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Enduring Innocence"
-        minCopies: 4
-        # in 100% of decks
-  - name: "Abzan Greasefang"
-    # 3% of the metagame, 9 decks
-    signatureCards:
-      - name: "Blooming Marsh"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Concealed Courtyard"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Esika's Chariot"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Formidable Speaker"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Greasefang, Okiba Boss"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Parhelion II"
         minCopies: 4
         # in 100% of decks

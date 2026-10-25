@@ -1,9 +1,9 @@
 format: Legacy
-date: "2026-10-24"
+date: "2026-10-25"
 # Draft from https://www.mtggoldfish.com/metagame/legacy — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Dimir Tempo"
-    # 12.2% of the metagame, 153 decks
+    # 12.4% of the metagame, 169 decks
     signatureCards:
       - name: "Brainstorm"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Boros Energy"
-    # 7.9% of the metagame, 99 decks
+    # 7.6% of the metagame, 104 decks
     signatureCards:
       - name: "Ajani, Nacatl Pariah"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Izzet Delver"
-    # 6.6% of the metagame, 83 decks
+    # 6.7% of the metagame, 92 decks
     signatureCards:
       - name: "Brainstorm"
         minCopies: 4
@@ -65,8 +65,29 @@ archetypes:
       - name: "Ponder"
         minCopies: 4
         # in 100% of decks
+  - name: "Doomsday"
+    # 5.3% of the metagame, 73 decks
+    signatureCards:
+      - name: "Brainstorm"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Dark Ritual"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Doomsday"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Underground Sea"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lotus Petal"
+        minCopies: 3
+        # in 100% of decks
+      - name: "Consider"
+        minCopies: 1
+        # in 100% of decks
   - name: "Eldrazi"
-    # 5.3% of the metagame, 67 decks
+    # 5.2% of the metagame, 71 decks
     signatureCards:
       - name: "Ancient Tomb"
         minCopies: 4
@@ -86,50 +107,8 @@ archetypes:
       - name: "Thought-Knot Seer"
         minCopies: 4
         # in 100% of decks
-  - name: "Doomsday"
-    # 5.2% of the metagame, 65 decks
-    signatureCards:
-      - name: "Brainstorm"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Dark Ritual"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Doomsday"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Underground Sea"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Lotus Petal"
-        minCopies: 3
-        # in 100% of decks
-      - name: "Street Wraith"
-        minCopies: 3
-        # in 100% of decks
-  - name: "Sneak and Show"
-    # 4.1% of the metagame, 51 decks
-    signatureCards:
-      - name: "Atraxa, Grand Unifier"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Brainstorm"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Force of Will"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Lotus Petal"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Ponder"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Scalding Tarn"
-        minCopies: 4
-        # in 100% of decks
   - name: "Lands"
-    # 4.1% of the metagame, 51 decks
+    # 4.2% of the metagame, 57 decks
     signatureCards:
       - name: "Crop Rotation"
         minCopies: 4
@@ -149,29 +128,29 @@ archetypes:
       - name: "Wasteland"
         minCopies: 4
         # in 100% of decks
-  - name: "Mystic Forge Combo"
-    # 3.7% of the metagame, 46 decks
+  - name: "Sneak and Show"
+    # 4% of the metagame, 55 decks
     signatureCards:
-      - name: "Ancient Tomb"
+      - name: "Atraxa, Grand Unifier"
         minCopies: 4
         # in 100% of decks
-      - name: "Grim Monolith"
+      - name: "Brainstorm"
         minCopies: 4
         # in 100% of decks
-      - name: "Karn, the Great Creator"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Kozilek's Command"
+      - name: "Force of Will"
         minCopies: 4
         # in 100% of decks
       - name: "Lotus Petal"
         minCopies: 4
         # in 100% of decks
-      - name: "Manifold Key"
+      - name: "Ponder"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Scalding Tarn"
         minCopies: 4
         # in 100% of decks
   - name: "Death and Taxes (Yorion) - Black/White"
-    # 3.7% of the metagame, 46 decks
+    # 3.6% of the metagame, 50 decks
     signatureCards:
       - name: "Aether Vial"
         minCopies: 4
@@ -191,8 +170,29 @@ archetypes:
       - name: "Prismatic Vista"
         minCopies: 4
         # in 100% of decks
+  - name: "Mystic Forge Combo"
+    # 3.6% of the metagame, 50 decks
+    signatureCards:
+      - name: "Ancient Tomb"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Grim Monolith"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Karn, the Great Creator"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Kozilek's Command"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lotus Petal"
+        minCopies: 4
+        # in 100% of decks
+      - name: "The One Ring"
+        minCopies: 4
+        # in 100% of decks
   - name: "Aluren"
-    # 3.4% of the metagame, 42 decks
+    # 3.6% of the metagame, 50 decks
     signatureCards:
       - name: "Acererak the Archlich"
         minCopies: 4
@@ -213,7 +213,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Beanstalk Control (Non-Yorion)"
-    # 3.3% of the metagame, 41 decks
+    # 3.3% of the metagame, 45 decks
     signatureCards:
       - name: "Brainstorm"
         minCopies: 4
@@ -234,7 +234,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Sewer-Cam Combo"
-    # 3% of the metagame, 38 decks
+    # 3% of the metagame, 41 decks
     signatureCards:
       - name: "Emry, Lurker of the Loch"
         minCopies: 4

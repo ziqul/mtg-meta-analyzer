@@ -1,10 +1,13 @@
 format: Standard
-date: "2026-10-24"
+date: "2026-10-25"
 # Draft from https://www.mtggoldfish.com/metagame/standard — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Dimir Midrange"
-    # 10.7% of the metagame, 139 decks
+    # 10.8% of the metagame, 180 decks
     signatureCards:
+      - name: "Dream Beavers"
+        minCopies: 4
+        # in 100% of decks
       - name: "Enduring Curiosity"
         minCopies: 4
         # in 100% of decks
@@ -20,11 +23,8 @@ archetypes:
       - name: "Watery Grave"
         minCopies: 4
         # in 100% of decks
-      - name: "Requiting Hex"
-        minCopies: 3
-        # in 100% of decks
   - name: "Izzet Spellementals"
-    # 9.8% of the metagame, 127 decks
+    # 9.6% of the metagame, 159 decks
     signatureCards:
       - name: "Eddymurk Crab"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Mono-Green Landfall"
-    # 8.4% of the metagame, 109 decks
+    # 9.1% of the metagame, 151 decks
     signatureCards:
       - name: "Earthbender Ascension"
         minCopies: 4
@@ -62,11 +62,11 @@ archetypes:
       - name: "Ba Sing Se"
         minCopies: 3
         # in 100% of decks
-      - name: "Icetill Explorer"
-        minCopies: 4
+      - name: "Escape Tunnel"
+        minCopies: 3
         # in 99% of decks
   - name: "Lifegain"
-    # 8.2% of the metagame, 106 decks
+    # 8.3% of the metagame, 138 decks
     signatureCards:
       - name: "Haliya, Guided by Light"
         minCopies: 4
@@ -85,30 +85,30 @@ archetypes:
         # in 99% of decks
       - name: "Concealed Courtyard"
         minCopies: 3
-        # in 99% of decks
-  - name: "Izzet Prowess"
-    # 6.1% of the metagame, 79 decks
+        # in 98% of decks
+  - name: "Azorius Control"
+    # 6.3% of the metagame, 104 decks
     signatureCards:
-      - name: "Riverpyre Verge"
+      - name: "Hallowed Fountain"
         minCopies: 4
         # in 100% of decks
-      - name: "Spirebluff Canal"
+      - name: "Floodfarm Verge"
         minCopies: 4
-        # in 100% of decks
-      - name: "Steam Vents"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Pompous Battlemage"
+        # in 99% of decks
+      - name: "Get Lost"
         minCopies: 4
         # in 98% of decks
-      - name: "Slickshot Show-Off"
+      - name: "Day of Judgment"
+        minCopies: 2
+        # in 98% of decks
+      - name: "Consult the Star Charts"
         minCopies: 4
         # in 97% of decks
-      - name: "Burst Lightning"
-        minCopies: 4
-        # in 90% of decks
+      - name: "No More Lies"
+        minCopies: 3
+        # in 96% of decks
   - name: "Dimir Reanimator"
-    # 5.9% of the metagame, 76 decks
+    # 6.1% of the metagame, 102 decks
     signatureCards:
       - name: "Deceit"
         minCopies: 4
@@ -128,11 +128,29 @@ archetypes:
       - name: "Watery Grave"
         minCopies: 4
         # in 100% of decks
+  - name: "Izzet Prowess"
+    # 5.5% of the metagame, 91 decks
+    signatureCards:
+      - name: "Riverpyre Verge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Spirebluff Canal"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Steam Vents"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Pompous Battlemage"
+        minCopies: 4
+        # in 98% of decks
+      - name: "Slickshot Show-Off"
+        minCopies: 4
+        # in 97% of decks
   - name: "4c Control"
-    # 5.6% of the metagame, 72 decks
+    # 5.1% of the metagame, 85 decks
     signatureCards:
       - name: "Stock Up"
-        minCopies: 3
+        minCopies: 4
         # in 100% of decks
       - name: "Great Hall of the Biblioplex"
         minCopies: 4
@@ -149,29 +167,8 @@ archetypes:
       - name: "Steam Vents"
         minCopies: 3
         # in 99% of decks
-  - name: "Azorius Control"
-    # 5.4% of the metagame, 70 decks
-    signatureCards:
-      - name: "Hallowed Fountain"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Floodfarm Verge"
-        minCopies: 4
-        # in 99% of decks
-      - name: "No More Lies"
-        minCopies: 3
-        # in 99% of decks
-      - name: "Get Lost"
-        minCopies: 4
-        # in 97% of decks
-      - name: "Day of Judgment"
-        minCopies: 2
-        # in 97% of decks
-      - name: "Consult the Star Charts"
-        minCopies: 4
-        # in 96% of decks
   - name: "Boros Dragons"
-    # 5.1% of the metagame, 66 decks
+    # 4.5% of the metagame, 75 decks
     signatureCards:
       - name: "Burst Lightning"
         minCopies: 4
@@ -192,7 +189,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Jeskai Artifacts"
-    # 4% of the metagame, 52 decks
+    # 4.2% of the metagame, 70 decks
     signatureCards:
       - name: "Hallowed Fountain"
         minCopies: 4
@@ -212,29 +209,8 @@ archetypes:
       - name: "Pinnacle Starcage"
         minCopies: 3
         # in 100% of decks
-  - name: "Azorius Momo"
-    # 3.4% of the metagame, 44 decks
-    signatureCards:
-      - name: "Daydream"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Floodfarm Verge"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Hallowed Fountain"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Momo, Friendly Flier"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Quantum Riddler"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Sage of the Skies"
-        minCopies: 4
-        # in 100% of decks
   - name: "Rakdos Lizards"
-    # 3.1% of the metagame, 40 decks
+    # 3.2% of the metagame, 54 decks
     signatureCards:
       - name: "Blood Crypt"
         minCopies: 4
@@ -254,3 +230,24 @@ archetypes:
       - name: "Burst Lightning"
         minCopies: 4
         # in 98% of decks
+  - name: "Azorius Momo"
+    # 3% of the metagame, 49 decks
+    signatureCards:
+      - name: "Daydream"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Floodfarm Verge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Hallowed Fountain"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Momo, Friendly Flier"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Quantum Riddler"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sage of the Skies"
+        minCopies: 4
+        # in 100% of decks
