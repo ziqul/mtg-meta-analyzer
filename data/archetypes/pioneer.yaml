@@ -1,9 +1,9 @@
 format: Pioneer
-date: "2026-10-25"
+date: "2026-10-26"
 # Draft from https://www.mtggoldfish.com/metagame/pioneer — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Golgari Midrange"
-    # 17.2% of the metagame, 54 decks
+    # 16.4% of the metagame, 64 decks
     signatureCards:
       - name: "Blooming Marsh"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 4
         # in 98% of decks
   - name: "Izzet Prowess"
-    # 14.3% of the metagame, 45 decks
+    # 14.1% of the metagame, 55 decks
     signatureCards:
       - name: "Academic Dispute"
         minCopies: 4
@@ -44,29 +44,8 @@ archetypes:
       - name: "Stormchaser's Talent"
         minCopies: 4
         # in 100% of decks
-  - name: "Mono-Red Prowess"
-    # 7% of the metagame, 22 decks
-    signatureCards:
-      - name: "Burst Lightning"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Kumano Faces Kakkazan"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Monastery Swiftspear"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Soul-Scar Mage"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Ramunap Ruins"
-        minCopies: 2
-        # in 100% of decks
-      - name: "Sokenzan, Crucible of Defiance"
-        minCopies: 1
-        # in 100% of decks
   - name: "Nykthos Ramp"
-    # 6.4% of the metagame, 20 decks
+    # 8% of the metagame, 31 decks
     signatureCards:
       - name: "Elvish Mystic"
         minCopies: 4
@@ -86,8 +65,29 @@ archetypes:
       - name: "Storm the Festival"
         minCopies: 4
         # in 100% of decks
+  - name: "Mono-Red Prowess"
+    # 7.2% of the metagame, 28 decks
+    signatureCards:
+      - name: "Burst Lightning"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Kumano Faces Kakkazan"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Monastery Swiftspear"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Soul-Scar Mage"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ramunap Ruins"
+        minCopies: 2
+        # in 100% of decks
+      - name: "Sokenzan, Crucible of Defiance"
+        minCopies: 1
+        # in 100% of decks
   - name: "Jund Sacrifice"
-    # 5.7% of the metagame, 18 decks
+    # 5.7% of the metagame, 22 decks
     signatureCards:
       - name: "Blackcleave Cliffs"
         minCopies: 4
@@ -101,14 +101,14 @@ archetypes:
       - name: "Mayhem Devil"
         minCopies: 4
         # in 100% of decks
+      - name: "The Sackville-Bagginses"
+        minCopies: 4
+        # in 100% of decks
       - name: "Witch's Oven"
         minCopies: 4
         # in 100% of decks
-      - name: "Blazemire Verge"
-        minCopies: 3
-        # in 100% of decks
   - name: "Jund Artifact Sacrifice"
-    # 5.7% of the metagame, 18 decks
+    # 5.7% of the metagame, 22 decks
     signatureCards:
       - name: "Biotech Specialist"
         minCopies: 4
@@ -129,7 +129,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Dimir Aggro"
-    # 5.1% of the metagame, 16 decks
+    # 4.9% of the metagame, 19 decks
     signatureCards:
       - name: "Darkslick Shores"
         minCopies: 4
@@ -149,29 +149,8 @@ archetypes:
       - name: "Kaito, Bane of Nightmares"
         minCopies: 4
         # in 100% of decks
-  - name: "Azorius Control"
-    # 3.8% of the metagame, 12 decks
-    signatureCards:
-      - name: "Deserted Beach"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Get Lost"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Hallowed Fountain"
-        minCopies: 4
-        # in 100% of decks
-      - name: "March of Otherworldly Light"
-        minCopies: 4
-        # in 100% of decks
-      - name: "No More Lies"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Temporary Lockdown"
-        minCopies: 4
-        # in 100% of decks
   - name: "Izzet Phoenix"
-    # 3.5% of the metagame, 11 decks
+    # 3.6% of the metagame, 14 decks
     signatureCards:
       - name: "Arclight Phoenix"
         minCopies: 4
@@ -189,5 +168,68 @@ archetypes:
         minCopies: 4
         # in 100% of decks
       - name: "Picklock Prankster"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Azorius Control"
+    # 3.6% of the metagame, 14 decks
+    signatureCards:
+      - name: "Deserted Beach"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Get Lost"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Hallowed Fountain"
+        minCopies: 4
+        # in 100% of decks
+      - name: "March of Otherworldly Light"
+        minCopies: 4
+        # in 100% of decks
+      - name: "No More Lies"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Dovin's Veto"
+        minCopies: 3
+        # in 100% of decks
+  - name: "Selesnya Company"
+    # 3.3% of the metagame, 13 decks
+    signatureCards:
+      - name: "Badgermole Cub"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Brushland"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Collected Company"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Elvish Mystic"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Enduring Innocence"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Llanowar Elves"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Izzet Aggro"
+    # 3.1% of the metagame, 12 decks
+    signatureCards:
+      - name: "Academic Dispute"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Flow State"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Monastery Swiftspear"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Pompous Battlemage"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sleight of Hand"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Spirebluff Canal"
         minCopies: 4
         # in 100% of decks

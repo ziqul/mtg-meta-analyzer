@@ -1,9 +1,9 @@
 format: Vintage
-date: "2026-10-25"
+date: "2026-10-26"
 # Draft from https://www.mtggoldfish.com/metagame/vintage — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Jewel Shops"
-    # 16.3% of the metagame, 102 decks
+    # 16.2% of the metagame, 110 decks
     signatureCards:
       - name: "Ancient Tomb"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Mono-White Initiative"
-    # 12.6% of the metagame, 79 decks
+    # 12.2% of the metagame, 83 decks
     signatureCards:
       - name: "Ancient Tomb"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Esper Lurrus Control"
-    # 9.9% of the metagame, 62 decks
+    # 9.9% of the metagame, 67 decks
     signatureCards:
       - name: "Force of Will"
         minCopies: 4
@@ -66,7 +66,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Dimir Lurrus Control"
-    # 9% of the metagame, 56 decks
+    # 8.8% of the metagame, 60 decks
     signatureCards:
       - name: "Force of Will"
         minCopies: 4
@@ -87,12 +87,9 @@ archetypes:
         minCopies: 1
         # in 100% of decks
   - name: "Lurrus PO"
-    # 7% of the metagame, 44 decks
+    # 7.5% of the metagame, 51 decks
     signatureCards:
       - name: "Force of Will"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Paradoxical Outcome"
         minCopies: 4
         # in 100% of decks
       - name: "Stock Up"
@@ -101,14 +98,17 @@ archetypes:
       - name: "Thundertrap Trainer"
         minCopies: 4
         # in 100% of decks
-      - name: "Flooded Strand"
+      - name: "Paradoxical Outcome"
         minCopies: 3
         # in 100% of decks
       - name: "Tundra"
         minCopies: 3
         # in 100% of decks
+      - name: "Flooded Strand"
+        minCopies: 2
+        # in 100% of decks
   - name: "Raker Shops"
-    # 6.7% of the metagame, 42 decks
+    # 6.6% of the metagame, 45 decks
     signatureCards:
       - name: "Ancient Tomb"
         minCopies: 4
@@ -129,8 +129,11 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Lurrus Breach"
-    # 3.8% of the metagame, 24 decks
+    # 4.3% of the metagame, 29 decks
     signatureCards:
+      - name: "Force of Will"
+        minCopies: 4
+        # in 100% of decks
       - name: "Stock Up"
         minCopies: 4
         # in 100% of decks
@@ -143,16 +146,16 @@ archetypes:
       - name: "Underworld Breach"
         minCopies: 2
         # in 100% of decks
-      - name: "Brain Freeze"
-        minCopies: 1
-        # in 100% of decks
-      - name: "Gitaxian Probe"
+      - name: "Ancestral Recall"
         minCopies: 1
         # in 100% of decks
   - name: "Oath of Druids"
-    # 3.5% of the metagame, 22 decks
+    # 3.5% of the metagame, 24 decks
     signatureCards:
       - name: "Oath of Druids"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Stock Up"
         minCopies: 4
         # in 100% of decks
       - name: "Atraxa, Grand Unifier"
@@ -161,17 +164,14 @@ archetypes:
       - name: "Tropical Island"
         minCopies: 2
         # in 100% of decks
-      - name: "Stock Up"
+      - name: "Force of Will"
         minCopies: 4
-        # in 97% of decks
-      - name: "Polluted Delta"
+        # in 94% of decks
+      - name: "Boseiju, Who Endures"
         minCopies: 2
-        # in 95% of decks
-      - name: "Forbidden Orchard"
-        minCopies: 4
-        # in 92% of decks
+        # in 94% of decks
   - name: "Paradoxical Outcome"
-    # 3.4% of the metagame, 21 decks
+    # 3.4% of the metagame, 23 decks
     signatureCards:
       - name: "Force of Will"
         minCopies: 4
@@ -192,7 +192,7 @@ archetypes:
         minCopies: 1
         # in 100% of decks
   - name: "Dredge"
-    # 3.4% of the metagame, 21 decks
+    # 3.4% of the metagame, 23 decks
     signatureCards:
       - name: "Bazaar of Baghdad"
         minCopies: 4
@@ -212,24 +212,24 @@ archetypes:
       - name: "Shambling Shell"
         minCopies: 4
         # in 100% of decks
-  - name: "Jeskai Lurrus"
-    # 3% of the metagame, 19 decks
+  - name: "Counter Vine"
+    # 3% of the metagame, 20 decks
     signatureCards:
-      - name: "Flow State"
+      - name: "Basking Rootwalla"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Bazaar of Baghdad"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Blazing Rootwalla"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Force of Negation"
         minCopies: 4
         # in 100% of decks
       - name: "Force of Will"
         minCopies: 4
         # in 100% of decks
-      - name: "Stock Up"
+      - name: "Hollow One"
         minCopies: 4
-        # in 100% of decks
-      - name: "Thundertrap Trainer"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Flame of Anor"
-        minCopies: 3
-        # in 100% of decks
-      - name: "Force of Negation"
-        minCopies: 3
         # in 100% of decks

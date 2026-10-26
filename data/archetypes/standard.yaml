@@ -1,9 +1,9 @@
 format: Standard
-date: "2026-10-25"
+date: "2026-10-26"
 # Draft from https://www.mtggoldfish.com/metagame/standard — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Dimir Midrange"
-    # 10.8% of the metagame, 180 decks
+    # 10.8% of the metagame, 192 decks
     signatureCards:
       - name: "Dream Beavers"
         minCopies: 4
@@ -23,8 +23,29 @@ archetypes:
       - name: "Watery Grave"
         minCopies: 4
         # in 100% of decks
+  - name: "Mono-Green Landfall"
+    # 9.5% of the metagame, 169 decks
+    signatureCards:
+      - name: "Earthbender Ascension"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Fabled Passage"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Llanowar Elves"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sazh's Chocobo"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ba Sing Se"
+        minCopies: 3
+        # in 100% of decks
+      - name: "Icetill Explorer"
+        minCopies: 4
+        # in 99% of decks
   - name: "Izzet Spellementals"
-    # 9.6% of the metagame, 159 decks
+    # 9% of the metagame, 160 decks
     signatureCards:
       - name: "Eddymurk Crab"
         minCopies: 4
@@ -44,71 +65,29 @@ archetypes:
       - name: "Sleight of Hand"
         minCopies: 4
         # in 100% of decks
-  - name: "Mono-Green Landfall"
-    # 9.1% of the metagame, 151 decks
-    signatureCards:
-      - name: "Earthbender Ascension"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Fabled Passage"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Llanowar Elves"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Sazh's Chocobo"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Ba Sing Se"
-        minCopies: 3
-        # in 100% of decks
-      - name: "Escape Tunnel"
-        minCopies: 3
-        # in 99% of decks
   - name: "Lifegain"
-    # 8.3% of the metagame, 138 decks
+    # 8.2% of the metagame, 146 decks
     signatureCards:
+      - name: "Amalia Benavides Aguirre"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Case of the Uneaten Feast"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Godless Shrine"
+        minCopies: 4
+        # in 100% of decks
       - name: "Haliya, Guided by Light"
         minCopies: 4
         # in 100% of decks
       - name: "Hinterland Sanctifier"
         minCopies: 4
         # in 100% of decks
-      - name: "Amalia Benavides Aguirre"
-        minCopies: 4
-        # in 99% of decks
-      - name: "Case of the Uneaten Feast"
-        minCopies: 4
-        # in 99% of decks
-      - name: "Godless Shrine"
-        minCopies: 4
-        # in 99% of decks
       - name: "Concealed Courtyard"
         minCopies: 3
         # in 98% of decks
-  - name: "Azorius Control"
-    # 6.3% of the metagame, 104 decks
-    signatureCards:
-      - name: "Hallowed Fountain"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Floodfarm Verge"
-        minCopies: 4
-        # in 99% of decks
-      - name: "Get Lost"
-        minCopies: 4
-        # in 98% of decks
-      - name: "Day of Judgment"
-        minCopies: 2
-        # in 98% of decks
-      - name: "Consult the Star Charts"
-        minCopies: 4
-        # in 97% of decks
-      - name: "No More Lies"
-        minCopies: 3
-        # in 96% of decks
   - name: "Dimir Reanimator"
-    # 6.1% of the metagame, 102 decks
+    # 6.8% of the metagame, 120 decks
     signatureCards:
       - name: "Deceit"
         minCopies: 4
@@ -128,8 +107,29 @@ archetypes:
       - name: "Watery Grave"
         minCopies: 4
         # in 100% of decks
+  - name: "Azorius Control"
+    # 6.2% of the metagame, 111 decks
+    signatureCards:
+      - name: "Hallowed Fountain"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Floodfarm Verge"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Get Lost"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Day of Judgment"
+        minCopies: 2
+        # in 99% of decks
+      - name: "Consult the Star Charts"
+        minCopies: 4
+        # in 98% of decks
+      - name: "No More Lies"
+        minCopies: 3
+        # in 96% of decks
   - name: "Izzet Prowess"
-    # 5.5% of the metagame, 91 decks
+    # 5.4% of the metagame, 95 decks
     signatureCards:
       - name: "Riverpyre Verge"
         minCopies: 4
@@ -142,15 +142,15 @@ archetypes:
         # in 100% of decks
       - name: "Pompous Battlemage"
         minCopies: 4
-        # in 98% of decks
+        # in 99% of decks
       - name: "Slickshot Show-Off"
         minCopies: 4
-        # in 97% of decks
+        # in 95% of decks
   - name: "4c Control"
-    # 5.1% of the metagame, 85 decks
+    # 5.3% of the metagame, 94 decks
     signatureCards:
       - name: "Stock Up"
-        minCopies: 4
+        minCopies: 3
         # in 100% of decks
       - name: "Great Hall of the Biblioplex"
         minCopies: 4
@@ -167,29 +167,8 @@ archetypes:
       - name: "Steam Vents"
         minCopies: 3
         # in 99% of decks
-  - name: "Boros Dragons"
-    # 4.5% of the metagame, 75 decks
-    signatureCards:
-      - name: "Burst Lightning"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Clarion Conqueror"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Inspiring Vantage"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Magmatic Hellkite"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Momo, Friendly Flier"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Nova Hellkite"
-        minCopies: 4
-        # in 100% of decks
   - name: "Jeskai Artifacts"
-    # 4.2% of the metagame, 70 decks
+    # 4.1% of the metagame, 73 decks
     signatureCards:
       - name: "Hallowed Fountain"
         minCopies: 4
@@ -209,29 +188,29 @@ archetypes:
       - name: "Pinnacle Starcage"
         minCopies: 3
         # in 100% of decks
-  - name: "Rakdos Lizards"
-    # 3.2% of the metagame, 54 decks
+  - name: "Boros Dragons"
+    # 4% of the metagame, 72 decks
     signatureCards:
-      - name: "Blood Crypt"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Hired Claw"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Iridescent Vinelasher"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Master of Barbs"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Blazemire Verge"
-        minCopies: 4
-        # in 98% of decks
       - name: "Burst Lightning"
         minCopies: 4
-        # in 98% of decks
+        # in 100% of decks
+      - name: "Clarion Conqueror"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Inspiring Vantage"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Magmatic Hellkite"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Momo, Friendly Flier"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Nova Hellkite"
+        minCopies: 4
+        # in 100% of decks
   - name: "Azorius Momo"
-    # 3% of the metagame, 49 decks
+    # 3.3% of the metagame, 59 decks
     signatureCards:
       - name: "Daydream"
         minCopies: 4
@@ -251,3 +230,24 @@ archetypes:
       - name: "Sage of the Skies"
         minCopies: 4
         # in 100% of decks
+  - name: "Rakdos Lizards"
+    # 3.2% of the metagame, 57 decks
+    signatureCards:
+      - name: "Blood Crypt"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Hired Claw"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Iridescent Vinelasher"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Master of Barbs"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Blazemire Verge"
+        minCopies: 4
+        # in 98% of decks
+      - name: "Burst Lightning"
+        minCopies: 4
+        # in 98% of decks
