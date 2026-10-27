@@ -1,9 +1,9 @@
 format: Pioneer
-date: "2026-10-26"
+date: "2026-10-27"
 # Draft from https://www.mtggoldfish.com/metagame/pioneer — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Golgari Midrange"
-    # 16.4% of the metagame, 64 decks
+    # 17% of the metagame, 66 decks
     signatureCards:
       - name: "Blooming Marsh"
         minCopies: 4
@@ -16,15 +16,15 @@ archetypes:
         # in 100% of decks
       - name: "Mutavault"
         minCopies: 4
-        # in 98% of decks
+        # in 99% of decks
       - name: "Overgrown Tomb"
         minCopies: 4
-        # in 98% of decks
+        # in 97% of decks
       - name: "Unholy Annex // Ritual Chamber"
         minCopies: 4
-        # in 98% of decks
+        # in 97% of decks
   - name: "Izzet Prowess"
-    # 14.1% of the metagame, 55 decks
+    # 14% of the metagame, 54 decks
     signatureCards:
       - name: "Academic Dispute"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Nykthos Ramp"
-    # 8% of the metagame, 31 decks
+    # 8.8% of the metagame, 34 decks
     signatureCards:
       - name: "Elvish Mystic"
         minCopies: 4
@@ -66,7 +66,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Mono-Red Prowess"
-    # 7.2% of the metagame, 28 decks
+    # 6.7% of the metagame, 26 decks
     signatureCards:
       - name: "Burst Lightning"
         minCopies: 4
@@ -129,7 +129,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Dimir Aggro"
-    # 4.9% of the metagame, 19 decks
+    # 4.6% of the metagame, 18 decks
     signatureCards:
       - name: "Darkslick Shores"
         minCopies: 4
@@ -147,27 +147,6 @@ archetypes:
         minCopies: 4
         # in 100% of decks
       - name: "Kaito, Bane of Nightmares"
-        minCopies: 4
-        # in 100% of decks
-  - name: "Izzet Phoenix"
-    # 3.6% of the metagame, 14 decks
-    signatureCards:
-      - name: "Arclight Phoenix"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Artist's Talent"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Consider"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Fiery Impulse"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Opt"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Picklock Prankster"
         minCopies: 4
         # in 100% of decks
   - name: "Azorius Control"
@@ -192,7 +171,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Selesnya Company"
-    # 3.3% of the metagame, 13 decks
+    # 3.6% of the metagame, 14 decks
     signatureCards:
       - name: "Badgermole Cub"
         minCopies: 4
@@ -212,13 +191,31 @@ archetypes:
       - name: "Llanowar Elves"
         minCopies: 4
         # in 100% of decks
-  - name: "Izzet Aggro"
-    # 3.1% of the metagame, 12 decks
+  - name: "Izzet Phoenix"
+    # 3.4% of the metagame, 13 decks
     signatureCards:
-      - name: "Academic Dispute"
+      - name: "Arclight Phoenix"
         minCopies: 4
         # in 100% of decks
-      - name: "Flow State"
+      - name: "Artist's Talent"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Consider"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Fiery Impulse"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Opt"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Picklock Prankster"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Izzet Aggro"
+    # 3.4% of the metagame, 13 decks
+    signatureCards:
+      - name: "Academic Dispute"
         minCopies: 4
         # in 100% of decks
       - name: "Monastery Swiftspear"
@@ -231,5 +228,8 @@ archetypes:
         minCopies: 4
         # in 100% of decks
       - name: "Spirebluff Canal"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Steam Vents"
         minCopies: 4
         # in 100% of decks

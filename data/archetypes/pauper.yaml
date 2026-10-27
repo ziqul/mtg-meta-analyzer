@@ -1,9 +1,9 @@
 format: Pauper
-date: "2026-10-26"
+date: "2026-10-27"
 # Draft from https://www.mtggoldfish.com/metagame/pauper — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Mono Red Madness"
-    # 12.7% of the metagame, 359 decks
+    # 12.7% of the metagame, 363 decks
     signatureCards:
       - name: "Fiery Temper"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Blue Terror"
-    # 7.5% of the metagame, 213 decks
+    # 7.5% of the metagame, 216 decks
     signatureCards:
       - name: "Brainstorm"
         minCopies: 4
@@ -44,29 +44,8 @@ archetypes:
       - name: "Cryptic Serpent"
         minCopies: 4
         # in 98% of decks
-  - name: "Elves"
-    # 6% of the metagame, 169 decks
-    signatureCards:
-      - name: "Priest of Titania"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Quirion Ranger"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Winding Way"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Nyxborn Hydra"
-        minCopies: 4
-        # in 99% of decks
-      - name: "Lead the Stampede"
-        minCopies: 4
-        # in 97% of decks
-      - name: "Timberwatch Elf"
-        minCopies: 4
-        # in 97% of decks
   - name: "Dimir Faeries"
-    # 5.9% of the metagame, 167 decks
+    # 6% of the metagame, 171 decks
     signatureCards:
       - name: "Counterspell"
         minCopies: 4
@@ -86,8 +65,29 @@ archetypes:
       - name: "Snuff Out"
         minCopies: 4
         # in 99% of decks
+  - name: "Elves"
+    # 5.9% of the metagame, 170 decks
+    signatureCards:
+      - name: "Priest of Titania"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Quirion Ranger"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Winding Way"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Nyxborn Hydra"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Timberwatch Elf"
+        minCopies: 4
+        # in 98% of decks
+      - name: "Lead the Stampede"
+        minCopies: 4
+        # in 97% of decks
   - name: "Tron"
-    # 5.9% of the metagame, 166 decks
+    # 5.9% of the metagame, 168 decks
     signatureCards:
       - name: "Expedition Map"
         minCopies: 4
@@ -105,7 +105,7 @@ archetypes:
         minCopies: 4
         # in 97% of decks
   - name: "Grixis Affinity"
-    # 4.8% of the metagame, 135 decks
+    # 4.8% of the metagame, 138 decks
     signatureCards:
       - name: "Drossforge Bridge"
         minCopies: 4
@@ -125,29 +125,8 @@ archetypes:
       - name: "Seat of the Synod"
         minCopies: 3
         # in 100% of decks
-  - name: "Spy Combo"
-    # 4.5% of the metagame, 126 decks
-    signatureCards:
-      - name: "Balustrade Spy"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Generous Ent"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Land Grant"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Lead the Stampede"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Sagu Wildling"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Dread Return"
-        minCopies: 2
-        # in 100% of decks
   - name: "Bogles"
-    # 4.5% of the metagame, 126 decks
+    # 4.4% of the metagame, 125 decks
     signatureCards:
       - name: "Abundant Growth"
         minCopies: 4
@@ -167,12 +146,30 @@ archetypes:
       - name: "Rancor"
         minCopies: 4
         # in 100% of decks
-  - name: "Mono Red Rally"
-    # 4% of the metagame, 112 decks
+  - name: "Spy Combo"
+    # 4.4% of the metagame, 125 decks
     signatureCards:
-      - name: "Burning-Tree Emissary"
+      - name: "Balustrade Spy"
         minCopies: 4
         # in 100% of decks
+      - name: "Generous Ent"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Land Grant"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lead the Stampede"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sagu Wildling"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Dread Return"
+        minCopies: 2
+        # in 100% of decks
+  - name: "Mono Red Rally"
+    # 4% of the metagame, 116 decks
+    signatureCards:
       - name: "Clockwork Percussionist"
         minCopies: 4
         # in 100% of decks
@@ -188,8 +185,11 @@ archetypes:
       - name: "Rally at the Hornburg"
         minCopies: 4
         # in 100% of decks
+      - name: "Burning-Tree Emissary"
+        minCopies: 4
+        # in 99% of decks
   - name: "Esper Affinity"
-    # 3.3% of the metagame, 94 decks
+    # 3.1% of the metagame, 89 decks
     signatureCards:
       - name: "Myr Enforcer"
         minCopies: 4
@@ -210,7 +210,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Grixis Control"
-    # 3% of the metagame, 85 decks
+    # 3% of the metagame, 86 decks
     signatureCards:
       - name: "Counterspell"
         minCopies: 4
@@ -221,12 +221,12 @@ archetypes:
       - name: "Thorn of the Black Rose"
         minCopies: 3
         # in 100% of decks
+      - name: "Baleful Strix"
+        minCopies: 4
+        # in 99% of decks
       - name: "Murmuring Mystic"
         minCopies: 3
         # in 99% of decks
       - name: "Campfire"
         minCopies: 2
         # in 99% of decks
-      - name: "Baleful Strix"
-        minCopies: 4
-        # in 97% of decks

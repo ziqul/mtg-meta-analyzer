@@ -1,9 +1,9 @@
 format: Modern
-date: "2026-10-26"
+date: "2026-10-27"
 # Draft from https://www.mtggoldfish.com/metagame/modern — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Eldrazi Ramp"
-    # 9.1% of the metagame, 660 decks
+    # 9.3% of the metagame, 664 decks
     signatureCards:
       - name: "Eldrazi Temple"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Izzet Prowess"
-    # 7.8% of the metagame, 565 decks
+    # 7.8% of the metagame, 562 decks
     signatureCards:
       - name: "Cori-Steel Cutter"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Affinity"
-    # 6.3% of the metagame, 456 decks
+    # 6.3% of the metagame, 448 decks
     signatureCards:
       - name: "Mishra's Bauble"
         minCopies: 4
@@ -66,7 +66,7 @@ archetypes:
         minCopies: 4
         # in 99% of decks
   - name: "Eldrazi"
-    # 6.3% of the metagame, 452 decks
+    # 6.2% of the metagame, 440 decks
     signatureCards:
       - name: "Eldrazi Temple"
         minCopies: 4
@@ -77,15 +77,15 @@ archetypes:
       - name: "Sowing Mycospawn"
         minCopies: 4
         # in 99% of decks
-      - name: "Emrakul, the Promised End"
-        minCopies: 4
-        # in 97% of decks
       - name: "Malevolent Rumble"
         minCopies: 4
         # in 97% of decks
       - name: "Boseiju, Who Endures"
         minCopies: 2
         # in 97% of decks
+      - name: "Basking Broodscale"
+        minCopies: 4
+        # in 96% of decks
   - name: "Domain Zoo"
     # 5.9% of the metagame, 423 decks
     signatureCards:
@@ -107,29 +107,8 @@ archetypes:
       - name: "Ragavan, Nimble Pilferer"
         minCopies: 4
         # in 99% of decks
-  - name: "Boros Energy"
-    # 5.7% of the metagame, 413 decks
-    signatureCards:
-      - name: "Ajani, Nacatl Pariah"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Arid Mesa"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Galvanic Discharge"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Guide of Souls"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Ocelot Pride"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Voice of Victory"
-        minCopies: 4
-        # in 100% of decks
   - name: "Esper Blink"
-    # 5.6% of the metagame, 408 decks
+    # 5.7% of the metagame, 405 decks
     signatureCards:
       - name: "Flooded Strand"
         minCopies: 4
@@ -149,29 +128,29 @@ archetypes:
       - name: "Solitude"
         minCopies: 4
         # in 99% of decks
-  - name: "Jeskai Energy"
-    # 4.1% of the metagame, 293 decks
+  - name: "Boros Energy"
+    # 5.7% of the metagame, 405 decks
     signatureCards:
+      - name: "Ajani, Nacatl Pariah"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Arid Mesa"
+        minCopies: 4
+        # in 100% of decks
       - name: "Galvanic Discharge"
         minCopies: 4
         # in 100% of decks
-      - name: "Flooded Strand"
+      - name: "Guide of Souls"
         minCopies: 4
-        # in 99% of decks
-      - name: "Hallowed Fountain"
-        minCopies: 1
-        # in 99% of decks
-      - name: "Meticulous Archive"
-        minCopies: 1
-        # in 99% of decks
-      - name: "Arid Mesa"
+        # in 100% of decks
+      - name: "Ocelot Pride"
         minCopies: 4
-        # in 98% of decks
-      - name: "Solitude"
+        # in 100% of decks
+      - name: "Voice of Victory"
         minCopies: 4
-        # in 98% of decks
+        # in 100% of decks
   - name: "Goryo's Vengeance"
-    # 4% of the metagame, 290 decks
+    # 4% of the metagame, 289 decks
     signatureCards:
       - name: "Goryo's Vengeance"
         minCopies: 4
@@ -191,8 +170,29 @@ archetypes:
       - name: "Flooded Strand"
         minCopies: 4
         # in 98% of decks
+  - name: "Jeskai Energy"
+    # 4% of the metagame, 286 decks
+    signatureCards:
+      - name: "Galvanic Discharge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Flooded Strand"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Hallowed Fountain"
+        minCopies: 1
+        # in 99% of decks
+      - name: "Meticulous Archive"
+        minCopies: 1
+        # in 99% of decks
+      - name: "Arid Mesa"
+        minCopies: 4
+        # in 98% of decks
+      - name: "Solitude"
+        minCopies: 4
+        # in 97% of decks
   - name: "Azorius Control"
-    # 3.7% of the metagame, 267 decks
+    # 3.7% of the metagame, 266 decks
     signatureCards:
       - name: "Flooded Strand"
         minCopies: 4
@@ -213,7 +213,7 @@ archetypes:
         minCopies: 4
         # in 97% of decks
   - name: "Ruby Storm"
-    # 3.6% of the metagame, 258 decks
+    # 3.6% of the metagame, 255 decks
     signatureCards:
       - name: "Desperate Ritual"
         minCopies: 4
@@ -234,7 +234,7 @@ archetypes:
         minCopies: 4
         # in 97% of decks
   - name: "Amulet Titan"
-    # 3.2% of the metagame, 232 decks
+    # 3.2% of the metagame, 231 decks
     signatureCards:
       - name: "Amulet of Vigor"
         minCopies: 4
@@ -255,7 +255,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Mono-Green Basking Broodscale Combo"
-    # 3% of the metagame, 218 decks
+    # 3% of the metagame, 214 decks
     signatureCards:
       - name: "Ancient Stirrings"
         minCopies: 4
@@ -273,5 +273,26 @@ archetypes:
         minCopies: 4
         # in 100% of decks
       - name: "Malevolent Rumble"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Rakdos Midrange"
+    # 3% of the metagame, 213 decks
+    signatureCards:
+      - name: "Bloodstained Mire"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Detective's Phoenix"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Mishra's Bauble"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Moonshadow"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Nethergoyf"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Street Wraith"
         minCopies: 4
         # in 100% of decks
