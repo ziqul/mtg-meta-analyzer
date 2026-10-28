@@ -1,9 +1,9 @@
 format: Standard
-date: "2026-10-27"
+date: "2026-10-28"
 # Draft from https://www.mtggoldfish.com/metagame/standard — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Dimir Midrange"
-    # 10.7% of the metagame, 197 decks
+    # 10.6% of the metagame, 211 decks
     signatureCards:
       - name: "Dream Beavers"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Mono-Green Landfall"
-    # 9.7% of the metagame, 179 decks
+    # 10.4% of the metagame, 207 decks
     signatureCards:
       - name: "Earthbender Ascension"
         minCopies: 4
@@ -41,11 +41,32 @@ archetypes:
       - name: "Ba Sing Se"
         minCopies: 3
         # in 100% of decks
-      - name: "Icetill Explorer"
+      - name: "Escape Tunnel"
+        minCopies: 2
+        # in 99% of decks
+  - name: "Lifegain"
+    # 8.7% of the metagame, 173 decks
+    signatureCards:
+      - name: "Amalia Benavides Aguirre"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Case of the Uneaten Feast"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Godless Shrine"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Haliya, Guided by Light"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Hinterland Sanctifier"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lunar Convocation"
         minCopies: 4
         # in 99% of decks
   - name: "Izzet Spellementals"
-    # 8.7% of the metagame, 160 decks
+    # 8.2% of the metagame, 162 decks
     signatureCards:
       - name: "Eddymurk Crab"
         minCopies: 4
@@ -65,40 +86,13 @@ archetypes:
       - name: "Sleight of Hand"
         minCopies: 4
         # in 100% of decks
-  - name: "Lifegain"
-    # 8.3% of the metagame, 153 decks
-    signatureCards:
-      - name: "Amalia Benavides Aguirre"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Case of the Uneaten Feast"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Godless Shrine"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Haliya, Guided by Light"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Hinterland Sanctifier"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Concealed Courtyard"
-        minCopies: 3
-        # in 99% of decks
   - name: "Dimir Reanimator"
-    # 7% of the metagame, 129 decks
+    # 7.8% of the metagame, 155 decks
     signatureCards:
       - name: "Deceit"
         minCopies: 4
         # in 100% of decks
       - name: "Gloomlake Verge"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Restless Reef"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Shipwreck Marsh"
         minCopies: 4
         # in 100% of decks
       - name: "Superior Spider-Man"
@@ -107,8 +101,14 @@ archetypes:
       - name: "Watery Grave"
         minCopies: 4
         # in 100% of decks
+      - name: "Bitter Triumph"
+        minCopies: 3
+        # in 100% of decks
+      - name: "Requiting Hex"
+        minCopies: 3
+        # in 100% of decks
   - name: "Azorius Control"
-    # 6.2% of the metagame, 114 decks
+    # 6.3% of the metagame, 125 decks
     signatureCards:
       - name: "Hallowed Fountain"
         minCopies: 4
@@ -127,9 +127,9 @@ archetypes:
         # in 98% of decks
       - name: "No More Lies"
         minCopies: 3
-        # in 96% of decks
+        # in 97% of decks
   - name: "Izzet Prowess"
-    # 5.3% of the metagame, 97 decks
+    # 5.1% of the metagame, 101 decks
     signatureCards:
       - name: "Riverpyre Verge"
         minCopies: 4
@@ -147,10 +147,10 @@ archetypes:
         minCopies: 4
         # in 95% of decks
   - name: "4c Control"
-    # 5% of the metagame, 93 decks
+    # 4.9% of the metagame, 97 decks
     signatureCards:
       - name: "Stock Up"
-        minCopies: 3
+        minCopies: 4
         # in 100% of decks
       - name: "Great Hall of the Biblioplex"
         minCopies: 4
@@ -168,7 +168,7 @@ archetypes:
         minCopies: 3
         # in 99% of decks
   - name: "Jeskai Artifacts"
-    # 4.2% of the metagame, 78 decks
+    # 4.4% of the metagame, 87 decks
     signatureCards:
       - name: "Floodfarm Verge"
         minCopies: 4
@@ -189,7 +189,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Boros Dragons"
-    # 4.2% of the metagame, 77 decks
+    # 4.2% of the metagame, 84 decks
     signatureCards:
       - name: "Burst Lightning"
         minCopies: 4
@@ -210,7 +210,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Azorius Momo"
-    # 3.3% of the metagame, 61 decks
+    # 3.2% of the metagame, 63 decks
     signatureCards:
       - name: "Daydream"
         minCopies: 4
@@ -231,7 +231,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Rakdos Lizards"
-    # 3.2% of the metagame, 60 decks
+    # 3.1% of the metagame, 61 decks
     signatureCards:
       - name: "Blood Crypt"
         minCopies: 4

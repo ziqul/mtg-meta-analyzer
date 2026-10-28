@@ -1,9 +1,9 @@
 format: Modern
-date: "2026-10-27"
+date: "2026-10-28"
 # Draft from https://www.mtggoldfish.com/metagame/modern — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Eldrazi Ramp"
-    # 9.3% of the metagame, 664 decks
+    # 9.4% of the metagame, 681 decks
     signatureCards:
       - name: "Eldrazi Temple"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Izzet Prowess"
-    # 7.8% of the metagame, 562 decks
+    # 7.7% of the metagame, 557 decks
     signatureCards:
       - name: "Cori-Steel Cutter"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Affinity"
-    # 6.3% of the metagame, 448 decks
+    # 6.2% of the metagame, 449 decks
     signatureCards:
       - name: "Mishra's Bauble"
         minCopies: 4
@@ -66,7 +66,7 @@ archetypes:
         minCopies: 4
         # in 99% of decks
   - name: "Eldrazi"
-    # 6.2% of the metagame, 440 decks
+    # 6% of the metagame, 432 decks
     signatureCards:
       - name: "Eldrazi Temple"
         minCopies: 4
@@ -77,17 +77,17 @@ archetypes:
       - name: "Sowing Mycospawn"
         minCopies: 4
         # in 99% of decks
-      - name: "Malevolent Rumble"
-        minCopies: 4
-        # in 97% of decks
-      - name: "Boseiju, Who Endures"
-        minCopies: 2
-        # in 97% of decks
       - name: "Basking Broodscale"
         minCopies: 4
         # in 96% of decks
+      - name: "Emrakul, the Promised End"
+        minCopies: 4
+        # in 96% of decks
+      - name: "Malevolent Rumble"
+        minCopies: 4
+        # in 96% of decks
   - name: "Domain Zoo"
-    # 5.9% of the metagame, 423 decks
+    # 5.9% of the metagame, 425 decks
     signatureCards:
       - name: "Leyline Binding"
         minCopies: 4
@@ -107,29 +107,8 @@ archetypes:
       - name: "Ragavan, Nimble Pilferer"
         minCopies: 4
         # in 99% of decks
-  - name: "Esper Blink"
-    # 5.7% of the metagame, 405 decks
-    signatureCards:
-      - name: "Flooded Strand"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Marsh Flats"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Hallowed Fountain"
-        minCopies: 1
-        # in 100% of decks
-      - name: "Meticulous Archive"
-        minCopies: 1
-        # in 100% of decks
-      - name: "Quantum Riddler"
-        minCopies: 4
-        # in 99% of decks
-      - name: "Solitude"
-        minCopies: 4
-        # in 99% of decks
   - name: "Boros Energy"
-    # 5.7% of the metagame, 405 decks
+    # 5.7% of the metagame, 408 decks
     signatureCards:
       - name: "Ajani, Nacatl Pariah"
         minCopies: 4
@@ -149,8 +128,29 @@ archetypes:
       - name: "Voice of Victory"
         minCopies: 4
         # in 100% of decks
+  - name: "Esper Blink"
+    # 5.6% of the metagame, 406 decks
+    signatureCards:
+      - name: "Flooded Strand"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Marsh Flats"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Hallowed Fountain"
+        minCopies: 1
+        # in 100% of decks
+      - name: "Meticulous Archive"
+        minCopies: 1
+        # in 100% of decks
+      - name: "Quantum Riddler"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Solitude"
+        minCopies: 4
+        # in 99% of decks
   - name: "Goryo's Vengeance"
-    # 4% of the metagame, 289 decks
+    # 4% of the metagame, 290 decks
     signatureCards:
       - name: "Goryo's Vengeance"
         minCopies: 4
@@ -167,11 +167,11 @@ archetypes:
       - name: "Ephemerate"
         minCopies: 4
         # in 98% of decks
-      - name: "Flooded Strand"
+      - name: "Psychic Frog"
         minCopies: 4
         # in 98% of decks
   - name: "Jeskai Energy"
-    # 4% of the metagame, 286 decks
+    # 3.9% of the metagame, 282 decks
     signatureCards:
       - name: "Galvanic Discharge"
         minCopies: 4
@@ -213,7 +213,7 @@ archetypes:
         minCopies: 4
         # in 97% of decks
   - name: "Ruby Storm"
-    # 3.6% of the metagame, 255 decks
+    # 3.6% of the metagame, 258 decks
     signatureCards:
       - name: "Desperate Ritual"
         minCopies: 4
@@ -234,7 +234,7 @@ archetypes:
         minCopies: 4
         # in 97% of decks
   - name: "Amulet Titan"
-    # 3.2% of the metagame, 231 decks
+    # 3.3% of the metagame, 236 decks
     signatureCards:
       - name: "Amulet of Vigor"
         minCopies: 4
@@ -254,29 +254,8 @@ archetypes:
       - name: "Spelunking"
         minCopies: 4
         # in 100% of decks
-  - name: "Mono-Green Basking Broodscale Combo"
-    # 3% of the metagame, 214 decks
-    signatureCards:
-      - name: "Ancient Stirrings"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Basking Broodscale"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Eldrazi Temple"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Emrakul, the Promised End"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Kozilek's Command"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Malevolent Rumble"
-        minCopies: 4
-        # in 100% of decks
   - name: "Rakdos Midrange"
-    # 3% of the metagame, 213 decks
+    # 3.1% of the metagame, 222 decks
     signatureCards:
       - name: "Bloodstained Mire"
         minCopies: 4

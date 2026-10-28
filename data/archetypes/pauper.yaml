@@ -1,9 +1,9 @@
 format: Pauper
-date: "2026-10-27"
+date: "2026-10-28"
 # Draft from https://www.mtggoldfish.com/metagame/pauper — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Mono Red Madness"
-    # 12.7% of the metagame, 363 decks
+    # 12.9% of the metagame, 366 decks
     signatureCards:
       - name: "Fiery Temper"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Blue Terror"
-    # 7.5% of the metagame, 216 decks
+    # 7.8% of the metagame, 222 decks
     signatureCards:
       - name: "Brainstorm"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 4
         # in 98% of decks
   - name: "Dimir Faeries"
-    # 6% of the metagame, 171 decks
+    # 6.1% of the metagame, 172 decks
     signatureCards:
       - name: "Counterspell"
         minCopies: 4
@@ -62,11 +62,29 @@ archetypes:
       - name: "Ninja of the Deep Hours"
         minCopies: 2
         # in 100% of decks
-      - name: "Snuff Out"
+      - name: "Baleful Strix"
         minCopies: 4
         # in 99% of decks
+  - name: "Tron"
+    # 5.8% of the metagame, 163 decks
+    signatureCards:
+      - name: "Expedition Map"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Urza's Mine"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Urza's Power Plant"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Urza's Tower"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Giant's Boulder"
+        minCopies: 4
+        # in 97% of decks
   - name: "Elves"
-    # 5.9% of the metagame, 170 decks
+    # 5.6% of the metagame, 159 decks
     signatureCards:
       - name: "Priest of Titania"
         minCopies: 4
@@ -86,26 +104,8 @@ archetypes:
       - name: "Lead the Stampede"
         minCopies: 4
         # in 97% of decks
-  - name: "Tron"
-    # 5.9% of the metagame, 168 decks
-    signatureCards:
-      - name: "Expedition Map"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Urza's Mine"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Urza's Power Plant"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Urza's Tower"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Giant's Boulder"
-        minCopies: 4
-        # in 97% of decks
   - name: "Grixis Affinity"
-    # 4.8% of the metagame, 138 decks
+    # 4.7% of the metagame, 134 decks
     signatureCards:
       - name: "Drossforge Bridge"
         minCopies: 4
@@ -126,7 +126,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Bogles"
-    # 4.4% of the metagame, 125 decks
+    # 4.3% of the metagame, 122 decks
     signatureCards:
       - name: "Abundant Growth"
         minCopies: 4
@@ -147,7 +147,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Spy Combo"
-    # 4.4% of the metagame, 125 decks
+    # 4.2% of the metagame, 118 decks
     signatureCards:
       - name: "Balustrade Spy"
         minCopies: 4
@@ -168,7 +168,7 @@ archetypes:
         minCopies: 2
         # in 100% of decks
   - name: "Mono Red Rally"
-    # 4% of the metagame, 116 decks
+    # 3.8% of the metagame, 108 decks
     signatureCards:
       - name: "Clockwork Percussionist"
         minCopies: 4
@@ -188,29 +188,29 @@ archetypes:
       - name: "Burning-Tree Emissary"
         minCopies: 4
         # in 99% of decks
-  - name: "Esper Affinity"
-    # 3.1% of the metagame, 89 decks
+  - name: "Ruby Storm"
+    # 3.2% of the metagame, 91 decks
     signatureCards:
-      - name: "Myr Enforcer"
+      - name: "Glimpse the Impossible"
         minCopies: 4
         # in 100% of decks
-      - name: "Refurbished Familiar"
+      - name: "Goblin Anarchomancer"
         minCopies: 4
         # in 100% of decks
-      - name: "Seat of the Synod"
+      - name: "Hickory Woodlot"
         minCopies: 4
         # in 100% of decks
-      - name: "Thoughtcast"
+      - name: "Manamorphose"
         minCopies: 4
         # in 100% of decks
-      - name: "Mistvault Bridge"
-        minCopies: 3
+      - name: "Sandstone Needle"
+        minCopies: 4
         # in 100% of decks
-      - name: "Razortide Bridge"
-        minCopies: 3
+      - name: "Seething Song"
+        minCopies: 4
         # in 100% of decks
   - name: "Grixis Control"
-    # 3% of the metagame, 86 decks
+    # 3% of the metagame, 84 decks
     signatureCards:
       - name: "Counterspell"
         minCopies: 4
@@ -230,3 +230,24 @@ archetypes:
       - name: "Campfire"
         minCopies: 2
         # in 99% of decks
+  - name: "Esper Affinity"
+    # 3% of the metagame, 84 decks
+    signatureCards:
+      - name: "Myr Enforcer"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Razortide Bridge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Refurbished Familiar"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Seat of the Synod"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Thoughtcast"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Mistvault Bridge"
+        minCopies: 3
+        # in 100% of decks
