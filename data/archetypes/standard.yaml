@@ -1,453 +1,253 @@
 format: Standard
-date: "2026-08-21"
+date: "2026-10-28"
+# Draft from https://www.mtggoldfish.com/metagame/standard — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
-  - name: Orzhov Lifegain
+  - name: "Dimir Midrange"
+    # 10.6% of the metagame, 211 decks
     signatureCards:
-      - name: "Case of the Uneaten Feast"
+      - name: "Dream Beavers"
         minCopies: 4
-      - name: "Hinterland Sanctifier"
+        # in 100% of decks
+      - name: "Enduring Curiosity"
         minCopies: 4
-      - name: "Amalia Benavides Aguirre"
-        minCopies: 3
-      - name: "Lunar Convocation"
-        minCopies: 1
-
-  - name: Golgari Annex
+        # in 100% of decks
+      - name: "Floodpits Drowner"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Gloomlake Verge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Kaito, Bane of Nightmares"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Watery Grave"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Mono-Green Landfall"
+    # 10.4% of the metagame, 207 decks
     signatureCards:
-      - name: "Unholy Annex"
+      - name: "Earthbender Ascension"
         minCopies: 4
-      - name: "Professor Dellian Fel"
-        minCopies: 2
-      - name: "Requiting Hex"
-        minCopies: 3
-      - name: "Bloodletter of Aclazotz"
-        exactCopies: 0
-
-  - name: Jeskai Control
-    signatureCards:
-      - name: "Jeskai Revelation"
+        # in 100% of decks
+      - name: "Fabled Passage"
         minCopies: 4
-      - name: "Tablet of Discovery"
-        minCopies: 4
-      - name: "Firebending Lesson"
-        minCopies: 4
-      - name: "Inevitable Defeat"
-        exactCopies: 0
-
-  - name: Izzet Monument
-    signatureCards:
-      - name: "Monument to Endurance"
-        minCopies: 4
-      - name: "Artist's Talent"
-        minCopies: 4
-      - name: "Flow State"
-        minCopies: 4
-
-  - name: Izzet Aggro
-    signatureCards:
-      - name: "Colorstorm Stallion"
-        minCopies: 3
-      - name: "Hired Claw"
-        minCopies: 3
-      - name: "Vibrant Outburst"
-        minCopies: 3
-      - name: "Slickshot Show-Off"
-        exactCopies: 0
-
-  - name: Izzet Prowess
-    signatureCards:
-      - name: "Wild Ride"
-        minCopies: 2
-      - name: "Elusive Otter"
-        minCopies: 4
-      - name: "Slickshot Show-Off"
-        minCopies: 4
-      - name: "Leyline of Resonance"
-        exactCopies: 0
-
-  - name: Boros Dwarves
-    signatureCards:
-      - name: "Dwarven Mauler"
-        minCopies: 4
-      - name: "Kíli the Resourceful"
-        minCopies: 4
-      - name: "Dáin's Company"
-        minCopies: 3
-
-  - name: Mono-Black Corpses
-    signatureCards:
-      - name: "Corpses of the Lost"
-        minCopies: 4
-      - name: "Forsaken Miner"
-        minCopies: 4
-      - name: "Iridescent Vinelasher"
-        minCopies: 4
-
-  - name: Gruul Break Out
-    signatureCards:
-      - name: "Break Out"
-        minCopies: 4
-      - name: "Keen-Eyed Curator"
-        minCopies: 4
-      - name: "Patchwork Beastie"
-        minCopies: 4
-      - name: "Wildfire Wickerfolk"
-        minCopies: 4
-
-  - name: Izzet Maestro
-    signatureCards:
-      - name: "Ashling's Command"
-        minCopies: 4
-      - name: Colorstorm Stallion
-        minCopies: 4
-
-  - name: 4-Color Gearhulk
-    signatureCards:
-      - name: Bloom Tender
-        minCopies: 3
-      - name: Brightglass Gearhulk
-        minCopies: 2
-      - name: Sewer-veillance Cam
-        minCopies: 2
-
-  - name: Simic Jackal
-    signatureCards:
-      - name: "Jackal, Genius Geneticist"
-        minCopies: 3
-      - name: "Pawpatch Recruit"
-        minCopies: 3
+        # in 100% of decks
       - name: "Llanowar Elves"
         minCopies: 4
-
-  - name: Mono-Green Landfall
-    signatureCards:
-      - name: Mightform Harmonizer
-        minCopies: 3
+        # in 100% of decks
       - name: "Sazh's Chocobo"
         minCopies: 4
-      - name: Fabled Passage
-        minCopies: 4
-      - name: Earthbender Ascension
+        # in 100% of decks
+      - name: "Ba Sing Se"
         minCopies: 3
-      - name: Stomping Ground
-        exactCopies: 0
-      - name: Temple Garden
-        exactCopies: 0
-      - name: Breeding Pool
-        exactCopies: 0
-      - name: Overgrown Tomb
-        exactCopies: 0
-
-  - name: Gruul Landfall
-    signatureCards:
-      - name: Mightform Harmonizer
-        minCopies: 3
-      - name: "Sazh's Chocobo"
-        minCopies: 4
-      - name: Fabled Passage
-        minCopies: 4
-      - name: Earthbender Ascension
-        minCopies: 3
-      - name: Stomping Ground
-        minCopies: 4
-
-  - name: Selesnya Landfall
-    signatureCards:
-      - name: Earthbender Ascension
-        minCopies: 3
-      - name: Fabled Passage
-        minCopies: 3
-      - name: Erode
+        # in 100% of decks
+      - name: "Escape Tunnel"
         minCopies: 2
-
-  - name: Sultai Reanimator
+        # in 99% of decks
+  - name: "Lifegain"
+    # 8.7% of the metagame, 173 decks
     signatureCards:
-      - name: Deceit
-        minCopies: 3
+      - name: "Amalia Benavides Aguirre"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Case of the Uneaten Feast"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Godless Shrine"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Haliya, Guided by Light"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Hinterland Sanctifier"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lunar Convocation"
+        minCopies: 4
+        # in 99% of decks
+  - name: "Izzet Spellementals"
+    # 8.2% of the metagame, 162 decks
+    signatureCards:
+      - name: "Eddymurk Crab"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Hearth Elemental"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Opt"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Prismari Charm"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Riverpyre Verge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sleight of Hand"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Dimir Reanimator"
+    # 7.8% of the metagame, 155 decks
+    signatureCards:
+      - name: "Deceit"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Gloomlake Verge"
+        minCopies: 4
+        # in 100% of decks
       - name: "Superior Spider-Man"
-        minCopies: 3
-      - name: Awaken the Honored Dead
-        minCopies: 1
-
-  - name: Dimir Excruciator
-    signatureCards:
-      - name: Doomsday Excruciator
-        minCopies: 1
-      - name: Deceit
-        minCopies: 3
-      - name: Requiting Hex
-        minCopies: 2
-      - name: Breeding Pool
-        exactCopies: 0
-
-  - name: Dimir Reanimator
-    signatureCards:
-      - name: Deceit
-        minCopies: 3
-      - name: Superior Spider-Man
-        minCopies: 3
-      - name: Requiting Hex
-        minCopies: 2
-      - name: Doomsday Excruciator
-        exactCopies: 0
-      - name: "Bringer of the Last Gift"
-        exactCopies: 0
-      - name: "Breeding Pool"
-        exactCopies: 0
-      - name: "Ashling, Rekindled"
-        exactCopies: 0
-
-  - name: Dimir Midrange
-    signatureCards:
-      - name: Kaito, Bane of Nightmares
-        minCopies: 2
-      - name: Enduring Curiosity
-        minCopies: 2
-      - name: Watery Grave
         minCopies: 4
-      - name: Soulstone Sanctuary
-        minCopies: 1
-
-  - name: Azorius Tempo
-    signatureCards:
-      - name: "Aang, Swift Savior"
-        minCopies: 3
-      - name: High Noon
-        minCopies: 3
-
-  - name: Izzet Spellementals
-    signatureCards:
-      - name: Eddymurk Crab
-        minCopies: 4
-      - name: Hearth Elemental
-        minCopies: 3
-      - name: Opt
-        minCopies: 3
-      - name: Slickshot Show-Off
-        exactCopies: 0
-
-  - name: Izzet Elementals
-    signatureCards:
-      - name: "Ashling, Rekindled"
-        minCopies: 4
-      - name: Sunderflock
-        minCopies: 2
-      - name: Vibrance
-        minCopies: 4
-      - name: Superior Spider-Man
-        exactCopies: 0
-      - name: Restless Reef
-        exactCopies: 0
-
-  - name: Grixis Elementals
-    signatureCards:
-      - name: Superior Spider-Man
-        minCopies: 1
-      - name: "Ashling, Rekindled"
-        minCopies: 4
-      - name: Sunderflock
-        minCopies: 2
-      - name: Vibrance
-        minCopies: 2
-
-  - name: 4-Color Control
-    signatureCards:
-      - name: Inevitable Defeat
-        minCopies: 2
-      - name: Stock Up
-        minCopies: 1
-
-  - name: Boros Dragons
-    signatureCards:
-      - name: Nova Hellkite
-        minCopies: 3
-      - name: "Sarkhan, Dragon Ascendant"
-        minCopies: 3
-      - name: "Momo, Friendly Flier"
-        minCopies: 3
-
-  - name: Boros Tremors
-    signatureCards:
-      - name: "Warleader's Call"
-        minCopies: 2
-      - name: "Voice of Victory"
-        minCopies: 2
-      - name: Inspiring Vantage
-        minCopies: 2
-
-  - name: Bant Airbending
-    signatureCards:
-      - name: "Aang, at the Crossroads"
-        minCopies: 2
-      - name: "Appa, Steadfast Guardian"
-        minCopies: 3
-      - name: Doc Aurlock, Grizzled Genius
-        minCopies: 3
-
-  - name: Temur Harmonizer
-    signatureCards:
-      - name: Mightform Harmonizer
-        minCopies: 3
-      - name: Full Bore
-        minCopies: 3
-
-  - name: Leyline Aggro
-    signatureCards:
-      - name: "Leyline of Resonance"
-        minCopies: 4
-      - name: "Ancestral Anger"
-        minCopies: 2
-
-  - name: Mono-Red Aggro
-    signatureCards:
-      - name: Hired Claw
-        minCopies: 3
-      - name: Burst Lightning
-        minCopies: 3
-      - name: Colorstorm Stallion
-        exactCopies: 0
-
-  - name: Rakdos Discard
-    signatureCards:
-      - name: Moonshadow
-        minCopies: 3
-      - name: Marauding Mako
-        minCopies: 3
-      - name: Bloodghast
-        minCopies: 1
-      - name: Quantum Riddler
-        exactCopies: 0
-      - name: Hardened Academic
-        exactCopies: 0
-
-  - name: Mardu Discard
-    signatureCards:
-      - name: Moonshadow
-        minCopies: 3
-      - name: Marauding Mako
-        minCopies: 3
-      - name: Bloodghast
-        minCopies: 1
-      - name: Quantum Riddler
-        exactCopies: 0
-      - name: Hardened Academic
-        minCopies: 3
-
-  - name: Grixis Discard
-    signatureCards:
-      - name: Marauding Mako
-        minCopies: 3
-      - name: Moonshadow
-        minCopies: 3
-      - name: Quantum Riddler
-        minCopies: 2
-
-  - name: Izzet Blink
-    signatureCards:
-      - name: Splash Portal
-        minCopies: 2
-      - name: Thundertrap Trainer
-        minCopies: 4
-      - name: Quantum Riddler
-        minCopies: 4
-
-  - name: Simic Kona
-    signatureCards:
-      - name: "Kona, Rescue Beastie"
-        minCopies: 4
-      - name: "Omniscience"
-        minCopies: 4
-      - name: "Uthros, Titanic Godcore"
-        minCopies: 3
-
-  - name: Dimir Control
-    signatureCards:
-      - name: "Deadly Cover-Up"
-        minCopies: 2
-      - name: "Consult the Star Charts"
-        minCopies: 3
+        # in 100% of decks
       - name: "Watery Grave"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Bitter Triumph"
         minCopies: 3
-
-  - name: Azorius Control
+        # in 100% of decks
+      - name: "Requiting Hex"
+        minCopies: 3
+        # in 100% of decks
+  - name: "Azorius Control"
+    # 6.3% of the metagame, 125 decks
     signatureCards:
-      - name: No More Lies
-        minCopies: 3
+      - name: "Hallowed Fountain"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Floodfarm Verge"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Get Lost"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Day of Judgment"
+        minCopies: 2
+        # in 99% of decks
       - name: "Consult the Star Charts"
+        minCopies: 4
+        # in 98% of decks
+      - name: "No More Lies"
         minCopies: 3
-      - name: "Hallowed Fountain"
-        minCopies: 3
+        # in 97% of decks
+  - name: "Izzet Prowess"
+    # 5.1% of the metagame, 101 decks
+    signatureCards:
+      - name: "Riverpyre Verge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Spirebluff Canal"
+        minCopies: 4
+        # in 100% of decks
       - name: "Steam Vents"
-        exactCopies: 0
+        minCopies: 4
+        # in 100% of decks
+      - name: "Pompous Battlemage"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Slickshot Show-Off"
+        minCopies: 4
+        # in 95% of decks
+  - name: "4c Control"
+    # 4.9% of the metagame, 97 decks
+    signatureCards:
+      - name: "Stock Up"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Great Hall of the Biblioplex"
+        minCopies: 4
+        # in 99% of decks
       - name: "Inevitable Defeat"
-        exactCopies: 0
-
-  - name: Azorius Momo
+        minCopies: 4
+        # in 99% of decks
+      - name: "Jeskai Revelation"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Tablet of Discovery"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Steam Vents"
+        minCopies: 3
+        # in 99% of decks
+  - name: "Jeskai Artifacts"
+    # 4.4% of the metagame, 87 decks
     signatureCards:
-      - name: Momo, Friendly Flier
-        minCopies: 3
-      - name: Sage of the Skies
-        minCopies: 3
-      - name: Springleaf Drum
-        minCopies: 3
-
-  - name: Azorius Otters
-    signatureCards:
-      - name: "Valley Floodcaller"
-        minCopies: 3
-      - name: "Firdoch Core"
-        minCopies: 2
+      - name: "Floodfarm Verge"
+        minCopies: 4
+        # in 100% of decks
       - name: "Hallowed Fountain"
         minCopies: 4
-
-  - name: Boros Burn
-    signatureCards:
-      - name: "Boros Charm"
-        minCopies: 3
-      - name: "Boltwave"
-        minCopies: 3
-      - name: "Inspiring Vantage"
-        minCopies: 1
-
-  - name: Temur Battlecrier
-    signatureCards:
-      - name: "Temur Battlecrier"
+        # in 100% of decks
+      - name: "Perilous Snare"
         minCopies: 4
-      - name: "Outcaster Trailblazer"
-        minCopies: 4
-
-  - name: Izzet Looting
-    signatureCards:
-      - name: "Tiger-Seal"
-        minCopies: 4
-      - name: "Duelist of the Mind"
-        minCopies: 4
-      - name: "Fear of Missing Out"
-        minCopies: 3
-
-  - name: Jeskai Artifacts
-    signatureCards:
+        # in 100% of decks
       - name: "Simulacrum Synthesizer"
-        minCopies: 3
-      - name: "Repurposing Bay"
-        minCopies: 3
+        minCopies: 4
+        # in 100% of decks
       - name: "United Battlefront"
-        minCopies: 3
-
-  - name: 4-Color Allies
-    signatureCards:
-      - name: "Earth King's Lieutenant"
         minCopies: 4
-      - name: "Cavern of Souls"
-        minCopies: 4
-      - name: "Jasmine Dragon Tea Shop"
+        # in 100% of decks
+      - name: "Cryogen Relic"
         minCopies: 3
-
-  - name: Mono-Black Demons
+        # in 100% of decks
+  - name: "Boros Dragons"
+    # 4.2% of the metagame, 84 decks
     signatureCards:
-      - name: "Bloodletter of Aclazotz"
-        minCopies: 2
-      - name: "Unholy Annex"
-        minCopies: 3
-      - name: "Swamp"
-        minCopies: 8
+      - name: "Burst Lightning"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Clarion Conqueror"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Inspiring Vantage"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Magmatic Hellkite"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Momo, Friendly Flier"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Nova Hellkite"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Azorius Momo"
+    # 3.2% of the metagame, 63 decks
+    signatureCards:
+      - name: "Daydream"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Floodfarm Verge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Hallowed Fountain"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Momo, Friendly Flier"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Quantum Riddler"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sage of the Skies"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Rakdos Lizards"
+    # 3.1% of the metagame, 61 decks
+    signatureCards:
+      - name: "Blood Crypt"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Hired Claw"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Iridescent Vinelasher"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Master of Barbs"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Blazemire Verge"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Burst Lightning"
+        minCopies: 4
+        # in 99% of decks

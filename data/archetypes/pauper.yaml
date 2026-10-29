@@ -1,513 +1,253 @@
 format: Pauper
-date: "2026-10-03"
+date: "2026-10-28"
+# Draft from https://www.mtggoldfish.com/metagame/pauper — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
-  - name: Mono-Blue Terror
+  - name: "Mono Red Madness"
+    # 12.9% of the metagame, 366 decks
     signatureCards:
-      - name: "Tolarian Terror"
-        minCopies: 3
-      - name: "Cryptic Serpent"
-        minCopies: 3
-      - name: "Thought Scour"
-        minCopies: 3
-      - name: "Sneaky Snacker"
-        exactCopies: 0
-  - name: Dimir Terror
-    signatureCards:
-      - name: "Snuff Out"
-        minCopies: 1
-      - name: "Tolarian Terror"
-        minCopies: 3
-      - name: "Thought Scour"
-        minCopies: 3
-      - name: "Sneaky Snacker"
-        minCopies: 3
-  - name: Mono-Green Elves
-    signatureCards:
-      - name: "Priest of Titania"
-        minCopies: 3
-      - name: "Lead the Stampede"
-        minCopies: 3
-      - name: "Quirion Ranger"
-        minCopies: 2
-  - name: Jund Wildfire
-    signatureCards:
-      - name: "Cleansing Wildfire"
-        minCopies: 3
-      - name: "Drossforge Bridge"
-        minCopies: 3
-      - name: "Slagwoods Bridge"
-        minCopies: 3
-  - name: Mono-Red Rally
-    signatureCards:
-      - name: "Goblin Bushwhacker"
-        minCopies: 3
-      - name: "Rally at the Hornburg"
-        minCopies: 2
-      - name: "Great Furnace"
-        minCopies: 2
-  - name: Burn
-    signatureCards:
-      - name: "Goblin Tomb Raider"
-        minCopies: 3
-      - name: "Great Furnace"
-        minCopies: 3
-      - name: "Rally at the Hornburg"
-        exactCopies: 0
-  - name: Mono-Red Madness
-    signatureCards:
-      - name: "Lightning Bolt"
-        minCopies: 3
-      - name: "Sneaky Snacker"
-        minCopies: 3
+      - name: "Fiery Temper"
+        minCopies: 4
+        # in 100% of decks
       - name: "Grab the Prize"
-        minCopies: 3
-      - name: "Alms of the Vein"
-        exactCopies: 0
-  - name: Grixis Affinity
+        minCopies: 4
+        # in 100% of decks
+      - name: "Guttersnipe"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lava Dart"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lightning Bolt"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sneaky Snacker"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Blue Terror"
+    # 7.8% of the metagame, 222 decks
     signatureCards:
-      - name: "Myr Enforcer"
-        minCopies: 3
-      - name: "Mistvault Bridge"
-        minCopies: 3
-      - name: "Refurbished Familiar"
-        minCopies: 3
-      # no white: yield the Esper builds to Esper Affinity
-      - name: "Glint Hawk"
-        exactCopies: 0
-      # no white: the Esper builds without Glint Hawk still run Ancient Den
-      - name: "Ancient Den"
-        exactCopies: 0
-  - name: Esper Affinity
+      - name: "Brainstorm"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Counterspell"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lorien Revealed"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Thought Scour"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Tolarian Terror"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Cryptic Serpent"
+        minCopies: 4
+        # in 98% of decks
+  - name: "Dimir Faeries"
+    # 6.1% of the metagame, 172 decks
     signatureCards:
-      - name: "Glint Hawk"
-        minCopies: 2
-      - name: "Cryogen Relic"
-        minCopies: 2
-      - name: "Refurbished Familiar"
-        minCopies: 2
-      - name: "Kor Skyfisher"
-        minCopies: 2
-  # Second Esper Affinity build, from mid 2026. Myr Enforcer and Thoughtcast with
-  # Springleaf Drum, Thraben Inspector or Moon-Circuit Hacker, and no Glint Hawk package.
-  # It shares the label with the rule above on purpose. Kor Skyfisher at zero keeps the
-  # two from matching the same deck. Ancient Den is the white marker, Great Furnace at
-  # zero yields the red builds to 4c Affinity.
-  - name: Esper Affinity
-    signatureCards:
-      - name: "Myr Enforcer"
-        minCopies: 3
-      - name: "Ancient Den"
-        minCopies: 1
-      - name: "Great Furnace"
-        exactCopies: 0
-      - name: "Kor Skyfisher"
-        exactCopies: 0
-  # Esper Affinity with a red splash in the main (Great Furnace, Galvanic Blast). Vault of
-  # Whispers keeps it apart from Jeskai Affinity, which Boros Synthesizer already labels.
-  # Glint Hawk runs here but Kor Skyfisher does not, so the Glint Hawk Esper Affinity rule
-  # never matches these decks.
-  - name: 4c Affinity
-    signatureCards:
-      - name: "Myr Enforcer"
-        minCopies: 3
-      - name: "Ancient Den"
-        minCopies: 1
-      - name: "Great Furnace"
-        minCopies: 1
-      - name: "Vault of Whispers"
-        minCopies: 1
-  - name: Azorius Caw-Gates
-    signatureCards:
-      - name: "Squadron Hawk"
-        minCopies: 3
-      - name: "Basilisk Gate"
-        minCopies: 2
-  - name: Naya Gates
-    signatureCards:
-      - name: "Basilisk Gate"
-        minCopies: 3
-      - name: "Pursue the Past"
-        minCopies: 2
-      - name: "Sacred Cat"
-        minCopies: 2
-  - name: Mono-White Aggro
-    signatureCards:
-      - name: "Battle Screech"
-        minCopies: 3
-      - name: "Thraben Charm"
-        minCopies: 3
-      - name: "Raffine's Informant"
-        minCopies: 3
-      - name: "Rally the Peasants"
-        exactCopies: 0
-  - name: Mono-Blue Faeries
-    signatureCards:
+      - name: "Counterspell"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lorien Revealed"
+        minCopies: 4
+        # in 100% of decks
       - name: "Spellstutter Sprite"
-        minCopies: 3
+        minCopies: 4
+        # in 100% of decks
       - name: "Faerie Seer"
         minCopies: 3
-      - name: "Swamp"
-        exactCopies: 0
-      - name: "Skred"
-        exactCopies: 0
-  - name: Dimir Faeries
-    signatureCards:
-      - name: "Cast Down"
-        minCopies: 1
-      - name: "Swamp"
-        minCopies: 1
-      - name: "Spellstutter Sprite"
-        minCopies: 3
-  - name: Azorius Familiars
-    signatureCards:
-      - name: "Sunscape Familiar"
-        minCopies: 3
-      - name: "Snap"
-        minCopies: 3
-      - name: "Azorius Chancery"
-        minCopies: 1
-      - name: "Archaeomancer"
-        minCopies: 1
-  - name: Gruul Ponza
-    signatureCards:
-      - name: "Thermokarst"
+        # in 100% of decks
+      - name: "Ninja of the Deep Hours"
         minCopies: 2
-      - name: "Mwonvuli Acid-Moss"
-        minCopies: 2
-      - name: "Utopia Sprawl"
-        minCopies: 2
-  - name: Gruul Ramp
+        # in 100% of decks
+      - name: "Baleful Strix"
+        minCopies: 4
+        # in 99% of decks
+  - name: "Tron"
+    # 5.8% of the metagame, 163 decks
     signatureCards:
-      - name: "Writhing Chrysalis"
-        minCopies: 3
-      - name: "Arbor Elf"
-        minCopies: 3
-      - name: "Utopia Sprawl"
-        minCopies: 3
-      - name: "Mwonvuli Acid-Moss"
-        exactCopies: 0
-  - name: Rakdos Madness Burn
+      - name: "Expedition Map"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Urza's Mine"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Urza's Power Plant"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Urza's Tower"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Giant's Boulder"
+        minCopies: 4
+        # in 97% of decks
+  - name: "Elves"
+    # 5.6% of the metagame, 159 decks
     signatureCards:
-      - name: "Vampire's Kiss"
+      - name: "Priest of Titania"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Quirion Ranger"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Winding Way"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Nyxborn Hydra"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Timberwatch Elf"
+        minCopies: 4
+        # in 98% of decks
+      - name: "Lead the Stampede"
+        minCopies: 4
+        # in 97% of decks
+  - name: "Grixis Affinity"
+    # 4.7% of the metagame, 134 decks
+    signatureCards:
+      - name: "Drossforge Bridge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Mistvault Bridge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Refurbished Familiar"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Thoughtcast"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Vault of Whispers"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Seat of the Synod"
         minCopies: 3
-      - name: "Kitchen Imp"
-        minCopies: 3
-      - name: "Alms of the Vein"
-        minCopies: 3
-  - name: Golgari Spy Combo
+        # in 100% of decks
+  - name: "Bogles"
+    # 4.3% of the metagame, 122 decks
+    signatureCards:
+      - name: "Abundant Growth"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ancestral Mask"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Armadillo Cloak"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ethereal Armor"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Gladecover Scout"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Rancor"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Spy Combo"
+    # 4.2% of the metagame, 118 decks
     signatureCards:
       - name: "Balustrade Spy"
-        minCopies: 3
-      - name: "Overgrown Battlement"
-        minCopies: 3
+        minCopies: 4
+        # in 100% of decks
       - name: "Generous Ent"
-        minCopies: 3
-  - name: Food Gardens
-    signatureCards:
-      - name: "Lembas"
-        minCopies: 3
-      - name: "Khalni Garden"
-        minCopies: 2
-      - name: "Fanatical Offering"
-        minCopies: 2
-      - name: "Cauldron Familiar"
-        minCopies: 2
-  - name: Golgari Gardens
-    signatureCards:
-      - name: "Khalni Garden"
-        minCopies: 3
-      - name: "Fanatical Offering"
-        minCopies: 3
-      - name: "Cast Down"
-        minCopies: 2
-      - name: "Cauldron Familiar"
-        exactCopies: 0
-  - name: Selesnya Bogles
-    signatureCards:
-      - name: "Ancestral Mask"
-        minCopies: 3
-      - name: "Abundant Growth"
-        minCopies: 3
-      - name: "Ethereal Armor"
-        minCopies: 3
-  - name: Ruby Storm
-    signatureCards:
-      - name: "Seething Song"
-        minCopies: 3
-      - name: "Manamorphose"
-        minCopies: 3
-  - name: Green Tron
-    signatureCards:
-      - name: "Urza's Tower"
-        minCopies: 2
-      - name: "Maelstrom Colossus"
-        minCopies: 2
-      - name: "Crop Rotation"
-        minCopies: 1
-  # Second Green Tron build, from mid 2026. Bramble Wurm and Giant's Boulder replace
-  # Maelstrom Colossus. It shares the label with the rule above on purpose. Maelstrom
-  # Colossus at zero keeps the two from matching the same deck. Mysidian Elder and Ghostly
-  # Flicker at zero yield the flicker builds to Grixis Flicker Tron and Ephemerate Tron.
-  - name: Green Tron
-    signatureCards:
-      - name: "Urza's Tower"
-        minCopies: 2
-      - name: "Bramble Wurm"
-        minCopies: 3
-      - name: "Giant's Boulder"
-        minCopies: 3
-      - name: "Maelstrom Colossus"
-        exactCopies: 0
-      - name: "Mysidian Elder"
-        exactCopies: 0
-      - name: "Ghostly Flicker"
-        exactCopies: 0
-  # Golem Foundry is a flexible slot (0-4 across the corpus), so it stays out. Myr
-  # Retriever is the stable half of the engine: all 92 historical Altar decks run 4.
-  - name: Altar Tron
-    signatureCards:
-      - name: "Ashnod's Altar"
-        minCopies: 2
-      - name: "Myr Retriever"
         minCopies: 4
-      - name: "Urza's Tower"
-        minCopies: 2
-  - name: Ephemerate Tron
-    signatureCards:
-      - name: "Urza's Tower"
-        minCopies: 2
-      - name: "Ghostly Flicker"
-        minCopies: 2
-      - name: "Crop Rotation"
-        minCopies: 1
-      - name: "Bojuka Bog"
-        minCopies: 1
-      - name: "Mysidian Elder"
-        exactCopies: 0
-      - name: "Black Mage's Rod"
-        exactCopies: 0
-  - name: Grixis Flicker Tron
-    signatureCards:
-      - name: "Mysidian Elder"
-        minCopies: 2
-      - name: "Ghostly Flicker"
-        minCopies: 2
-      - name: "Urza's Tower"
-        minCopies: 2
-  - name: Turbo Fog
-    signatureCards:
-      - name: "Moment's Peace"
-        minCopies: 3
-      - name: "Growth Spiral"
-        minCopies: 2
-  # Second Turbo Fog build, Golgari rather than Simic: same Moment's Peace plus Stream
-  # of Thought plus Tangle core, but Crypt Rats and Weather the Storm in place of the
-  # Growth Spiral card draw. It shares the label with the definition above on purpose.
-  # Signature cards are AND-only, so one deck cannot express both builds, and the two
-  # match zero decks in common, so no deck ever trips the exactly-one-match rule.
-  # Darkness is the cleanest separator: it appears in eleven Pauper decks, all this build.
-  - name: Turbo Fog
-    signatureCards:
-      - name: "Darkness"
-        minCopies: 1
-      - name: "Moment's Peace"
-        minCopies: 3
-      - name: "Stream of Thought"
-        minCopies: 1
-  - name: Inside Out Combo
-    signatureCards:
-      - name: "Tireless Tribe"
-        minCopies: 3
-      - name: "Inside Out"
-        minCopies: 3
-  - name: Cycle Storm
-    signatureCards:
-      - name: "Songs of the Damned"
-        minCopies: 3
-      - name: "Drannith Stinger"
-        minCopies: 2
-  - name: Slivers
-    signatureCards:
-      - name: "Muscle Sliver"
-        minCopies: 3
-      - name: "Predatory Sliver"
-        minCopies: 3
-  - name: Walls Combo
-    signatureCards:
-      - name: "Axebane Guardian"
-        minCopies: 2
-      - name: "Drift of Phantasms"
-        minCopies: 1
-  # Stinkweed Imp appears in eleven Pauper decks and every one is this Lotleth Giant
-  # dredge shell, so it carries the definition alone. Town Greeter would be the third
-  # card but ten of the eleven run it: gating on it drops the mono-red Faithless Looting
-  # build, which is the same deck.
-  - name: Dredge
-    signatureCards:
-      - name: "Stinkweed Imp"
+        # in 100% of decks
+      - name: "Land Grant"
         minCopies: 4
+        # in 100% of decks
+      - name: "Lead the Stampede"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sagu Wildling"
+        minCopies: 4
+        # in 100% of decks
       - name: "Dread Return"
         minCopies: 2
-  - name: Mono-Black Sacrifice
+        # in 100% of decks
+  - name: "Mono Red Rally"
+    # 3.8% of the metagame, 108 decks
     signatureCards:
-      - name: "Bloodthrone Vampire"
-        minCopies: 2
-      - name: "Nested Shambler"
-        minCopies: 3
-  # --- Blade / Synthesizer trio: all three share the Glint Hawk + Kor Skyfisher +
-  # Refurbished Familiar shell. Partition on Experimental Synthesizer (the engine) and
-  # Tithing Blade (the black splash). ---
-  - name: Orzhov Blade
-    signatureCards:
-      - name: "Tithing Blade"
-        minCopies: 1
-      - name: "Glint Hawk"
-        minCopies: 3
-      - name: "Refurbished Familiar"
-        minCopies: 3
-      - name: "Lembas"
-        minCopies: 1
-      - name: "Kor Skyfisher"
-        minCopies: 3
-      - name: "Thoughtcast"
-        exactCopies: 0
-      - name: "Experimental Synthesizer"
-        exactCopies: 0
-  - name: Mardu Synthesizer
-    signatureCards:
-      - name: "Experimental Synthesizer"
+      - name: "Clockwork Percussionist"
         minCopies: 4
-      - name: "Tithing Blade"
-        minCopies: 1
-      - name: "Glint Hawk"
-        minCopies: 3
-  - name: Boros Synthesizer
-    signatureCards:
-      - name: "Galvanic Blast"
-        minCopies: 3
-      - name: "Glint Hawk"
-        minCopies: 3
-      - name: "Kor Skyfisher"
-        minCopies: 3
-      - name: "Tithing Blade"
-        exactCopies: 0
-  - name: Grixis Control
-    signatureCards:
-      - name: "Skred"
-        minCopies: 3
-      - name: "Tolarian Terror"
-        minCopies: 3
-      - name: "Snuff Out"
-        minCopies: 1
-  - name: Izzet Terror
-    signatureCards:
-      - name: "Skred"
-        minCopies: 3
-      - name: "Tolarian Terror"
-        minCopies: 3
-      - name: "Snuff Out"
-        exactCopies: 0
-  - name: Jeskai Ephemerate
-    signatureCards:
-      - name: "Skred"
-        minCopies: 3
-      - name: "Augur of Bolas"
-        minCopies: 2
-      - name: "Counterspell"
-        minCopies: 3
-  - name: Selesnya Gates
-    signatureCards:
-      - name: "Basilisk Gate"
-        minCopies: 3
-      - name: "Guardian of the Guildpact"
-        minCopies: 3
-      - name: "Malevolent Rumble"
-        minCopies: 3
-      - name: "Pursue the Past"
-        exactCopies: 0
-      - name: "Squadron Hawk"
-        exactCopies: 0
-  - name: Boros Bully
-    signatureCards:
-      - name: "Rally the Peasants"
-        minCopies: 2
-      - name: "Boros Garrison"
-        minCopies: 1
-      - name: "Thraben Charm"
-        minCopies: 2
-  # Draw-go Dimir with Thorn of the Black Rose and no faerie or Terror threats. Some lists
-  # splash red, but only in the sideboard (Mountain, Hydroblast), so they keep this name.
-  # Spellstutter Sprite, Tolarian Terror and Ephemerate at zero keep it apart from Dimir
-  # Faeries, the Terror decks and Esper Ephemerate, which share the Counterspell and
-  # Lórien Revealed core.
-  - name: Dimir Control
-    signatureCards:
-      - name: "Counterspell"
+        # in 100% of decks
+      - name: "Goblin Bushwhacker"
         minCopies: 4
-      - name: "Lórien Revealed"
+        # in 100% of decks
+      - name: "Goblin Tomb Raider"
         minCopies: 4
-      - name: "Thorn of the Black Rose"
-        minCopies: 1
-      - name: "Spellstutter Sprite"
-        exactCopies: 0
-      - name: "Tolarian Terror"
-        exactCopies: 0
-      - name: "Ephemerate"
-        exactCopies: 0
-  # Ephemerate and Archaeomancer value with Counterspell, in black and white. Skred and
-  # Lightning Bolt at zero yield the red builds to Jeskai Ephemerate. Some lists play the
-  # affinity lands with Dispatch, they are still this deck.
-  - name: Esper Ephemerate
-    signatureCards:
-      - name: "Ephemerate"
-        minCopies: 2
-      - name: "Archaeomancer"
-        minCopies: 2
-      - name: "Counterspell"
-        minCopies: 4
-      - name: "Skred"
-        exactCopies: 0
+        # in 100% of decks
       - name: "Lightning Bolt"
-        exactCopies: 0
-  - name: Mono-Green Infect
+        minCopies: 4
+        # in 100% of decks
+      - name: "Rally at the Hornburg"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Burning-Tree Emissary"
+        minCopies: 4
+        # in 99% of decks
+  - name: "Ruby Storm"
+    # 3.2% of the metagame, 91 decks
     signatureCards:
-      - name: "Glistener Elf"
-        minCopies: 3
-      - name: "Blight Mamba"
-        minCopies: 2
-  # Lava Dart alone is not enough, Mono-Red Madness runs Kiln Fiend and Lava Dart too.
-  # Manamorphose and Mutagenic Growth are the free spells only this deck plays.
-  - name: Mono-Red Kiln Fiend
-    signatureCards:
-      - name: "Kiln Fiend"
-        minCopies: 3
+      - name: "Glimpse the Impossible"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Goblin Anarchomancer"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Hickory Woodlot"
+        minCopies: 4
+        # in 100% of decks
       - name: "Manamorphose"
-        minCopies: 3
-      - name: "Mutagenic Growth"
-        minCopies: 3
-  - name: Mono-White Heroic
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sandstone Needle"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Seething Song"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Grixis Control"
+    # 3% of the metagame, 84 decks
     signatureCards:
-      - name: "Ethereal Armor"
+      - name: "Counterspell"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Lorien Revealed"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Thorn of the Black Rose"
         minCopies: 3
-      - name: "Hyena Umbra"
+        # in 100% of decks
+      - name: "Baleful Strix"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Murmuring Mystic"
         minCopies: 3
-  - name: Poison Storm
+        # in 99% of decks
+      - name: "Campfire"
+        minCopies: 2
+        # in 99% of decks
+  - name: "Esper Affinity"
+    # 3% of the metagame, 84 decks
     signatureCards:
-      - name: "Infectious Inquiry"
+      - name: "Myr Enforcer"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Razortide Bridge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Refurbished Familiar"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Seat of the Synod"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Thoughtcast"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Mistvault Bridge"
         minCopies: 3
-      - name: "Pentad Prism"
-        minCopies: 3
-  # Artifact creature swarm with Search Party Captain, Martyr's Soul and Salt Road
-  # Packbeast, from late August 2026. Most lists splash green for Winding Way; the
-  # mono-white lists without it are the same deck and keep this name. Battle Screech at
-  # zero leaves the hybrid lists to Mono-White Aggro (Battle Screech and Kor Skyfisher).
-  - name: Selesnya Rally
-    signatureCards:
-      - name: "Search Party Captain"
-        minCopies: 3
-      - name: "Martyr's Soul"
-        minCopies: 3
-      - name: "Salt Road Packbeast"
-        minCopies: 3
-      - name: "Battle Screech"
-        exactCopies: 0
+        # in 100% of decks
