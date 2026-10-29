@@ -1,9 +1,9 @@
 format: Standard
-date: "2026-10-28"
+date: "2026-10-29"
 # Draft from https://www.mtggoldfish.com/metagame/standard — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Dimir Midrange"
-    # 10.6% of the metagame, 211 decks
+    # 10.6% of the metagame, 213 decks
     signatureCards:
       - name: "Dream Beavers"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Mono-Green Landfall"
-    # 10.4% of the metagame, 207 decks
+    # 10.5% of the metagame, 210 decks
     signatureCards:
       - name: "Earthbender Ascension"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 2
         # in 99% of decks
   - name: "Lifegain"
-    # 8.7% of the metagame, 173 decks
+    # 9% of the metagame, 180 decks
     signatureCards:
       - name: "Amalia Benavides Aguirre"
         minCopies: 4
@@ -65,29 +65,8 @@ archetypes:
       - name: "Lunar Convocation"
         minCopies: 4
         # in 99% of decks
-  - name: "Izzet Spellementals"
-    # 8.2% of the metagame, 162 decks
-    signatureCards:
-      - name: "Eddymurk Crab"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Hearth Elemental"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Opt"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Prismari Charm"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Riverpyre Verge"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Sleight of Hand"
-        minCopies: 4
-        # in 100% of decks
   - name: "Dimir Reanimator"
-    # 7.8% of the metagame, 155 decks
+    # 8.2% of the metagame, 165 decks
     signatureCards:
       - name: "Deceit"
         minCopies: 4
@@ -107,8 +86,29 @@ archetypes:
       - name: "Requiting Hex"
         minCopies: 3
         # in 100% of decks
+  - name: "Izzet Spellementals"
+    # 7.8% of the metagame, 157 decks
+    signatureCards:
+      - name: "Eddymurk Crab"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Hearth Elemental"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Opt"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Prismari Charm"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Riverpyre Verge"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sleight of Hand"
+        minCopies: 4
+        # in 100% of decks
   - name: "Azorius Control"
-    # 6.3% of the metagame, 125 decks
+    # 6.2% of the metagame, 125 decks
     signatureCards:
       - name: "Hallowed Fountain"
         minCopies: 4
@@ -129,7 +129,7 @@ archetypes:
         minCopies: 3
         # in 97% of decks
   - name: "Izzet Prowess"
-    # 5.1% of the metagame, 101 decks
+    # 5% of the metagame, 101 decks
     signatureCards:
       - name: "Riverpyre Verge"
         minCopies: 4
@@ -147,10 +147,13 @@ archetypes:
         minCopies: 4
         # in 95% of decks
   - name: "4c Control"
-    # 4.9% of the metagame, 97 decks
+    # 4.8% of the metagame, 96 decks
     signatureCards:
       - name: "Stock Up"
         minCopies: 4
+        # in 100% of decks
+      - name: "Sacred Foundry"
+        minCopies: 2
         # in 100% of decks
       - name: "Great Hall of the Biblioplex"
         minCopies: 4
@@ -164,11 +167,8 @@ archetypes:
       - name: "Tablet of Discovery"
         minCopies: 4
         # in 99% of decks
-      - name: "Steam Vents"
-        minCopies: 3
-        # in 99% of decks
   - name: "Jeskai Artifacts"
-    # 4.4% of the metagame, 87 decks
+    # 4.5% of the metagame, 90 decks
     signatureCards:
       - name: "Floodfarm Verge"
         minCopies: 4
@@ -189,7 +189,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Boros Dragons"
-    # 4.2% of the metagame, 84 decks
+    # 4% of the metagame, 81 decks
     signatureCards:
       - name: "Burst Lightning"
         minCopies: 4
@@ -210,7 +210,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Azorius Momo"
-    # 3.2% of the metagame, 63 decks
+    # 3.3% of the metagame, 66 decks
     signatureCards:
       - name: "Daydream"
         minCopies: 4
@@ -231,9 +231,15 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Rakdos Lizards"
-    # 3.1% of the metagame, 61 decks
+    # 3.1% of the metagame, 62 decks
     signatureCards:
+      - name: "Blazemire Verge"
+        minCopies: 4
+        # in 100% of decks
       - name: "Blood Crypt"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Flamecache Gecko"
         minCopies: 4
         # in 100% of decks
       - name: "Hired Claw"
@@ -245,9 +251,3 @@ archetypes:
       - name: "Master of Barbs"
         minCopies: 4
         # in 100% of decks
-      - name: "Blazemire Verge"
-        minCopies: 4
-        # in 99% of decks
-      - name: "Burst Lightning"
-        minCopies: 4
-        # in 99% of decks

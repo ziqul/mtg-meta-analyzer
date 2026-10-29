@@ -1,9 +1,9 @@
 format: Modern
-date: "2026-10-28"
+date: "2026-10-29"
 # Draft from https://www.mtggoldfish.com/metagame/modern — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Eldrazi Ramp"
-    # 9.4% of the metagame, 681 decks
+    # 9.6% of the metagame, 687 decks
     signatureCards:
       - name: "Eldrazi Temple"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Izzet Prowess"
-    # 7.7% of the metagame, 557 decks
+    # 7.7% of the metagame, 552 decks
     signatureCards:
       - name: "Cori-Steel Cutter"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Affinity"
-    # 6.2% of the metagame, 449 decks
+    # 6.3% of the metagame, 449 decks
     signatureCards:
       - name: "Mishra's Bauble"
         minCopies: 4
@@ -65,29 +65,8 @@ archetypes:
       - name: "Tormod's Crypt"
         minCopies: 4
         # in 99% of decks
-  - name: "Eldrazi"
-    # 6% of the metagame, 432 decks
-    signatureCards:
-      - name: "Eldrazi Temple"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Kozilek's Command"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Sowing Mycospawn"
-        minCopies: 4
-        # in 99% of decks
-      - name: "Basking Broodscale"
-        minCopies: 4
-        # in 96% of decks
-      - name: "Emrakul, the Promised End"
-        minCopies: 4
-        # in 96% of decks
-      - name: "Malevolent Rumble"
-        minCopies: 4
-        # in 96% of decks
   - name: "Domain Zoo"
-    # 5.9% of the metagame, 425 decks
+    # 5.9% of the metagame, 421 decks
     signatureCards:
       - name: "Leyline Binding"
         minCopies: 4
@@ -107,8 +86,29 @@ archetypes:
       - name: "Ragavan, Nimble Pilferer"
         minCopies: 4
         # in 99% of decks
+  - name: "Eldrazi"
+    # 5.9% of the metagame, 420 decks
+    signatureCards:
+      - name: "Eldrazi Temple"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Kozilek's Command"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Sowing Mycospawn"
+        minCopies: 4
+        # in 99% of decks
+      - name: "Basking Broodscale"
+        minCopies: 4
+        # in 96% of decks
+      - name: "Emrakul, the Promised End"
+        minCopies: 4
+        # in 96% of decks
+      - name: "Malevolent Rumble"
+        minCopies: 4
+        # in 96% of decks
   - name: "Boros Energy"
-    # 5.7% of the metagame, 408 decks
+    # 5.7% of the metagame, 406 decks
     signatureCards:
       - name: "Ajani, Nacatl Pariah"
         minCopies: 4
@@ -129,7 +129,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Esper Blink"
-    # 5.6% of the metagame, 406 decks
+    # 5.6% of the metagame, 401 decks
     signatureCards:
       - name: "Flooded Strand"
         minCopies: 4
@@ -150,7 +150,7 @@ archetypes:
         minCopies: 4
         # in 99% of decks
   - name: "Goryo's Vengeance"
-    # 4% of the metagame, 290 decks
+    # 4% of the metagame, 285 decks
     signatureCards:
       - name: "Goryo's Vengeance"
         minCopies: 4
@@ -164,14 +164,14 @@ archetypes:
       - name: "Watery Grave"
         minCopies: 1
         # in 99% of decks
-      - name: "Ephemerate"
-        minCopies: 4
-        # in 98% of decks
       - name: "Psychic Frog"
         minCopies: 4
         # in 98% of decks
+      - name: "Godless Shrine"
+        minCopies: 1
+        # in 98% of decks
   - name: "Jeskai Energy"
-    # 3.9% of the metagame, 282 decks
+    # 4% of the metagame, 283 decks
     signatureCards:
       - name: "Galvanic Discharge"
         minCopies: 4
@@ -192,7 +192,7 @@ archetypes:
         minCopies: 4
         # in 97% of decks
   - name: "Azorius Control"
-    # 3.7% of the metagame, 266 decks
+    # 3.7% of the metagame, 264 decks
     signatureCards:
       - name: "Flooded Strand"
         minCopies: 4
@@ -234,7 +234,7 @@ archetypes:
         minCopies: 4
         # in 97% of decks
   - name: "Amulet Titan"
-    # 3.3% of the metagame, 236 decks
+    # 3.4% of the metagame, 241 decks
     signatureCards:
       - name: "Amulet of Vigor"
         minCopies: 4

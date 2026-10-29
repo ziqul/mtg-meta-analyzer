@@ -1,9 +1,9 @@
 format: Legacy
-date: "2026-10-28"
+date: "2026-10-29"
 # Draft from https://www.mtggoldfish.com/metagame/legacy — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Dimir Tempo"
-    # 12.5% of the metagame, 195 decks
+    # 12.6% of the metagame, 200 decks
     signatureCards:
       - name: "Brainstorm"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Boros Energy"
-    # 7.6% of the metagame, 119 decks
+    # 7.6% of the metagame, 120 decks
     signatureCards:
       - name: "Ajani, Nacatl Pariah"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Izzet Delver"
-    # 6.8% of the metagame, 106 decks
+    # 6.8% of the metagame, 108 decks
     signatureCards:
       - name: "Brainstorm"
         minCopies: 4
@@ -66,7 +66,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Doomsday"
-    # 5.8% of the metagame, 91 decks
+    # 5.8% of the metagame, 92 decks
     signatureCards:
       - name: "Brainstorm"
         minCopies: 4
@@ -87,7 +87,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Eldrazi"
-    # 4.4% of the metagame, 69 decks
+    # 4.6% of the metagame, 73 decks
     signatureCards:
       - name: "Ancient Tomb"
         minCopies: 4
@@ -108,7 +108,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Lands"
-    # 4.4% of the metagame, 68 decks
+    # 4.4% of the metagame, 69 decks
     signatureCards:
       - name: "Crop Rotation"
         minCopies: 4
@@ -149,29 +149,8 @@ archetypes:
       - name: "Scalding Tarn"
         minCopies: 4
         # in 100% of decks
-  - name: "Aluren"
-    # 3.9% of the metagame, 60 decks
-    signatureCards:
-      - name: "Acererak the Archlich"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Aluren"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Ancient Tomb"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Atraxa, Grand Unifier"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Brainstorm"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Force of Will"
-        minCopies: 4
-        # in 100% of decks
   - name: "Mystic Forge Combo"
-    # 3.8% of the metagame, 59 decks
+    # 3.8% of the metagame, 60 decks
     signatureCards:
       - name: "Ancient Tomb"
         minCopies: 4
@@ -192,7 +171,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Death and Taxes (Yorion) - Black/White"
-    # 3.7% of the metagame, 58 decks
+    # 3.8% of the metagame, 60 decks
     signatureCards:
       - name: "Aether Vial"
         minCopies: 4
@@ -213,7 +192,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Beanstalk Control (Non-Yorion)"
-    # 3.7% of the metagame, 57 decks
+    # 3.8% of the metagame, 60 decks
     signatureCards:
       - name: "Brainstorm"
         minCopies: 4
@@ -231,5 +210,26 @@ archetypes:
         minCopies: 4
         # in 100% of decks
       - name: "Up the Beanstalk"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Aluren"
+    # 3.8% of the metagame, 60 decks
+    signatureCards:
+      - name: "Acererak the Archlich"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Aluren"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Ancient Tomb"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Atraxa, Grand Unifier"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Brainstorm"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Force of Will"
         minCopies: 4
         # in 100% of decks

@@ -1,9 +1,9 @@
 format: Pioneer
-date: "2026-10-28"
+date: "2026-10-29"
 # Draft from https://www.mtggoldfish.com/metagame/pioneer — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Golgari Midrange"
-    # 17.7% of the metagame, 71 decks
+    # 17.5% of the metagame, 66 decks
     signatureCards:
       - name: "Blooming Marsh"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 4
         # in 97% of decks
   - name: "Izzet Prowess"
-    # 13.7% of the metagame, 55 decks
+    # 13.5% of the metagame, 51 decks
     signatureCards:
       - name: "Academic Dispute"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Nykthos Ramp"
-    # 9.5% of the metagame, 38 decks
+    # 10.1% of the metagame, 38 decks
     signatureCards:
       - name: "Elvish Mystic"
         minCopies: 4
@@ -66,7 +66,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Mono-Red Prowess"
-    # 6.2% of the metagame, 25 decks
+    # 6.4% of the metagame, 24 decks
     signatureCards:
       - name: "Burst Lightning"
         minCopies: 4
@@ -87,7 +87,7 @@ archetypes:
         minCopies: 1
         # in 100% of decks
   - name: "Jund Sacrifice"
-    # 5.5% of the metagame, 22 decks
+    # 5.8% of the metagame, 22 decks
     signatureCards:
       - name: "Blackcleave Cliffs"
         minCopies: 4
@@ -108,7 +108,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Jund Artifact Sacrifice"
-    # 5.5% of the metagame, 22 decks
+    # 5.6% of the metagame, 21 decks
     signatureCards:
       - name: "Biotech Specialist"
         minCopies: 4
@@ -129,7 +129,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Dimir Aggro"
-    # 4.5% of the metagame, 18 decks
+    # 4.8% of the metagame, 18 decks
     signatureCards:
       - name: "Darkslick Shores"
         minCopies: 4
@@ -150,7 +150,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Selesnya Company"
-    # 3.7% of the metagame, 15 decks
+    # 3.7% of the metagame, 14 decks
     signatureCards:
       - name: "Badgermole Cub"
         minCopies: 4
@@ -170,50 +170,8 @@ archetypes:
       - name: "Llanowar Elves"
         minCopies: 4
         # in 100% of decks
-  - name: "Izzet Phoenix"
-    # 3.5% of the metagame, 14 decks
-    signatureCards:
-      - name: "Arclight Phoenix"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Artist's Talent"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Consider"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Fiery Impulse"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Opt"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Picklock Prankster"
-        minCopies: 4
-        # in 100% of decks
-  - name: "Azorius Control"
-    # 3.5% of the metagame, 14 decks
-    signatureCards:
-      - name: "Deserted Beach"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Get Lost"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Hallowed Fountain"
-        minCopies: 4
-        # in 100% of decks
-      - name: "March of Otherworldly Light"
-        minCopies: 4
-        # in 100% of decks
-      - name: "No More Lies"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Dovin's Veto"
-        minCopies: 3
-        # in 100% of decks
   - name: "Izzet Aggro"
-    # 3.5% of the metagame, 14 decks
+    # 3.7% of the metagame, 14 decks
     signatureCards:
       - name: "Academic Dispute"
         minCopies: 4
@@ -231,5 +189,26 @@ archetypes:
         minCopies: 4
         # in 100% of decks
       - name: "Steam Vents"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Izzet Phoenix"
+    # 3.4% of the metagame, 13 decks
+    signatureCards:
+      - name: "Arclight Phoenix"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Artist's Talent"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Consider"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Fiery Impulse"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Opt"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Picklock Prankster"
         minCopies: 4
         # in 100% of decks

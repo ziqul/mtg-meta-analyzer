@@ -1,30 +1,9 @@
 format: Premodern
-date: "2026-10-28"
+date: "2026-10-29"
 # Draft from https://www.mtggoldfish.com/metagame/premodern — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
-  - name: "Mono-Blue Stiflenought"
-    # 10.9% of the metagame, 100 decks
-    signatureCards:
-      - name: "Counterspell"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Gush"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Portent"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Foil"
-        minCopies: 4
-        # in 99% of decks
-      - name: "Phyrexian Dreadnought"
-        minCopies: 4
-        # in 99% of decks
-      - name: "Stifle"
-        minCopies: 4
-        # in 99% of decks
   - name: "Selesnya Enchantress"
-    # 10.5% of the metagame, 96 decks
+    # 10.8% of the metagame, 102 decks
     signatureCards:
       - name: "Argothian Enchantress"
         minCopies: 4
@@ -44,29 +23,50 @@ archetypes:
       - name: "Seal of Cleansing"
         minCopies: 3
         # in 100% of decks
+  - name: "Mono-Blue Stiflenought"
+    # 10.8% of the metagame, 102 decks
+    signatureCards:
+      - name: "Counterspell"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Foil"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Gush"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Phyrexian Dreadnought"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Portent"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Stifle"
+        minCopies: 4
+        # in 100% of decks
   - name: "Mono-Black Midrange"
-    # 9% of the metagame, 82 decks
+    # 9.4% of the metagame, 88 decks
     signatureCards:
       - name: "Duress"
         minCopies: 4
         # in 100% of decks
       - name: "Hypnotic Specter"
         minCopies: 4
-        # in 98% of decks
+        # in 97% of decks
       - name: "Mishra's Factory"
         minCopies: 4
-        # in 97% of decks
+        # in 96% of decks
       - name: "Smother"
         minCopies: 2
-        # in 97% of decks
+        # in 95% of decks
       - name: "Dark Ritual"
         minCopies: 4
         # in 93% of decks
       - name: "Diabolic Edict"
         minCopies: 2
-        # in 93% of decks
+        # in 91% of decks
   - name: "Mono-Red Sligh"
-    # 6.9% of the metagame, 63 decks
+    # 7% of the metagame, 66 decks
     signatureCards:
       - name: "Fireblast"
         minCopies: 4
@@ -87,7 +87,7 @@ archetypes:
         minCopies: 4
         # in 95% of decks
   - name: "Naya Terragedon"
-    # 5.1% of the metagame, 47 decks
+    # 5.2% of the metagame, 49 decks
     signatureCards:
       - name: "Armageddon"
         minCopies: 4
@@ -98,17 +98,38 @@ archetypes:
       - name: "Swords to Plowshares"
         minCopies: 4
         # in 100% of decks
-      - name: "Sylvan Library"
-        minCopies: 4
-        # in 100% of decks
       - name: "Terravore"
         minCopies: 4
         # in 100% of decks
       - name: "Wasteland"
         minCopies: 4
         # in 100% of decks
+      - name: "Windswept Heath"
+        minCopies: 4
+        # in 100% of decks
+  - name: "Psychatog"
+    # 4.7% of the metagame, 44 decks
+    signatureCards:
+      - name: "Counterspell"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Gush"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Portent"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Psychatog"
+        minCopies: 4
+        # in 100% of decks
+      - name: "Foil"
+        minCopies: 3
+        # in 100% of decks
+      - name: "Duress"
+        minCopies: 4
+        # in 98% of decks
   - name: "Azorius Stiflenought"
-    # 4.6% of the metagame, 42 decks
+    # 4.6% of the metagame, 43 decks
     signatureCards:
       - name: "Counterspell"
         minCopies: 4
@@ -128,29 +149,8 @@ archetypes:
       - name: "Decree of Justice"
         minCopies: 3
         # in 98% of decks
-  - name: "Psychatog"
-    # 4.6% of the metagame, 42 decks
-    signatureCards:
-      - name: "Counterspell"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Duress"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Gush"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Polluted Delta"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Portent"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Psychatog"
-        minCopies: 4
-        # in 100% of decks
   - name: "The Rock"
-    # 3.2% of the metagame, 29 decks
+    # 3.2% of the metagame, 30 decks
     signatureCards:
       - name: "Llanowar Wastes"
         minCopies: 4
@@ -161,17 +161,26 @@ archetypes:
       - name: "Cabal Therapy"
         minCopies: 4
         # in 97% of decks
+      - name: "Treetop Village"
+        minCopies: 4
+        # in 97% of decks
       - name: "Wall of Blossoms"
         minCopies: 4
         # in 97% of decks
-      - name: "Treetop Village"
-        minCopies: 4
-        # in 94% of decks
       - name: "Duress"
         minCopies: 4
-        # in 91% of decks
+        # in 94% of decks
+  - name: "Mono-White"
+    # 3.1% of the metagame, 29 decks
+    signatureCards:
+      - name: "Swords to Plowshares"
+        minCopies: 4
+        # in 97% of decks
+      - name: "Exalted Angel"
+        minCopies: 3
+        # in 94% of decks
   - name: "5c Hermit Druid"
-    # 3% of the metagame, 27 decks
+    # 3% of the metagame, 28 decks
     signatureCards:
       - name: "Cabal Therapy"
         minCopies: 4

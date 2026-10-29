@@ -1,9 +1,9 @@
 format: Pauper
-date: "2026-10-28"
+date: "2026-10-29"
 # Draft from https://www.mtggoldfish.com/metagame/pauper — share >= 3%, inclusion >= 90%, top 6 cards
 archetypes:
   - name: "Mono Red Madness"
-    # 12.9% of the metagame, 366 decks
+    # 13.2% of the metagame, 371 decks
     signatureCards:
       - name: "Fiery Temper"
         minCopies: 4
@@ -24,7 +24,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Blue Terror"
-    # 7.8% of the metagame, 222 decks
+    # 7.6% of the metagame, 215 decks
     signatureCards:
       - name: "Brainstorm"
         minCopies: 4
@@ -45,7 +45,7 @@ archetypes:
         minCopies: 4
         # in 98% of decks
   - name: "Dimir Faeries"
-    # 6.1% of the metagame, 172 decks
+    # 6.2% of the metagame, 175 decks
     signatureCards:
       - name: "Counterspell"
         minCopies: 4
@@ -66,7 +66,7 @@ archetypes:
         minCopies: 4
         # in 99% of decks
   - name: "Tron"
-    # 5.8% of the metagame, 163 decks
+    # 5.7% of the metagame, 159 decks
     signatureCards:
       - name: "Expedition Map"
         minCopies: 4
@@ -84,7 +84,7 @@ archetypes:
         minCopies: 4
         # in 97% of decks
   - name: "Elves"
-    # 5.6% of the metagame, 159 decks
+    # 5.4% of the metagame, 153 decks
     signatureCards:
       - name: "Priest of Titania"
         minCopies: 4
@@ -98,14 +98,14 @@ archetypes:
       - name: "Nyxborn Hydra"
         minCopies: 4
         # in 99% of decks
+      - name: "Lead the Stampede"
+        minCopies: 4
+        # in 98% of decks
       - name: "Timberwatch Elf"
         minCopies: 4
         # in 98% of decks
-      - name: "Lead the Stampede"
-        minCopies: 4
-        # in 97% of decks
   - name: "Grixis Affinity"
-    # 4.7% of the metagame, 134 decks
+    # 4.7% of the metagame, 133 decks
     signatureCards:
       - name: "Drossforge Bridge"
         minCopies: 4
@@ -126,7 +126,7 @@ archetypes:
         minCopies: 3
         # in 100% of decks
   - name: "Bogles"
-    # 4.3% of the metagame, 122 decks
+    # 4.3% of the metagame, 120 decks
     signatureCards:
       - name: "Abundant Growth"
         minCopies: 4
@@ -168,7 +168,7 @@ archetypes:
         minCopies: 2
         # in 100% of decks
   - name: "Mono Red Rally"
-    # 3.8% of the metagame, 108 decks
+    # 3.9% of the metagame, 109 decks
     signatureCards:
       - name: "Clockwork Percussionist"
         minCopies: 4
@@ -189,7 +189,7 @@ archetypes:
         minCopies: 4
         # in 99% of decks
   - name: "Ruby Storm"
-    # 3.2% of the metagame, 91 decks
+    # 3.4% of the metagame, 95 decks
     signatureCards:
       - name: "Glimpse the Impossible"
         minCopies: 4
@@ -210,7 +210,7 @@ archetypes:
         minCopies: 4
         # in 100% of decks
   - name: "Grixis Control"
-    # 3% of the metagame, 84 decks
+    # 3.1% of the metagame, 87 decks
     signatureCards:
       - name: "Counterspell"
         minCopies: 4
@@ -230,24 +230,3 @@ archetypes:
       - name: "Campfire"
         minCopies: 2
         # in 99% of decks
-  - name: "Esper Affinity"
-    # 3% of the metagame, 84 decks
-    signatureCards:
-      - name: "Myr Enforcer"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Razortide Bridge"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Refurbished Familiar"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Seat of the Synod"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Thoughtcast"
-        minCopies: 4
-        # in 100% of decks
-      - name: "Mistvault Bridge"
-        minCopies: 3
-        # in 100% of decks
