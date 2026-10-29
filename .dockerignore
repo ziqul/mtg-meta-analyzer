@@ -1,0 +1,9 @@
+# Dockerfile.dev copies the dependency files only, and the Makefile mounts the
+# source at run time. So the build context stays at three files, and the 400 MB
+# of data/ and the 40 MB of .git never go to the Docker daemon.
+#
+# Add an exception line here for each new file that a Dockerfile must COPY.
+*
+!package.json
+!bun.lock
+!.npmrc

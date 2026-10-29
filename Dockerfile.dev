@@ -1,0 +1,29 @@
+# Development image: Bun with the project dependencies.
+#
+# The image holds no source code. The Makefile mounts the working directory
+# at /app, so an edit on the host reaches the dev server, and Vite reloads.
+# A second, anonymous volume keeps /app/node_modules from the image, because
+# the mount of the working directory would otherwise hide it.
+#
+#   make container-start              # port 5173
+#   make container-start PORT=3000    # another port
+#   make container-run SCRIPT=lint    # one script of package.json
+FROM oven/bun:1
+
+WORKDIR /app
+
+# Only the dependency files, so a source change does not repeat the install.
+# --ignore-scripts skips the "prepare" script, which needs the source and a
+# Git directory. Nothing is lost: the SvelteKit plugin of Vite makes the
+# .svelte-kit files itself, and "bun run check" calls svelte-kit sync.
+COPY package.json bun.lock .npmrc ./
+RUN bun install --frozen-lockfile --ignore-scripts
+
+ENV PORT=5173
+EXPOSE 5173
+
+# --host makes the server answer requests from outside the container.
+# --strictPort stops Vite from moving to another port, which the published
+# port of the container would not follow.
+# exec replaces the shell, so no sh process stays above bun.
+CMD ["sh", "-c", "exec bun run dev --host 0.0.0.0 --port $PORT --strictPort"]
