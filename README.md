@@ -44,6 +44,13 @@ bun run scripts/fetch-tournament.ts 72980 --dry-run   # preview without writing
 
 Tournament JSON files are saved to `data/tournaments/` and loaded at build time.
 
+### Stage environment
+
+Any pull request commit can be published to a separate Stage site with the
+**Deploy to Stage** button on the PR. See
+[docs/stage-environment.md](docs/stage-environment.md) for how it works and the
+one-time setup.
+
 ## Tech Stack
 
 - [SvelteKit 5](https://svelte.dev) with Svelte runes and static adapter
