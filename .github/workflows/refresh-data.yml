@@ -172,7 +172,12 @@ jobs:
             git reset --soft HEAD~1
           fi
 
-          # Today's data can undo the replaced commit exactly; then just drop it.
+          # After folding, compare today's data with the state before the replaced
+          # commit. If today's run exactly undid that commit, nothing is left and
+          # `git commit` would fail the job, so drop the replaced commit instead.
+          # E.g. yesterday's commit only added
+          # data/modern/2026-10/videre-12857018.json and its index entry, and
+          # today that tournament is gone again: master goes back to the parent.
           if git diff --cached --quiet; then
             git push --force-with-lease="master:$HEAD_SHA" origin HEAD:master
             exit 0
