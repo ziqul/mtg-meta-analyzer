@@ -20,6 +20,8 @@
 
 	let canvas: HTMLCanvasElement;
 	let chart: Chart | null = null;
+	/** Archetype of the legend label that the user selected, if any. */
+	let selectedName: string | null = $state(null);
 
 	/** Card art for chart bubbles (plugin + tooltip artist credit). */
 	const archetypeArt = createArchetypeArtLoader(
@@ -57,8 +59,10 @@
 
 	function buildChart() {
 		if (chart) chart.destroy();
+		// The old chart is gone, so no bubble can stay selected.
+		selectedName = null;
 
-		const filtered = stats.filter((s) => s.name !== 'Unknown' && s.name !== 'Other' && s.totalMatches > 0);
+		const filtered = stats.filter((s) => isOnChart(s));
 		if (filtered.length === 0) return;
 
 		// Start loading images for all visible archetypes
@@ -97,6 +101,7 @@
 			options: {
 				responsive: true,
 				maintainAspectRatio: false,
+				onHover: handleChartHover,
 				scales: {
 					x: {
 						title: { display: true, text: 'Metagame Share (%)', font: { size: 13 } },
@@ -141,6 +146,73 @@
 		});
 	}
 
+	/** True when the archetype has a bubble, and thus a label to click. */
+	function isOnChart(s: ArchetypeStats): boolean {
+		if (s.name === 'Unknown' || s.name === 'Other') {
+			return false;
+		}
+		return s.totalMatches > 0;
+	}
+
+	/**
+	 * The pointer on the canvas gives Chart.js its own hover, which replaces a
+	 * selection made from a label. The highlighted label must follow. Chart.js
+	 * calls this for each move of the pointer over the canvas.
+	 */
+	function handleChartHover(): void {
+		if (selectedName !== null) {
+			selectedName = null;
+		}
+	}
+
+	/**
+	 * Shows a bubble as if the pointer were on it. Chart.js holds the active
+	 * elements of the chart and of the tooltip in two separate places, so both
+	 * get the same element. A second click on the same label clears it.
+	 */
+	function selectArchetype(name: string): void {
+		if (!chart) {
+			return;
+		}
+		if (selectedName === name) {
+			clearSelection();
+			return;
+		}
+
+		const datasetIndex = chart.data.datasets.findIndex((ds) => ds.label === name);
+		if (datasetIndex === -1) {
+			return;
+		}
+		const bubble = chart.getDatasetMeta(datasetIndex).data[0];
+		if (!bubble) {
+			return;
+		}
+
+		const active = [{ datasetIndex, index: 0 }];
+		chart.setActiveElements(active);
+		chart.tooltip?.setActiveElements(active, { x: bubble.x, y: bubble.y });
+		chart.update();
+		selectedName = name;
+	}
+
+	function clearSelection(): void {
+		selectedName = null;
+		if (!chart) {
+			return;
+		}
+		chart.setActiveElements([]);
+		chart.tooltip?.setActiveElements([], { x: 0, y: 0 });
+		chart.update();
+	}
+
+	/** Bubble and legend colour of one archetype. */
+	function legendColor(s: ArchetypeStats, index: number): string {
+		if (s.name === 'Other') {
+			return OTHER_COLOR;
+		}
+		return COLORS[index % COLORS.length];
+	}
+
 	onMount(() => {
 		buildChart();
 	});
@@ -166,14 +238,24 @@
 <div class="legend">
 	{#each stats.filter((s) => s.name !== 'Unknown' && s.totalMatches > 0) as s, i}
 		{@const art = lookupCardImage($cardImageIndex, $archetypeCardMap.get(s.name))}
-		<span class="legend-item">
-			<ArchetypeLegendIcon
-				{art}
-				name={s.name}
-				color={s.name === 'Other' ? OTHER_COLOR : COLORS[i % COLORS.length]}
-			/>
-			{s.name}
-		</span>
+		{@const color = legendColor(s, i)}
+		{#if isOnChart(s)}
+			<button
+				type="button"
+				class="legend-item legend-button"
+				class:selected={selectedName === s.name}
+				aria-pressed={selectedName === s.name}
+				onclick={() => selectArchetype(s.name)}
+			>
+				<ArchetypeLegendIcon {art} name={s.name} {color} />
+				{s.name}
+			</button>
+		{:else}
+			<span class="legend-item">
+				<ArchetypeLegendIcon {art} name={s.name} {color} />
+				{s.name}
+			</span>
+		{/if}
 	{/each}
 </div>
 
@@ -199,6 +281,26 @@
 		display: flex;
 		align-items: center;
 		gap: 0.3rem;
+		padding: 0.15rem 0.35rem;
+		border: 1px solid transparent;
+		border-radius: var(--radius);
+	}
+
+	/* Reset the button, so a clickable label looks like a plain label. */
+	.legend-button {
+		background: none;
+		font: inherit;
+		color: inherit;
+		cursor: pointer;
+	}
+
+	.legend-button:hover {
+		border-color: var(--color-border);
+	}
+
+	.legend-button.selected {
+		border-color: var(--color-accent);
+		background: var(--color-surface);
 	}
 
 </style>
