@@ -1,0 +1,203 @@
+name: Refresh Data
+
+on:
+  schedule:
+    - cron: '0 5 * * *' # daily at 05:00 UTC
+  workflow_dispatch:
+    inputs:
+      from:
+        description: 'Tournament start month (YYYY-MM), defaults to past month'
+        required: false
+        type: string
+      to:
+        description: 'Tournament end month (YYYY-MM), defaults to current month'
+        required: false
+        type: string
+      formats:
+        description: 'Goldfish format slugs for archetypes, separated by a space'
+        required: false
+        type: string
+      top:
+        description: 'Cards in each archetype rule (default 6)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+env:
+  DEFAULT_FORMATS: standard modern pioneer legacy vintage pauper premodern
+  DEFAULT_TOP: '6'
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      # Depth 2 so the previous commit is available to fold into.
+      - uses: actions/checkout@v6
+        with:
+          ref: master
+          fetch-depth: 2
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile
+
+      # Each source is independent: one failing must not stop the others from
+      # being committed, so the fetch steps continue on error and warn.
+      - name: Fetch MTGO tournaments
+        id: mtgo
+        continue-on-error: true
+        run: |
+          if [ -n "${{ inputs.from }}" ] || [ -n "${{ inputs.to }}" ]; then
+            ARGS=""
+            [ -n "${{ inputs.from }}" ] && ARGS="$ARGS --from ${{ inputs.from }}"
+            [ -n "${{ inputs.to }}" ] && ARGS="$ARGS --to ${{ inputs.to }}"
+            bun run scripts/fetch-mtgo.ts $ARGS
+          else
+            PREV_MONTH=$(date -u -d "1 month ago" +%Y-%m)
+            CURR_MONTH=$(date -u +%Y-%m)
+            bun run scripts/fetch-mtgo.ts --from "$PREV_MONTH" --to "$CURR_MONTH"
+          fi
+
+      - name: Start Videre DB bridge
+        id: bridge
+        continue-on-error: true
+        run: |
+          curl -fsSL -o cloudflared \
+            https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+          chmod +x cloudflared
+          ./cloudflared access tcp \
+            --hostname public-db.videreproject.com --url 127.0.0.1:5432 &
+          for i in $(seq 1 30); do
+            (exec 3<>/dev/tcp/127.0.0.1/5432) 2>/dev/null && exit 0
+            sleep 1
+          done
+          echo "Bridge did not come up on port 5432" >&2
+          exit 1
+
+      - name: Fetch Videre tournaments
+        id: videre
+        if: steps.bridge.outcome == 'success'
+        continue-on-error: true
+        run: |
+          if [ -n "${{ inputs.from }}" ] || [ -n "${{ inputs.to }}" ]; then
+            ARGS=""
+            [ -n "${{ inputs.from }}" ] && ARGS="$ARGS --from ${{ inputs.from }}"
+            [ -n "${{ inputs.to }}" ] && ARGS="$ARGS --to ${{ inputs.to }}"
+            bun run scripts/fetch-videre.ts $ARGS
+          else
+            PREV_MONTH=$(date -u -d "1 month ago" +%Y-%m)
+            CURR_MONTH=$(date -u +%Y-%m)
+            bun run scripts/fetch-videre.ts --from "$PREV_MONTH" --to "$CURR_MONTH"
+          fi
+
+      - name: Prune data outside the retention window
+        run: bun run scripts/prune-old-data.ts
+
+      - name: Check/rebuild card image index
+        run: |
+          if bun run scripts/check-card-image-index.ts; then
+            echo "Card image index is current."
+          else
+            bun run scripts/build-card-image-index.ts
+          fi
+
+      # Each format overwrites data/archetypes/<slug>.yaml. The script keeps the
+      # old file when only its date line would change, so an unchanged metagame
+      # makes no commit. One failed format does not stop the others.
+      - name: Draft archetype configs from MTGGoldfish
+        run: |
+          FORMATS="${{ inputs.formats }}"
+          if [ -z "$FORMATS" ]; then
+            FORMATS="$DEFAULT_FORMATS"
+          fi
+          TOP="${{ inputs.top }}"
+          if [ -z "$TOP" ]; then
+            TOP="$DEFAULT_TOP"
+          fi
+
+          FAILED=""
+          for FORMAT in $FORMATS; do
+            if bun run scripts/draft-archetypes-goldfish.ts "$FORMAT" --top "$TOP" --force; then
+              echo "ok: $FORMAT"
+            else
+              FAILED="$FAILED $FORMAT"
+            fi
+          done
+
+          if [ -n "$FAILED" ]; then
+            echo "::warning::Could not draft:$FAILED"
+          fi
+
+      - name: Warn about failed sources
+        if: steps.mtgo.outcome == 'failure' || steps.bridge.outcome == 'failure' || steps.videre.outcome == 'failure'
+        run: |
+          echo "::warning::A tournament source failed (mtgo: ${{ steps.mtgo.outcome }}, videre bridge: ${{ steps.bridge.outcome }}, videre: ${{ steps.videre.outcome }}); committing what the others fetched."
+
+      # Every data commit stays in git history forever, even after the files are
+      # pruned. To keep the repo small, when the commit on master is itself a
+      # data refresh we replace it (soft reset + force push) instead of stacking
+      # a new one on top. Any other commit on top is left alone.
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Data is already current."
+            exit 0
+          fi
+
+          BOT_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+          HEAD_SHA=$(git rev-parse HEAD)
+          HEAD_EMAIL=$(git log -1 --format=%ae HEAD)
+          HEAD_SUBJECT=$(git log -1 --format=%s HEAD)
+          HEAD_PARENTS=$(git log -1 --format=%p HEAD | wc -w)
+
+          REPLACE=false
+          if [ "$HEAD_EMAIL" = "$BOT_EMAIL" ] \
+            && [ "${HEAD_SUBJECT#data:}" != "$HEAD_SUBJECT" ] \
+            && [ "$HEAD_PARENTS" -eq 1 ]; then
+            REPLACE=true
+            echo "Previous commit is a data refresh ($HEAD_SUBJECT); replacing it."
+            git reset --soft HEAD~1
+          fi
+
+          # Today's data can undo the replaced commit exactly; then just drop it.
+          if git diff --cached --quiet; then
+            git push --force-with-lease="master:$HEAD_SHA" origin HEAD:master
+            exit 0
+          fi
+
+          # Describe the whole change against the new parent, so a replacing
+          # commit also covers what the commit it replaces did.
+          FETCHED=$(git diff --cached --name-only --diff-filter=A -- data/ \
+            | grep -v -e '^data/archetypes/' -e 'card-images\.json' -e 'card-images-status\.json' \
+            | grep -c '\.json$' || true)
+          PRUNED=$(git diff --cached --name-only --diff-filter=D -- data/ \
+            | grep -v '^data/archetypes/' | grep -c '\.json$' || true)
+          ARCHETYPES=$(git diff --cached --name-only -- data/archetypes/ | wc -l | tr -d ' ')
+          DATE=$(date -u +%Y-%m-%d)
+
+          PARTS=""
+          [ "$FETCHED" -gt 0 ] && PARTS="$PARTS, fetch $FETCHED tournaments"
+          [ "$PRUNED" -gt 0 ] && PARTS="$PARTS, prune $PRUNED old"
+          [ "$ARCHETYPES" -gt 0 ] && PARTS="$PARTS, refresh $ARCHETYPES archetype configs"
+          [ -z "$PARTS" ] && PARTS=", refresh card image index"
+          git commit -m "data:${PARTS#,} ($DATE)"
+
+          if [ "$REPLACE" = true ]; then
+            # Fails if master moved since checkout, so nobody's commit is lost.
+            git push --force-with-lease="master:$HEAD_SHA" origin HEAD:master
+          else
+            git push origin HEAD:master
+          fi
