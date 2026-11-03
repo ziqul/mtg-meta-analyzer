@@ -12,6 +12,7 @@
 	import { archetypeCardMap } from '../stores/tournaments';
 	import { cardImageIndex, lookupCardImage } from '../stores/card-images';
 	import { createArchetypeArtLoader } from '../utils/archetype-art';
+	import { caretPaddingToPointEdge } from '../utils/chart-tooltip';
 	import ArchetypeLegendIcon from './ArchetypeLegendIcon.svelte';
 
 	Chart.register(BubbleController, LinearScale, PointElement, Tooltip, Legend);
@@ -135,6 +136,7 @@
 							footer: archetypeArt.tooltipFooter,
 						},
 						footerFont: { weight: 'normal', size: 10 },
+						caretPadding: caretPaddingToPointEdge,
 					},
 				},
 			},

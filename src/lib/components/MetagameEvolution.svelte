@@ -18,6 +18,7 @@
 	} from '../utils/metagame-evolution';
 	import { cardImageIndex, lookupCardImage } from '../stores/card-images';
 	import { createArchetypeArtLoader } from '../utils/archetype-art';
+	import { caretPaddingToPointEdge } from '../utils/chart-tooltip';
 	import ArchetypeLegendIcon from './ArchetypeLegendIcon.svelte';
 	import { settings } from '../stores/settings';
 
@@ -185,6 +186,7 @@
 							footer: archetypeArt.tooltipFooter,
 						},
 						footerFont: { weight: 'normal', size: 10 },
+						caretPadding: caretPaddingToPointEdge,
 					},
 				},
 			},
