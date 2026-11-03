@@ -37,8 +37,8 @@ Deviations from the plan below, accepted after review:
   empty index so previews fall back to text instead of loading forever
   (`null` strictly means "loading"); the next preview interaction retries.
 
-Ingestion wiring: each tournament-fetch workflow (`fetch-mtgo.yml`,
-`fetch-videre.yml`, `fetch-tournament.yml`) rebuilds the index after a fetch
+Ingestion wiring: each tournament-fetch workflow (`refresh-data.yml`,
+`fetch-tournament.yml`) rebuilds the index after a fetch
 that changed `data/` and commits it alongside the tournament files. For
 manual/local ingestion, run `bun run build:card-images`.
 
