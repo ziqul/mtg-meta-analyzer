@@ -58,14 +58,15 @@ jobs:
     steps:
       # The deploy key can write to the Stage repo and nothing else. Unlike a
       # GITHUB_TOKEN push, a deploy-key push starts the Stage repo's workflow.
-      # Depth 2 is enough to find the base commit (below), and having the
-      # current tip locally lets git send only the files that changed.
+      # Full history, so the last deploy commit can be found under any commits
+      # made since. It stays small (see below), and having it locally lets git
+      # send only the files that changed.
       - uses: actions/checkout@v6
         with:
           repository: ${{ github.repository_owner }}/${{ env.STAGE_REPO }}
           ref: ${{ env.STAGE_BRANCH }}
           ssh-key: ${{ secrets.STAGE_DEPLOY_KEY }}
-          fetch-depth: 2
+          fetch-depth: 0
           path: stage
 
       - uses: actions/download-artifact@v8
@@ -73,10 +74,10 @@ jobs:
           name: stage-site
           path: site-new
 
-      # master is kept as the Stage repo's own files (workflow, README,
-      # CLAUDE.md) plus exactly one deploy commit on top that holds site/.
-      # Each deploy replaces that one commit, so old builds never pile up in
-      # history.
+      # master holds at most one build: the Stage repo's own files (workflow,
+      # README, CLAUDE.md) with exactly one deploy commit holding site/. A new
+      # deploy replaces the previous one instead of stacking on it, and names
+      # it in a Replaces: line, so old builds never pile up in history.
       - name: Commit and push
         working-directory: stage
         env:
@@ -88,24 +89,42 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           TIP=$(git rev-parse HEAD)
-          if git log -1 --format=%B | grep -q '^Stage-Deploy:'; then
-            BASE=$(git rev-parse HEAD^)
-          else
-            BASE=$TIP
-          fi
+          LAST_DEPLOY=$(git log --first-parent -1 --format=%H --grep='^Stage-Deploy:' HEAD)
 
-          git checkout -q --detach "$BASE"
+          # Start from master's files without the old build.
+          git checkout -q --detach "$TIP"
           git rm -rq --ignore-unmatch site
           rm -rf site
+
+          if [ -z "$LAST_DEPLOY" ]; then
+            BASE=$TIP
+          elif [ "$LAST_DEPLOY" = "$TIP" ]; then
+            BASE=$(git rev-parse "$TIP^")
+          else
+            # The repo's own files changed on top of the last deploy. Fold
+            # those changes into one commit on the deploy's parent, so the old
+            # build drops out of history; the message lists what was folded.
+            {
+              echo "Stage repo changes since the last deploy"
+              echo
+              git log --first-parent --format='- %s (%h)' "$LAST_DEPLOY..$TIP"
+            } > ../base-message.txt
+            BASE=$(git commit-tree "$(git write-tree)" -p "$LAST_DEPLOY^" -F ../base-message.txt)
+          fi
+
           mv ../site-new site
           git add site
 
-          printf '%s\n' \
-            "Deploy ${SOURCE_BRANCH} @ ${SOURCE_SHA:0:7}" \
-            "" \
-            "Source: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/commit/$SOURCE_SHA" \
-            "Requested-by: $SENDER" \
-            "Stage-Deploy: $SOURCE_SHA" > ../message.txt
+          {
+            echo "Deploy ${SOURCE_BRANCH} @ ${SOURCE_SHA:0:7}"
+            echo
+            echo "Source: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/commit/$SOURCE_SHA"
+            echo "Requested-by: $SENDER"
+            if [ -n "$LAST_DEPLOY" ]; then
+              echo "Replaces: $(git log -1 --format='%h (%s)' "$LAST_DEPLOY")"
+            fi
+            echo "Stage-Deploy: $SOURCE_SHA"
+          } > ../message.txt
           COMMIT=$(git commit-tree "$(git write-tree)" -p "$BASE" -F ../message.txt)
 
           # The lease refuses the push if master moved since we fetched it.

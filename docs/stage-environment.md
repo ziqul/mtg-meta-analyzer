@@ -53,12 +53,35 @@ sequenceDiagram
   branch's code. Keeping the deploy key out of that job means the code being
   built can't push anywhere. The job that pushes runs none of the branch's
   code.
-- **The Stage repo's `master` is its own files plus one deploy commit.** Each
-  deploy builds on the last commit that isn't a deploy (deploy commits carry a
-  `Stage-Deploy:` trailer) and force-pushes. The repo stays the size of one
-  build (~410 MB, mostly `data/`), and its own files (workflow, README,
-  `CLAUDE.md`) survive. Exception: if a change to the Stage repo is merged
-  while a deploy commit is on top, that one old build stays in history.
+- **The Stage repo never holds more than one build.** Its `master` is the
+  repo's own files (workflow, README, `CLAUDE.md`) plus exactly one deploy
+  commit holding `site/` (deploy commits carry a `Stage-Deploy:` trailer).
+  Each deploy force-pushes a new deploy commit in place of the previous one,
+  with a `Replaces:` line naming it, so the repo stays the size of one build
+  (~410 MB, mostly `data/`):
+
+  ```
+  before:  Initial commit ── README edit ── Deploy A
+  after:   Initial commit ── README edit ── Deploy B   (Replaces: Deploy A)
+  ```
+
+  If the repo's own files changed on top of the last deploy (say a README PR
+  was merged), the deploy first folds those commits into one commit,
+  *Stage repo changes since the last deploy*, placed where the old deploy
+  was, and lists them in its message. The changes are kept; the old build
+  drops out of history:
+
+  ```
+  before:  Initial commit ── Deploy A ── Merge PR #3
+  after:   Initial commit ── Stage repo changes since the last deploy ── Deploy B
+  ```
+
+  Two things can still keep an old build around. GitHub deletes force-pushed
+  objects in its own time, so the size it reports can lag for a while. And a
+  pull request's commits stay on GitHub for good, so a PR branched off `master`
+  while a deploy is on it keeps that build. That only matters for PRs to the
+  Stage repo itself, which should be rare; branch those from the commit below
+  the deploy (`origin/master^`) instead.
 - **Last run wins.** A new run cancels a deploy still in progress, in both
   repos.
 
