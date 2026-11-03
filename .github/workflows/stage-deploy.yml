@@ -1,0 +1,237 @@
+name: Stage Deploy
+
+# Runs when someone clicks "Deploy to Stage" on the Stage check run that
+# stage-offer.yml created. Builds that commit and pushes the output to site/ on
+# the Stage repo's master branch; the Stage repo's own workflow publishes it to
+# GitHub Pages.
+#
+# check_run workflows always run from the copy of this file on master, never
+# from the PR branch, so a change here only takes effect once it is merged.
+#
+# Setup and walkthrough: docs/stage-environment.md
+
+on:
+  check_run:
+    types: [requested_action]
+
+permissions: {}
+
+# A newer click replaces a deploy that is still running.
+concurrency:
+  group: stage-deploy
+  cancel-in-progress: true
+
+env:
+  STAGE_REPO: mtg-meta-analyzer-stage
+  STAGE_BRANCH: master
+
+jobs:
+  start:
+    name: Accept request
+    # Our button, on our App's check run. Any App installed on this repo could
+    # put a button with the same identifier on a check run of its own. (The
+    # payload's app object carries the numeric App ID but not the client ID.)
+    if: >-
+      github.event.requested_action.identifier == 'deploy-stage' &&
+      github.event.check_run.app.id == vars.STAGE_APP_ID
+    runs-on: ubuntu-latest
+    outputs:
+      check-run-id: ${{ steps.check-run.outputs.id }}
+    steps:
+      - id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.STAGE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.STAGE_APP_PRIVATE_KEY }}
+          permission-checks: write
+
+      # The click is the approval, so make sure it came from someone who could
+      # push to this repo anyway.
+      - name: Check who clicked
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          SENDER: ${{ github.event.sender.login }}
+        run: |
+          PERMISSION=$(gh api "repos/$GITHUB_REPOSITORY/collaborators/$SENDER/permission" --jq '.permission')
+          echo "$SENDER has $PERMISSION access"
+          case "$PERMISSION" in
+            admin|maintain|write) ;;
+            *) echo "::error::$SENDER needs write access to deploy to Stage"; exit 1 ;;
+          esac
+
+      # A second check run on the same commit shows the deploy's progress on
+      # the PR and links to this workflow run.
+      - id: check-run
+        name: Report deploy started
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          HEAD_SHA: ${{ github.event.check_run.head_sha }}
+          SENDER: ${{ github.event.sender.login }}
+        run: |
+          RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          ID=$(jq -n --arg sha "$HEAD_SHA" --arg url "$RUN_URL" --arg sender "$SENDER" '{
+            name: "Stage deploy",
+            head_sha: $sha,
+            status: "in_progress",
+            details_url: $url,
+            output: {
+              title: "Deploying to Stage",
+              summary: "Requested by @\($sender). Follow along in the [workflow run](\($url))."
+            }
+          }' | gh api "repos/$GITHUB_REPOSITORY/check-runs" --input - --jq '.id')
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+
+  # The build runs the PR's code (bun install, vite build), so it gets no
+  # secrets and a read-only GITHUB_TOKEN. Only the publish job holds a token
+  # that can write to the Stage repo, and it runs none of the PR's code.
+  build:
+    name: Build
+    needs: start
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.check_run.head_sha }}
+          persist-credentials: false
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile
+
+      - run: bun run build
+        env:
+          BASE_PATH: /${{ env.STAGE_REPO }}
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: stage-site
+          path: build
+          retention-days: 1
+
+  publish:
+    name: Push to Stage repo
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      # Scoped to the Stage repo only, with contents:write and nothing else.
+      - id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.STAGE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.STAGE_APP_PRIVATE_KEY }}
+          repositories: ${{ env.STAGE_REPO }}
+          permission-contents: write
+
+      # Depth 2 is enough to find the base commit (below), and having the
+      # current tip locally lets git send only the files that changed.
+      - uses: actions/checkout@v6
+        with:
+          repository: ${{ github.repository_owner }}/${{ env.STAGE_REPO }}
+          ref: ${{ env.STAGE_BRANCH }}
+          token: ${{ steps.app-token.outputs.token }}
+          fetch-depth: 2
+          path: stage
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: stage-site
+          path: site-new
+
+      # Commits are made as the App's bot account, <slug>[bot].
+      - name: Set the commit author
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          APP_SLUG: ${{ steps.app-token.outputs.app-slug }}
+        run: |
+          BOT_ID=$(gh api "users/${APP_SLUG}%5Bbot%5D" --jq '.id')
+          git -C stage config user.name "${APP_SLUG}[bot]"
+          git -C stage config user.email "${BOT_ID}+${APP_SLUG}[bot]@users.noreply.github.com"
+
+      # master is kept as the Stage repo's own files (workflow, README,
+      # CLAUDE.md) plus exactly one deploy commit on top that holds site/.
+      # Each deploy replaces that one commit, so old builds never pile up in
+      # history, and the diff never touches .github/workflows, so the App
+      # needs no "workflows" permission.
+      - name: Commit and push
+        working-directory: stage
+        env:
+          SOURCE_SHA: ${{ github.event.check_run.head_sha }}
+          SOURCE_BRANCH: ${{ github.event.check_run.check_suite.head_branch }}
+          SENDER: ${{ github.event.sender.login }}
+        run: |
+          TIP=$(git rev-parse HEAD)
+          if git log -1 --format=%B | grep -q '^Stage-Deploy:'; then
+            BASE=$(git rev-parse HEAD^)
+          else
+            BASE=$TIP
+          fi
+
+          git checkout -q --detach "$BASE"
+          git rm -rq --ignore-unmatch site
+          rm -rf site
+          mv ../site-new site
+          git add site
+
+          printf '%s\n' \
+            "Deploy ${SOURCE_BRANCH} @ ${SOURCE_SHA:0:7}" \
+            "" \
+            "Source: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/commit/$SOURCE_SHA" \
+            "Requested-by: $SENDER" \
+            "Stage-Deploy: $SOURCE_SHA" > ../message.txt
+          COMMIT=$(git commit-tree "$(git write-tree)" -p "$BASE" -F ../message.txt)
+
+          # The lease refuses the push if master moved since we fetched it.
+          git push --force-with-lease="${STAGE_BRANCH}:${TIP}" origin "${COMMIT}:refs/heads/${STAGE_BRANCH}"
+
+  finish:
+    name: Report result
+    needs: [start, build, publish]
+    if: always() && needs.start.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.STAGE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.STAGE_APP_PRIVATE_KEY }}
+          permission-checks: write
+
+      - name: Complete the Stage deploy check run
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          CHECK_RUN_ID: ${{ needs.start.outputs.check-run-id }}
+          RESULT: ${{ needs.publish.result }}
+        run: |
+          RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          STAGE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${STAGE_REPO}/"
+          PAGES_RUNS="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY_OWNER/$STAGE_REPO/actions"
+          case "$RESULT" in
+            success)
+              CONCLUSION=success
+              DETAILS=$STAGE_URL
+              TITLE="Pushed to Stage"
+              SUMMARY="Stage is publishing this commit now ([Pages deploy]($PAGES_RUNS)); it's live at $STAGE_URL in a minute or two."
+              ;;
+            cancelled)
+              CONCLUSION=cancelled
+              DETAILS=$RUN_URL
+              TITLE="Cancelled"
+              SUMMARY="A newer Stage deploy replaced this one."
+              ;;
+            *)
+              CONCLUSION=failure
+              DETAILS=$RUN_URL
+              TITLE="Stage deploy failed"
+              SUMMARY="See the [workflow run]($RUN_URL)."
+              ;;
+          esac
+          jq -n --arg c "$CONCLUSION" --arg url "$DETAILS" --arg t "$TITLE" --arg s "$SUMMARY" '{
+            status: "completed",
+            conclusion: $c,
+            details_url: $url,
+            output: { title: $t, summary: $s }
+          }' | gh api -X PATCH "repos/$GITHUB_REPOSITORY/check-runs/$CHECK_RUN_ID" --input - --silent

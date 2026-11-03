@@ -1,0 +1,61 @@
+name: Stage Offer
+
+# Puts a "Deploy to Stage" button on every pull request commit. The button sits
+# on a check run created by the stage-deployer GitHub App; clicking it fires a
+# check_run event that stage-deploy.yml picks up. The check run has to come from
+# our own App: GitHub starts no workflows for buttons on check runs that GitHub
+# Actions itself (GITHUB_TOKEN) created.
+#
+# Setup and walkthrough: docs/stage-environment.md
+
+on:
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize, reopened]
+
+# The App token does all the work, so GITHUB_TOKEN gets nothing.
+permissions: {}
+
+env:
+  STAGE_REPO: mtg-meta-analyzer-stage
+
+jobs:
+  offer:
+    name: Offer stage deploy
+    # Fork PRs get no secrets and can't mint the App token. The client-id check
+    # keeps this job skipped (not failing) until the App is set up.
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      vars.STAGE_APP_CLIENT_ID != ''
+    runs-on: ubuntu-latest
+    steps:
+      - id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.STAGE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.STAGE_APP_PRIVATE_KEY }}
+          permission-checks: write
+
+      # A completed check run with a neutral conclusion: grey, never blocks the
+      # merge, and the button only shows on completed check runs.
+      - name: Create the check run with the button
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          STAGE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${STAGE_REPO}/"
+          jq -n --arg sha "$HEAD_SHA" --arg url "$STAGE_URL" '{
+            name: "Stage",
+            head_sha: $sha,
+            status: "completed",
+            conclusion: "neutral",
+            output: {
+              title: "Ready to deploy to Stage",
+              summary: "Click **Deploy to Stage** (top right) to build this commit and publish it to \($url)"
+            },
+            actions: [{
+              label: "Deploy to Stage",
+              description: "Build this commit and publish it",
+              identifier: "deploy-stage"
+            }]
+          }' | gh api "repos/$GITHUB_REPOSITORY/check-runs" --input - --jq '.html_url'
