@@ -46,8 +46,8 @@ Tournament JSON files are saved to `data/tournaments/` and loaded at build time.
 
 ### Stage environment
 
-Any pull request commit can be published to a separate Stage site with the
-**Deploy to Stage** button on the PR. See
+Any branch can be published to a separate Stage site by running the
+**Stage Deploy** workflow from the Actions tab. See
 [docs/stage-environment.md](docs/stage-environment.md) for how it works and the
 one-time setup.
 
