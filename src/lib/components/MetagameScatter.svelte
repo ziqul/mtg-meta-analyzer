@@ -152,9 +152,11 @@
 
 	/**
 	 * Highlights the bubble of one archetype and dims all others, the way the
-	 * Metagame Share Evolution chart does; null restores them all. The lookup
-	 * is by dataset label, not by position, because the legend keeps Other
-	 * while the chart does not.
+	 * Metagame Share Evolution chart does, and opens the bubble's tooltip; null
+	 * restores them all. The lookup is by dataset label, not by position,
+	 * because the legend keeps Other while the chart does not. Chart.js holds
+	 * the active elements of the chart and of the tooltip in two separate
+	 * places, so both get the same element.
 	 */
 	function highlightArchetype(name: string | null): void {
 		if (!chart) {
@@ -169,6 +171,12 @@
 			// Read by the card art plugin, which draws over the bubbles
 			d.dimmed = !active;
 		});
+
+		const datasetIndex = chart.data.datasets.findIndex((ds) => ds.label === name);
+		const bubble = datasetIndex === -1 ? undefined : chart.getDatasetMeta(datasetIndex).data[0];
+		const activeElements = bubble ? [{ datasetIndex, index: 0 }] : [];
+		chart.setActiveElements(activeElements);
+		chart.tooltip?.setActiveElements(activeElements, { x: bubble?.x ?? 0, y: bubble?.y ?? 0 });
 		chart.update('none');
 	}
 
@@ -208,7 +216,7 @@
 		{@const color = legendColor(s, i)}
 		{#if isOnChart(s)}
 			<span
-				class="legend-item"
+				class="legend-item legend-hoverable"
 				role="presentation"
 				onmouseenter={() => highlightArchetype(s.name)}
 				onmouseleave={() => highlightArchetype(null)}
@@ -251,5 +259,10 @@
 		padding: 0.15rem 0.35rem;
 		user-select: none;
 		-webkit-user-select: none;
+	}
+
+	/* Other has no bubble, so only the labels with one get the pointer. */
+	.legend-hoverable {
+		cursor: pointer;
 	}
 </style>

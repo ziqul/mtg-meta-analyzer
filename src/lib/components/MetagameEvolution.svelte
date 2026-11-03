@@ -103,9 +103,22 @@
 		},
 	};
 
-	/** A legend label highlights its line like the pointer on the canvas does. */
+	/**
+	 * A legend label highlights its line like the pointer on the canvas does,
+	 * and opens the tooltip on the line's latest point that has a share.
+	 * Chart.js holds the active elements of the chart and of the tooltip in two
+	 * separate places, so both get the same element.
+	 */
 	function highlightSeries(index: number) {
-		if (chart) highlightDataset(chart, index);
+		if (!chart) return;
+		const values = index === -1 ? [] : (chart.data.datasets[index].data as (number | null)[]);
+		const pointIndex = values.findLastIndex((v) => !!v);
+		const point = pointIndex === -1 ? undefined : chart.getDatasetMeta(index).data[pointIndex];
+		const active = point ? [{ datasetIndex: index, index: pointIndex }] : [];
+		chart.setActiveElements(active);
+		chart.tooltip?.setActiveElements(active, { x: point?.x ?? 0, y: point?.y ?? 0 });
+		highlightDataset(chart, index);
+		chart.update('none');
 	}
 
 	function buildChart(currentSeries: EvolutionSeries[]) {
@@ -324,6 +337,7 @@
 		gap: 0.3rem;
 		padding: 0.1rem 0.3rem;
 		font-size: 0.8rem;
+		cursor: pointer;
 		user-select: none;
 		-webkit-user-select: none;
 	}
