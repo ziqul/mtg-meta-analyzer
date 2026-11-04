@@ -18,6 +18,7 @@
 	} from '../utils/metagame-evolution';
 	import { cardImageIndex, lookupCardImage } from '../stores/card-images';
 	import { createArchetypeArtLoader } from '../utils/archetype-art';
+	import { caretPaddingToPointEdge } from '../utils/chart-tooltip';
 	import ArchetypeLegendIcon from './ArchetypeLegendIcon.svelte';
 	import { settings } from '../stores/settings';
 
@@ -36,7 +37,6 @@
 	} = $props();
 
 	let periodSize = $state<PeriodSize>('2w');
-	let hiddenSeries = $state(new Set<string>());
 
 	const evolutionResult = $derived(
 		computeMetagameEvolution(tournaments, playerArchetypes, periodSize, {
@@ -67,8 +67,26 @@
 	];
 	const OTHER_COLOR = '#555555';
 
-	/** Highlights the hovered line and dims all others. */
+	/** Highlights one line and dims all others; -1 restores them all. */
 	let hoveredDatasetIndex = -1;
+	function highlightDataset(chartInstance: Chart, index: number) {
+		if (index === hoveredDatasetIndex) return;
+		hoveredDatasetIndex = index;
+		chartInstance.data.datasets.forEach((ds, i) => {
+			const d = ds as unknown as Record<string, unknown>;
+			const base = d.baseColor as string;
+			const active = hoveredDatasetIndex === -1 || i === hoveredDatasetIndex;
+			d.borderWidth = active ? 2.5 : 1;
+			d.borderColor = active ? base : `${base}33`;
+			d.pointBorderColor = active ? base : `${base}33`;
+			d.pointBackgroundColor = active ? `${base}bb` : `${base}22`;
+			// Read by the card art plugin, which draws over the points
+			d.dimmed = !active;
+		});
+		chartInstance.update('none');
+	}
+
+	/** Highlights the line nearest to the pointer on the canvas. */
 	const hoverHighlightPlugin = {
 		id: 'hoverHighlight',
 		afterEvent(chartInstance: Chart, args: { event: { type: string } }) {
@@ -82,26 +100,26 @@
 							{ intersect: false },
 							false,
 						)[0]?.datasetIndex ?? -1);
-			if (newIndex === hoveredDatasetIndex) return;
-			hoveredDatasetIndex = newIndex;
-			chartInstance.data.datasets.forEach((ds, i) => {
-				const d = ds as unknown as Record<string, unknown>;
-				const base = d.baseColor as string;
-				const active = hoveredDatasetIndex === -1 || i === hoveredDatasetIndex;
-				d.borderWidth = active ? 2.5 : 1;
-				d.borderColor = active ? base : `${base}33`;
-				d.pointBorderColor = active ? base : `${base}33`;
-				d.pointBackgroundColor = active ? `${base}bb` : `${base}22`;
-			});
-			chartInstance.update('none');
+			highlightDataset(chartInstance, newIndex);
 		},
 	};
 
-	function toggleSeries(name: string) {
-		const next = new Set(hiddenSeries);
-		if (next.has(name)) next.delete(name);
-		else next.add(name);
-		hiddenSeries = next;
+	/**
+	 * A legend label highlights its line like the pointer on the canvas does,
+	 * and opens the tooltip on the line's latest point that has a share.
+	 * Chart.js holds the active elements of the chart and of the tooltip in two
+	 * separate places, so both get the same element.
+	 */
+	function highlightSeries(index: number) {
+		if (!chart) return;
+		const values = index === -1 ? [] : (chart.data.datasets[index].data as (number | null)[]);
+		const pointIndex = values.findLastIndex((v) => !!v);
+		const point = pointIndex === -1 ? undefined : chart.getDatasetMeta(index).data[pointIndex];
+		const active = point ? [{ datasetIndex: index, index: pointIndex }] : [];
+		chart.setActiveElements(active);
+		chart.tooltip?.setActiveElements(active, { x: point?.x ?? 0, y: point?.y ?? 0 });
+		highlightDataset(chart, index);
+		chart.update('none');
 	}
 
 	function buildChart(currentSeries: EvolutionSeries[]) {
@@ -114,11 +132,8 @@
 
 		void archetypeArt.load(currentSeries.map((s) => s.name));
 
-		const visibleSeries = currentSeries.filter((s) => !hiddenSeries.has(s.name));
 		const labels = currentSeries[0].points.map((p) => p.label);
-		const maxShare = visibleSeries.length > 0
-			? Math.max(...visibleSeries.flatMap((s) => s.points.map((p) => (p.share ?? 0) * 100)))
-			: 10;
+		const maxShare = Math.max(...currentSeries.flatMap((s) => s.points.map((p) => (p.share ?? 0) * 100)));
 		const yMax = Math.ceil(maxShare) + 2;
 
 		chart = new Chart(canvas, {
@@ -128,19 +143,18 @@
 				datasets: currentSeries.map((s, i) => {
 					const isOther = s.name === 'Other';
 					const color = isOther ? OTHER_COLOR : COLORS[i % COLORS.length];
-					const hidden = hiddenSeries.has(s.name);
 					return {
 						label: s.name,
 						baseColor: color,
-						data: hidden ? s.points.map(() => null) : s.points.map((p) => (p.share === null ? null : p.share * 100)),
-						pointRadius: hidden ? 0 : s.points.map((p) => (p.share ? 10 : 0)),
-						pointHoverRadius: hidden ? 0 : s.points.map((p) => (p.share ? 12 : 0)),
+						data: s.points.map((p) => (p.share === null ? null : p.share * 100)),
+						pointRadius: s.points.map((p) => (p.share ? 10 : 0)),
+						pointHoverRadius: s.points.map((p) => (p.share ? 12 : 0)),
 						spanGaps: true,
 						pointBackgroundColor: `${color}bb`,
 						pointBorderColor: color,
 						pointBorderWidth: 2,
 						borderColor: color,
-						borderWidth: hidden ? 0 : 2,
+						borderWidth: 2,
 						backgroundColor: 'transparent',
 						tension: 0.3,
 					};
@@ -172,6 +186,7 @@
 							footer: archetypeArt.tooltipFooter,
 						},
 						footerFont: { weight: 'normal', size: 10 },
+						caretPadding: caretPaddingToPointEdge,
 					},
 				},
 			},
@@ -188,7 +203,6 @@
 
 	$effect(() => {
 		const s = series;
-		void hiddenSeries;
 		if (canvas) buildChart(s);
 	});
 </script>
@@ -245,11 +259,11 @@
 <div class="legend">
 	{#each series as s, i}
 		{@const art = lookupCardImage($cardImageIndex, archetypeCardMap.get(s.name))}
-		<button
-			type="button"
+		<span
 			class="legend-item"
-			class:legend-hidden={hiddenSeries.has(s.name)}
-			onclick={() => toggleSeries(s.name)}
+			role="presentation"
+			onmouseenter={() => highlightSeries(i)}
+			onmouseleave={() => highlightSeries(-1)}
 		>
 			<ArchetypeLegendIcon
 				{art}
@@ -257,7 +271,7 @@
 				color={s.name === 'Other' ? OTHER_COLOR : COLORS[i % COLORS.length]}
 			/>
 			{s.name}
-		</button>
+		</span>
 	{/each}
 	{#if evolutionResult.incompleteData && $settings.winnersMode}
 		<span class="legend-warning">
@@ -318,28 +332,16 @@
 		font-size: 0.8rem;
 	}
 
+	/* A label only highlights its line on hover: no selection, no drag. */
 	.legend-item {
 		display: flex;
 		align-items: center;
 		gap: 0.3rem;
-		cursor: pointer;
-		background: none;
-		border: none;
 		padding: 0.1rem 0.3rem;
-		border-radius: 4px;
-		font: inherit;
 		font-size: 0.8rem;
-		color: inherit;
-		transition: opacity 0.15s;
-	}
-
-	.legend-item:hover {
-		background: var(--color-hover, rgba(0, 0, 0, 0.05));
-	}
-
-	.legend-hidden {
-		opacity: 0.4;
-		filter: grayscale(1);
+		cursor: pointer;
+		user-select: none;
+		-webkit-user-select: none;
 	}
 
 	.separator {

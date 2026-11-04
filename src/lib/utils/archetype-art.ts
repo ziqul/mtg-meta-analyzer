@@ -50,7 +50,8 @@ function extractDominantColor(img: HTMLImageElement): string {
  * `onImageLoad` fires per loaded image so the chart can repaint.
  *
  * `plugin` draws the circular-cropped art over each point with a ring in
- * the art's dominant color (`ringWidth` px). `tooltipFooter` credits the
+ * the art's dominant color (`ringWidth` px), faded on a dataset whose
+ * `dimmed` flag the chart's hover highlight set. `tooltipFooter` credits the
  * hovered archetype's artist (Scryfall imagery guideline for art crops).
  */
 export function createArchetypeArtLoader(
@@ -100,6 +101,7 @@ export function createArchetypeArtLoader(
 				const img = images.get(archName);
 				if (!img) continue;
 				const meta = chart.getDatasetMeta(dsIndex);
+				const dimmed = (chart.data.datasets[dsIndex] as { dimmed?: boolean }).dimmed;
 				for (const rawElement of meta.data) {
 					const element = rawElement as unknown as {
 						x: number;
@@ -110,6 +112,7 @@ export function createArchetypeArtLoader(
 					if (r <= 0) continue; // hidden / 0%-share points
 					const { x, y } = element;
 					ctx.save();
+					if (dimmed) ctx.globalAlpha = 0.2;
 					ctx.beginPath();
 					ctx.arc(x, y, r, 0, Math.PI * 2);
 					ctx.closePath();
@@ -131,6 +134,7 @@ export function createArchetypeArtLoader(
 					);
 					ctx.restore();
 					ctx.save();
+					if (dimmed) ctx.globalAlpha = 0.2;
 					ctx.beginPath();
 					ctx.arc(x, y, r, 0, Math.PI * 2);
 					ctx.strokeStyle = dominantColors.get(archName) ?? "rgba(255,255,255,0.6)";

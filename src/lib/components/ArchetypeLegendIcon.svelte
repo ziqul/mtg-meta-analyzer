@@ -19,7 +19,7 @@
 {#if art?.art_crop}
 	<!-- crossorigin keeps the browser cache coherent with the CORS-mode
 	     plugin loads of the same URL (else Chrome blocks the second use) -->
-	<img class="legend-art" crossorigin="anonymous" src={art.art_crop} alt={name} onerror={retryCors} />
+	<img class="legend-art" crossorigin="anonymous" src={art.art_crop} alt={name} draggable="false" onerror={retryCors} />
 {:else}
 	<span class="dot" style="background: {color}"></span>
 {/if}
